@@ -16,3 +16,8 @@ test:
   image: 18fgsa/html-proofer:gitlab-ci
   script:
     - htmlproofer ./
+
+css:
+  image: chrben/ubuntu-npm-nonroot:latest
+  script:
+    - npm run test:html5
