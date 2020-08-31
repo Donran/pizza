@@ -3,6 +3,8 @@ stages:
   - html_test
 
 before_script:
+  - apt-get install python-software-properties
+  - curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash –
   - apt-get install nodejs npm
 
 html_test:
