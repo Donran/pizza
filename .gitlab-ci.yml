@@ -1,15 +1,11 @@
 stages:
-  - before_script
   - html_test
-
-before_script:
-  stage: before_script
-  script:
-    - sudo apt install nodejs npm
 
 html_test:
   stage: html_test
   # image: cyb3rjak3/html5validator:latest
+  image: chrben/ubuntu-npm-nonroot:latest
+  
   script:
     # - html5validator --root ./ --also-check-css --format text
     - npm run test:html5
