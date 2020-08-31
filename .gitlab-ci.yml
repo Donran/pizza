@@ -12,10 +12,7 @@ pages:
   only:
     - master
 
-stages:
-  - html_test
-
-html_test:
+test:
   image: 18fgsa/html-proofer:gitlab-ci
   script:
     - htmlproofer _site --empty-alt-ignore
