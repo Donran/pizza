@@ -1,20 +1,8 @@
 stages:
-  # - deploy
-  - test
+  - html_test
 
-# pages:
-#   stage: deploy
-#   script:
-#   - scripts/move-content-to-public.sh
-#   artifacts:
-#     paths:
-#     - public
-#   only:
-#   - master
-
-w3c-validation:
-  stage: test
+html_test:
+  stage: html_test
+  image: cyb3rjak3/html5validator:latest
   script:
-  - scripts/w3c-html-validation.sh
-  only:
-  - master
+    - html5validator --root public/ --also-check-css --format text
