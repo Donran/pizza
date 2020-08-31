@@ -1,16 +1,16 @@
 stages:
-  - deploy
+  # - deploy
   - test
 
-pages:
-  stage: deploy
-  script:
-  - scripts/move-content-to-public.sh
-  artifacts:
-    paths:
-    - public
-  only:
-  - master
+# pages:
+#   stage: deploy
+#   script:
+#   - scripts/move-content-to-public.sh
+#   artifacts:
+#     paths:
+#     - public
+#   only:
+#   - master
 
 w3c-validation:
   stage: test
