@@ -5,7 +5,7 @@ stages:
 before_script:
   stage: before_script
   script:
-    sudo apt install nodejs npm
+    - sudo apt install nodejs npm
 
 html_test:
   stage: html_test
