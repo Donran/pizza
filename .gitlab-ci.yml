@@ -1,0 +1,20 @@
+stages:
+  - deploy
+  - test
+
+pages:
+  stage: deploy
+  script:
+  - scripts/move-content-to-public.sh
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+
+w3c-validation:
+  stage: test
+  script:
+  - scripts/w3c-html-validation.sh
+  only:
+  - master
