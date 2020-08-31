@@ -15,4 +15,4 @@ pages:
 test:
   image: 18fgsa/html-proofer:gitlab-ci
   script:
-    - htmlproofer _site --empty-alt-ignore
+    - htmlproofer _site
