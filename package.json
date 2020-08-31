@@ -1,0 +1,22 @@
+{
+  "name": "pizza-website",
+  "version": "1.0.0",
+  "description": "pizza website",
+  "main": "index.js",
+  "scripts": {
+    "test:html5": "node scripts/validator.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/fantastic4group/pizza-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/fantastic4group/pizza-website/issues"
+  },
+  "homepage": "https://gitlab.com/fantastic4group/pizza-website#readme",
+  "dependencies": {
+    "html5-lint": "^0.3.0"
+  }
+}
