@@ -11,3 +11,11 @@ pages:
       - public
   only:
     - master
+
+stages:
+  - html_test
+
+html_test:
+  image: 18fgsa/html-proofer:gitlab-ci
+  script:
+    - htmlproofer _site --empty-alt-ignore
