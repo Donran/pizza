@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:css": "node scripts/validator_css.js",
-    "test:html5": "node scripts/validator_html.js"
+    "test:html": "node scripts/validator_html.js"
   },
   "repository": {
     "type": "git",
