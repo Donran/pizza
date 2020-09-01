@@ -12,12 +12,17 @@ pages:
   only:
     - master
 
-test:
-  image: 18fgsa/html-proofer:gitlab-ci
-  script:
-    - htmlproofer ./
+# test:
+#   image: 18fgsa/html-proofer:gitlab-ci
+#   script:
+#     - htmlproofer ./
 
 css:
   image: chrben/ubuntu-npm-nonroot:latest
   script:
-    - npm run test:html5
+    - npm run test:css
+
+html:
+  image: chrben/ubuntu-npm-nonroot:latest
+  script:
+    - npm run test:html

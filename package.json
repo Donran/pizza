@@ -4,7 +4,8 @@
   "description": "pizza website",
   "main": "index.js",
   "scripts": {
-    "test:html5": "node scripts/validator.js"
+    "test:css": "node scripts/validator_css.js",
+    "test:html5": "node scripts/validator_html.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "dependencies": {
     "css-validator": "^0.9.0",
     "glob": "^7.1.6",
+    "html-validator": "^5.1.16",
     "html5-lint": "^0.3.0"
   }
 }
