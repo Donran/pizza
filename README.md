@@ -19,3 +19,5 @@ Utvecklingsmiljöstandard: https://docs.google.com/document/d/1qODXPXecAPtKAclBD
 Definition of Done: https://docs.google.com/document/d/1N6MKphE8Hklv3OKKkSzRnReyrUrzJewhYbHatP8XlNc/edit?usp=sharing
 
 Hemsida: https://fantastic4group.gitlab.io/pizza-website
+
+Backlogg: https://docs.google.com/spreadsheets/d/131Dxy4QplduNJaxo41rS0nOelqbk0bQTxoG1y0TOsho/edit#gid=0
