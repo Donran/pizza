@@ -47,6 +47,24 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "e294954b-bb9e-4e96-893a-2243ef460988",
+    "name": "Telefon nummer Check",
+    "commands": [{
+      "id": "9a029ac9-5b8a-4500-b6f9-d30bddb8c574",
+      "comment": "",
+      "command": "open",
+      "target": "https://fantastic4group.gitlab.io/pizza-website/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "37dd8f98-f37c-49dd-a04f-c61bf9b97437",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//li[contains(.,'Telefon nummer: 0630-555-555')]",
+      "targets": [],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "61c64175-5f61-4c45-9bf7-7e1ca7213848",
