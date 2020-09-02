@@ -83,6 +83,55 @@
       "targets": [],
       "value": ""
     }]
+  }, {
+    "id": "6b8d32c4-263d-44c9-b3ed-ec2a11ca8b79",
+    "name": "Öppettider Check",
+    "commands": [{
+      "id": "b4078dcf-2817-4443-bc3a-06a90efabb74",
+      "comment": "",
+      "command": "open",
+      "target": "https://fantastic4group.gitlab.io/pizza-website/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "008776d2-553d-4442-8d53-cf63793596ff",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//li[contains(.,'Öppettider:')]",
+      "targets": [
+        ["css=li:nth-child(4)", "css:finder"],
+        ["xpath=//li[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8accc96c-9c1c-4cd6-85b9-85b70b6bef83",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//li[contains(.,'Mån-Tors : 10-22')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8e7468c2-553d-4979-b17c-1360554c0cff",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//li[contains(.,'Fredagar 10-23')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "44cab222-0f57-4dec-9610-f68050f8e0e3",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//li[contains(.,'Lördagar 12-23')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "89b3b911-ed03-41c0-b9af-b4f144f2e4f5",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//li[contains(.,'Söndagar 12-20')]",
+      "targets": [],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "61c64175-5f61-4c45-9bf7-7e1ca7213848",
