@@ -1,3 +1,4 @@
+/* All the content, is centered, have black background, same font, no margin and white color of text*/
 body {
     text-align: center;
     background-color: black;
@@ -6,16 +7,19 @@ body {
     color: white;
 }
 
+/* No space around elements */
 ul {
     margin: 0;
     padding: 0;
 }
 
+/* Remove all decoration from list */
 li {
     list-style: none;
     padding: 15px;
 }
 
+/* Title size */
 h1 {
     font-size: 50px;
 }
