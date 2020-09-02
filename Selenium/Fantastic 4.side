@@ -14,13 +14,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "187589d4-4942-4644-802a-7e503b04904f",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "1920x997",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "de17186d-efec-4704-b96f-e32d1e4bc7e8",
       "comment": "",
       "command": "click",
@@ -29,6 +22,28 @@
         ["css=h1", "css:finder"],
         ["xpath=//h1", "xpath:position"],
         ["xpath=//h1[contains(.,'Pizzeria Santos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "5266c99d-071e-47ae-bd19-339b11fac150",
+    "name": "Email Check",
+    "commands": [{
+      "id": "1d2ca209-8f5c-42e1-bf61-a73986af3910",
+      "comment": "",
+      "command": "open",
+      "target": "https://fantastic4group.gitlab.io/pizza-website/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "22d57d73-2f86-40ea-ad96-bd51bd504acc",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//li[contains(.,'Email: info@fantastic4group.gitlab.io')]",
+      "targets": [
+        ["css=li:nth-child(2)", "css:finder"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'Email: info@fantastic4group.gitlab.io')]", "xpath:innerText"]
       ],
       "value": ""
     }]
