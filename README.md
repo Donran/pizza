@@ -21,3 +21,5 @@ Definition of Done: https://docs.google.com/document/d/1N6MKphE8Hklv3OKKkSzRnRey
 Hemsida: https://fantastic4group.gitlab.io/pizza-website
 
 Backlogg: https://docs.google.com/spreadsheets/d/131Dxy4QplduNJaxo41rS0nOelqbk0bQTxoG1y0TOsho/edit#gid=0
+
+Tester Dokumentation: https://docs.google.com/document/d/13ieLu7vd3DmOMwuCfa9Nweh2aepcPFhiMsjAUzzaHUU/edit?usp=sharing
