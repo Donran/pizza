@@ -2,7 +2,7 @@
   "id": "6fbd4d58-6bd1-4961-a491-4d44e4cc1c71",
   "version": "2.0",
   "name": "Fantastic 4",
-  "url": "",
+  "url": "https://fantastic4group.gitlab.io/pizza-website/",
   "tests": [{
     "id": "e84e6be3-fa4b-42f4-815a-1dbf291873ab",
     "name": "Untitled",
@@ -16,6 +16,6 @@
     "timeout": 300,
     "tests": ["e84e6be3-fa4b-42f4-815a-1dbf291873ab"]
   }],
-  "urls": [],
+  "urls": ["https://fantastic4group.gitlab.io/pizza-website/"],
   "plugins": []
 }
