@@ -1,0 +1,21 @@
+{
+  "id": "6fbd4d58-6bd1-4961-a491-4d44e4cc1c71",
+  "version": "2.0",
+  "name": "Fantastic 4",
+  "url": "",
+  "tests": [{
+    "id": "e84e6be3-fa4b-42f4-815a-1dbf291873ab",
+    "name": "Untitled",
+    "commands": []
+  }],
+  "suites": [{
+    "id": "61c64175-5f61-4c45-9bf7-7e1ca7213848",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["e84e6be3-fa4b-42f4-815a-1dbf291873ab"]
+  }],
+  "urls": [],
+  "plugins": []
+}
