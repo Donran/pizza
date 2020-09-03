@@ -21,29 +21,26 @@ CSS 3
 Javascript (ECMAScript 2018)
 
 # Utvecklingsmiljöstandard
-Editor - Visual Studio Code 1.48.2
+**Editor** - Visual Studio Code 1.48.2
 <br>
-    >Plugins: 
-    <br>
-       >> Live Server
-       <br>
-       >> Beautify
-       <br>
-       >> Beautify css/sass/scss/less
+Plugins för VSCode: 
+- Live Server
+- Beautify
+- Beautify css/sass/scss/less
+
+**Fildelning** - GitLab
 <br>
-Fildelning - GitLab
+**OS** - Windows 10 1909
 <br>
-OS - Windows 10 1909
+**Browsers** - Edge 85 / Chrome 85
 <br>
-Browsers - Edge 85 / Chrome 85
+**Skärmupplösning** - 2560x1440, 1920x1080
 <br>
-Skärmupplösning - 2560x1440, 1920x1080
+**Tester** - Selenium IDE Chrome
 <br>
-Tester - Selenium IDE Chrome
+**Validering** - HTML Validator, CSS Validator
 <br>
-Validering - HTML Validator, CSS Validator
-<br>
-Dokumentation - Svenska, kortfattat med bilder
+**Dokumentation** - Svenska, kortfattat med bilder
 <br>
 
 
