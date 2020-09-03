@@ -39,7 +39,7 @@
       "id": "22d57d73-2f86-40ea-ad96-bd51bd504acc",
       "comment": "",
       "command": "click",
-      "target": "xpath=//li[contains(.,'Email: info@fantastic4group.gitlab.io')]",
+      "target": "xpath=//a[contains(.,'Email: info@fantastic4group.gitlab.io')]",
       "targets": [
         ["css=li:nth-child(2)", "css:finder"],
         ["xpath=//li[2]", "xpath:position"],
@@ -79,7 +79,7 @@
       "id": "1d0ed7c4-ecb5-4408-9fe6-7f52f1a5c677",
       "comment": "",
       "command": "click",
-      "target": "xpath=//li[contains(.,'Address: Fjällgatan 32H 981 39 KIRUNA')]",
+      "target": "xpath=//a[contains(.,'Address: Fjällgatan 32H 981 39 KIRUNA')]",
       "targets": [],
       "value": ""
     }]
