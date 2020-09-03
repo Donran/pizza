@@ -52,6 +52,8 @@ Plugins för VSCode:
 # Definition of Done
 Godkänd av gruppen.
 <br>
+Bearbetat feedback från gruppmedlemmar.
+<br>
 Ska klara av tester
 <br>
 Överens med gruppens kodningsstandard
