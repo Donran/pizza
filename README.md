@@ -48,7 +48,7 @@ Plugins för VSCode:
 <br>
 **Dokumentation** - Svenska, kortfattat med bilder
 <br>
-**Annat** - node.js v.14.9.0
+**Annat** - node.js v.14.9.0, npm v.6.14.8
 
 
 # Definition of Done
