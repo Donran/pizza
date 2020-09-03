@@ -32,6 +32,7 @@ Plugins för VSCode:
 - Live Server
 - Beautify
 - Beautify css/sass/scss/less
+- Live Share
 
 **Fildelning** - GitLab
 <br>
