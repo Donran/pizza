@@ -80,5 +80,15 @@ Koden ska gå igenom valideringen
 1. Observera att du måste skriva in hela url:et på sidan du vill testa så du inte glömmer http/https delen. Är sidan lokal måste du skriva in localhost adressen med den rätta porten till din lokala server (VSCode Live Server).
 1. Därefter, skriv på raden/raderna under vad du vill testa. I command inputtar du vad du vill göra, t.ex att klicka eller att selecta en rad text. Sedan på Target så inputtar du vad det är på sidan du vill testa, t.ex h1 tagg osv.  
 
+# Screenshots av websidan
+**För att använda**
+1.  Gå in i "shots.js" via VSCode.
+1.  Under rubriken "urls" kan man skriva in det adress man vill.
+1.  Under rubriken "sizes" kan man skriva in det upplösning man vill.
+1.  Start "takeScreenshot.sh"
+1.  Sedan alla screenshots ska sparas i scripts/screenshots
+
+
+
 
 
