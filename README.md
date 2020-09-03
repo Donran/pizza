@@ -44,9 +44,38 @@ Plugins för VSCode:
 <br>
 
 
-Definition of Done: https://docs.google.com/document/d/1N6MKphE8Hklv3OKKkSzRnReyrUrzJewhYbHatP8XlNc/edit?usp=sharing
+# Definition of Done
+Godkänd av gruppen.
+<br>
+Ska klara av tester
+<br>
+Överens med gruppens kodningsstandard
+<br>
+Koden ska vara kommenterad och dokumenterad
+<br>
+Koden ska gå igenom valideringen
 
 
 
 
-Tester Dokumentation: https://docs.google.com/document/d/13ieLu7vd3DmOMwuCfa9Nweh2aepcPFhiMsjAUzzaHUU/edit?usp=sharing
+
+# Tester Dokumentation
+**Hur man sätter upp Selenium IDE för tester**
+1. Klona/pulla filerna från Gitlab repot Pizza Website
+1. Ladda ner Selenium IDE tillägget till Firefox, Chrome eller Edge (Chromium)
+1. Öppna tillägget och tryck på Open an existing project
+1. Navigera till mappen Selenium i Git repot och välj filen Fantastic 4.side
+1. För att starta ett test så måste man först välja ett test och sedan trycka på Run current test knappen 
+1. För att köra alla tester så trycker man på knappen till vänster om den förra knappen “Run all tests” 
+1. För att spara ändringar i projektet så trycker du på Ctrl+S och navigerar sedan till mappen Selenium i repot och tryck på Save för att ersätta Fantastic 4.side med den nya filen
+
+**Hur man skapar ett test i Selenium IDE**
+Se till att du har den senaste versionen av filerna genom att pulla dem från Gitlab.
+Öppna Selenium IDE och skapa ett projekt eller välj ett existerande projekt om du redan har ett.
+Klicka på + knappen under projekt rubriken och välj ett namn på testet du vill skapa.
+Skriv in eller välj “open” från listan på fältet där det står command 
+Skriv in url:et  på sidan du vill testa i target fältet på samma rad.
+Observera att du måste skriva in hela url:et på sidan du vill testa så du inte glömmer http/https delen. Är sidan lokal måste du skriva in localhost adressen med den rätta porten till din lokala server (VSCode Live Server).
+Därefter, skriv på raden/raderna under vad du vill testa. I command inputtar du vad du vill göra, t.ex att klicka eller att selecta en rad text. Sedan på Target så inputtar du vad det är på sidan du vill testa, t.ex h1 tagg osv.  
+
+
