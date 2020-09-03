@@ -82,7 +82,7 @@ Koden ska gå igenom valideringen
 
 # Screenshots av websidan
 **För att använda**
-1.  Gå in i "shots.js" via VSCode.
+1.  Gå in i "shot.json" via VSCode.
 1.  Under rubriken "urls" kan man skriva in det adress man vill.
 1.  Under rubriken "sizes" kan man skriva in det upplösning man vill.
 1.  Starta "takeScreenshot.sh"
