@@ -23,10 +23,13 @@ Javascript (ECMAScript 2018)
 # Utvecklingsmiljöstandard
 Editor - Visual Studio Code 1.48.2
 <br>
-    Plugins: 
-        Live Server
-        Beautify
-        Beautify css/sass/scss/less
+    >Plugins: 
+    <br>
+       >> Live Server
+       <br>
+       >> Beautify
+       <br>
+       >> Beautify css/sass/scss/less
 <br>
 Fildelning - GitLab
 <br>
