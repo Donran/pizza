@@ -20,9 +20,11 @@ pages:
 css:
   image: chrben/ubuntu-npm-nonroot:latest
   script:
+    - npm install
     - npm run test:css
 
 html:
   image: chrben/ubuntu-npm-nonroot:latest
   script:
+    - npm install
     - npm run test:html
