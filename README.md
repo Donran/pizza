@@ -4,7 +4,7 @@ Backlogg: https://docs.google.com/spreadsheets/d/131Dxy4QplduNJaxo41rS0nOelqbk0b
 
 Hemsida: https://fantastic4group.gitlab.io/pizza-website
 
-**Viktigt! Instalera Node.js "npm install" för att allt ska funka som det ska.**
+**Viktigt! Installera Node.js "npm install" för att allt ska funka som det ska.**
 
 # Kodningsstandard
 **Tabsize:** 4
