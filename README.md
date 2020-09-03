@@ -6,9 +6,13 @@ Hemsida: https://fantastic4group.gitlab.io/pizza-website
 
 # Kodningsstandard
 Tabsize: 4
+<br>
 Kommentarer: Engelska över funktionen
+<br>
 Namngivning: Engelska
+<br>
 Variabel: let
+<br>
 Funktioner: non lambda functions
 
 # Programmeringsspråk
