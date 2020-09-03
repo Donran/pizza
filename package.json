@@ -18,9 +18,17 @@
   },
   "homepage": "https://gitlab.com/fantastic4group/pizza-website#readme",
   "dependencies": {
+    "chalk": "^4.1.0",
     "css-validator": "^0.9.0",
+    "fs": "0.0.1-security",
     "glob": "^7.1.6",
     "html-validator": "^5.1.16",
-    "html5-lint": "^0.3.0"
+    "html5-lint": "^0.3.0",
+    "mime": "^2.4.6",
+    "ora": "^5.0.0",
+    "page-shots": "^1.1.0",
+    "path": "^0.12.7",
+    "puppeteer": "^5.2.1",
+    "sanitize-filename": "^1.6.3"
   }
 }
