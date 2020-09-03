@@ -8,7 +8,7 @@ Hemsida: https://fantastic4group.gitlab.io/pizza-website
 **Viktigt! Installera Node.js från https://nodejs.org/en/ . Sedan navigera till pizza-website foldern i valfri kommandoprompt och skriv in "npm install" . Detta krävs för att allt ska funka som det ska.**
 
 # Kodningsstandard
-**Tabsize:** 4
+**Spaces:** 4
 <br>
 **Kommentarer:** Engelska över funktionen, mellanslag mellan "//" och meningen, stor bokstav
 <br>
