@@ -5,15 +5,15 @@ Backlogg: https://docs.google.com/spreadsheets/d/131Dxy4QplduNJaxo41rS0nOelqbk0b
 Hemsida: https://fantastic4group.gitlab.io/pizza-website
 
 # Kodningsstandard
-Tabsize: 4
+**Tabsize:** 4
 <br>
-Kommentarer: Engelska över funktionen
+**Kommentarer:** Engelska över funktionen
 <br>
-Namngivning: Engelska
+**Namngivning:** Engelska
 <br>
-Variabel: let
+**Variabel:** let
 <br>
-Funktioner: non lambda functions
+**Funktioner:** non lambda functions
 
 # Programmeringsspråk
 HTML 5
