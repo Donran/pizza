@@ -4,6 +4,8 @@ Backlogg: https://docs.google.com/spreadsheets/d/131Dxy4QplduNJaxo41rS0nOelqbk0b
 
 Hemsida: https://fantastic4group.gitlab.io/pizza-website
 
+**Viktigt! Installera Node.js från https://nodejs.org/en/ . Sedan navigera till pizza-website foldern i valfri kommandoprompt och skriv in "npm install" . Detta krävs för att allt ska funka som det ska.**
+
 # Kodningsstandard
 **Tabsize:** 4
 <br>
@@ -87,3 +89,6 @@ Koden ska gå igenom valideringen
 1.  Under rubriken "sizes" kan man skriva in det upplösning man vill.
 1.  Starta "takeScreenshot.sh"
 1.  Sedan alla screenshots ska sparas i scripts/screenshots
+
+# HTML och CSS Validering
+Koden valideras automatiskt när man pushar den till git
