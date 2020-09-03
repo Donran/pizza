@@ -10,7 +10,7 @@ Hemsida: https://fantastic4group.gitlab.io/pizza-website
 # Kodningsstandard
 **Tabsize:** 4
 <br>
-**Kommentarer:** Engelska över funktionen
+**Kommentarer:** Engelska över funktionen, mellanslag mellan "//" och meningen, stor bokstav
 <br>
 **Namngivning:** Engelska
 <br>
