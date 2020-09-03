@@ -27,7 +27,7 @@ Editor - Visual Studio Code 1.48.2
         Live Server
         Beautify
         Beautify css/sass/scss/less
-        <br>
+<br>
 Fildelning - GitLab
 <br>
 OS - Windows 10 1909
