@@ -85,7 +85,7 @@ Koden ska gå igenom valideringen
 1.  Gå in i "shots.js" via VSCode.
 1.  Under rubriken "urls" kan man skriva in det adress man vill.
 1.  Under rubriken "sizes" kan man skriva in det upplösning man vill.
-1.  Start "takeScreenshot.sh"
+1.  Starta "takeScreenshot.sh"
 1.  Sedan alla screenshots ska sparas i scripts/screenshots
 
 
