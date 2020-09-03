@@ -4,11 +4,17 @@ Backlogg: https://docs.google.com/spreadsheets/d/131Dxy4QplduNJaxo41rS0nOelqbk0b
 
 Hemsida: https://fantastic4group.gitlab.io/pizza-website
 
+# Kodningsstandard
+Tabsize: 4
+Kommentarer: Engelska över funktionen
+Namngivning: Engelska
+Variabel: let
+Funktioner: non lambda functions
 
-
-Kodningsstandard: https://docs.google.com/document/d/1hls-EJYbuREyIhA81wrsw7yuwVpyi2wL_YfPJm0f6cc/edit?usp=sharing
-
-Programmeringsspråk: https://docs.google.com/document/d/1JRzQr0AO_0PL8KYpr-vRD78iEzjbsAtQSgW2X_q-TFM/edit?usp=sharing
+# Programmeringsspråk
+HTML 5
+CSS 3
+Javascript (ECMAScript 2018)
 
 Utvecklingsmiljöstandard: https://docs.google.com/document/d/1qODXPXecAPtKAclBDLwWyxR3pQieFUP68Qy9tLs82Xs/edit?usp=sharing
 
