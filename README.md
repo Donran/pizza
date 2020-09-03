@@ -20,7 +20,29 @@ HTML 5
 CSS 3
 Javascript (ECMAScript 2018)
 
-Utvecklingsmiljöstandard: https://docs.google.com/document/d/1qODXPXecAPtKAclBDLwWyxR3pQieFUP68Qy9tLs82Xs/edit?usp=sharing
+# Utvecklingsmiljöstandard
+Editor - Visual Studio Code 1.48.2
+<br>
+    Plugins: 
+        Live Server
+        Beautify
+        Beautify css/sass/scss/less
+        <br>
+Fildelning - GitLab
+<br>
+OS - Windows 10 1909
+<br>
+Browsers - Edge 85 / Chrome 85
+<br>
+Skärmupplösning - 2560x1440, 1920x1080
+<br>
+Tester - Selenium IDE Chrome
+<br>
+Validering - HTML Validator, CSS Validator
+<br>
+Dokumentation - Svenska, kortfattat med bilder
+<br>
+
 
 Definition of Done: https://docs.google.com/document/d/1N6MKphE8Hklv3OKKkSzRnReyrUrzJewhYbHatP8XlNc/edit?usp=sharing
 
