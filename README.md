@@ -87,3 +87,6 @@ Koden ska gå igenom valideringen
 1.  Under rubriken "sizes" kan man skriva in det upplösning man vill.
 1.  Starta "takeScreenshot.sh"
 1.  Sedan alla screenshots ska sparas i scripts/screenshots
+
+# HTML och CSS Validering
+Koden valideras automatiskt när man pushar den till git
