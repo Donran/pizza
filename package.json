@@ -4,8 +4,8 @@
   "description": "pizza website",
   "main": "index.js",
   "scripts": {
-    "test:css": "node scripts/validator_css.js",
-    "test:html": "node scripts/validator_html.js"
+    "test:css": "node scripts/validators/validator_css.js",
+    "test:html": "node scripts/validators/validator_html.js"
   },
   "repository": {
     "type": "git",

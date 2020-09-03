@@ -15,6 +15,4 @@ Utvecklingsmiljöstandard: https://docs.google.com/document/d/1qODXPXecAPtKAclBD
 Definition of Done: https://docs.google.com/document/d/1N6MKphE8Hklv3OKKkSzRnReyrUrzJewhYbHatP8XlNc/edit?usp=sharing
 
 
-
-
 Tester Dokumentation: https://docs.google.com/document/d/13ieLu7vd3DmOMwuCfa9Nweh2aepcPFhiMsjAUzzaHUU/edit?usp=sharing
