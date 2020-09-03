@@ -3,7 +3,7 @@
 Backlogg: https://docs.google.com/spreadsheets/d/131Dxy4QplduNJaxo41rS0nOelqbk0bQTxoG1y0TOsho/edit#gid=0
 
 Hemsida: https://fantastic4group.gitlab.io/pizza-website
-**(För att hosta HTML sida används GitLab Pages, därför behövs .gitlab-ci.yml-fil.)**
+**(För att hosta HTML sida används GitLab Pages, därför behövs .gitlab-ci.yml filen.)**
 
 **Viktigt! Installera Node.js från https://nodejs.org/en/ . Sedan navigera till pizza-website foldern i valfri kommandoprompt och skriv in "npm install" . Detta krävs för att allt ska funka som det ska.**
 
