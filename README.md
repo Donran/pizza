@@ -1,12 +1,8 @@
 # Pizza Website
 
-Emil CV: https://docs.google.com/document/d/1fulBCzBHzXmvtx-rKS9eBhnCL-6a8aVW1v9JnhkBZVU/edit?usp=sharing
+Backlogg: https://docs.google.com/spreadsheets/d/131Dxy4QplduNJaxo41rS0nOelqbk0bQTxoG1y0TOsho/edit#gid=0
 
-Klaudiusz CV: https://docs.google.com/document/d/1N8fEHWjKeP6WUQGe4r-HAv4tzEoIYH44ok-T_v0hv8Q/edit?usp=sharing
-
-Felix CV: https://docs.google.com/document/d/18ZMd7GxaW6uD7-sIW85IqWL5sDdSa86lTsILjzYCzR4/edit?usp=sharing
-
-Erik CV: https://docs.google.com/document/d/1UqN9XSFbEchpGUPcjTMZmxmQD7q-xsSHHC5g2gf2xn8/edit?usp=sharing
+Hemsida: https://fantastic4group.gitlab.io/pizza-website
 
 
 
@@ -18,8 +14,7 @@ Utvecklingsmiljöstandard: https://docs.google.com/document/d/1qODXPXecAPtKAclBD
 
 Definition of Done: https://docs.google.com/document/d/1N6MKphE8Hklv3OKKkSzRnReyrUrzJewhYbHatP8XlNc/edit?usp=sharing
 
-Hemsida: https://fantastic4group.gitlab.io/pizza-website
 
-Backlogg: https://docs.google.com/spreadsheets/d/131Dxy4QplduNJaxo41rS0nOelqbk0bQTxoG1y0TOsho/edit#gid=0
+
 
 Tester Dokumentation: https://docs.google.com/document/d/13ieLu7vd3DmOMwuCfa9Nweh2aepcPFhiMsjAUzzaHUU/edit?usp=sharing
