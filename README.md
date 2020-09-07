@@ -98,4 +98,8 @@ Koden ska gå igenom valideringen
 1.  Sedan alla screenshots ska sparas i scripts/screenshots
 
 # HTML och CSS Validering
-Koden valideras automatiskt när man pushar den till git
+Koden valideras automatiskt via CI när man har pushat den. Annars kan man validera den lokalt genom att:
+1. Går in i **\scripts\validators**
+1. Starta kommand prompt i den mappen
+1. Skriv in **./runValidators.sh** för att starta filen
+1. Sedan resultat visas i fönstret av valideringen
