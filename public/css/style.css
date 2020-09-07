@@ -38,13 +38,17 @@ li {
     padding: 10px;
 }
 
-ul li {
+ul li{
     margin: auto;
-    max-width: 360px;
+    max-width: 720px;
 
     /* Aligns weekdays and time to different sides */
     display: flex;
     justify-content: space-between;
+}
+
+ul li:nth-child(even) {
+    background-color: rgb(30, 30, 30);
 }
 
 a {
