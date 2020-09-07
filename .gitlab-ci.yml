@@ -4,18 +4,13 @@ pages:
   stage: deploy
   script:
     - mkdir .public
-    - cp -r * .public
+    - cp -r ./public/* .public
     - mv .public public
   artifacts:
     paths:
       - public
   only:
     - master
-
-# test:
-#   image: 18fgsa/html-proofer:gitlab-ci
-#   script:
-#     - htmlproofer ./
 
 css:
   image: chrben/ubuntu-npm-nonroot:latest
