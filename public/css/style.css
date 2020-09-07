@@ -1,13 +1,16 @@
-/* All the content, is centered, have black background, same font, no margin and white color of text*/
+/* All the content, have black background, same font, no margin and white color of text*/
 body {
     margin: auto;
+    /* content width is not higher then 1920 pixels*/
     max-width: 1920px;
     position: relative;
     min-height: 100vh;
+    /* Text styling and background color */
     text-align: center;
-    background-color: black;
     font-family: "Montserrat", sans-serif;
+    background-color: black;
     color: white;
+    /* Used to center page content */
     display: grid;
     grid-template-areas:
         "."
@@ -16,20 +19,21 @@ body {
     grid-template-rows: auto max-content auto;
 }
 
-/* The  */
+/* Aligns content in the middle  */
 .ContentDiv {
     grid-area: content;
 }
 
-/* No space around elements */
 ul {
+    /*Makes the margin and padding part of photo width*/
     box-sizing: border-box;
     margin: 15px;
     padding: 0;
 }
 
-/* Remove all decoration from list */
+
 li {
+    /* Remove all decoration from list */
     list-style: none;
     padding: 10px;
 }
@@ -43,6 +47,7 @@ ul li {
     justify-content: space-between;
 }
 
+/* Gives every 2nd list item a dark grey background */
 ul li:nth-child(even) {
     background-color: rgb(30, 30, 30);
 }
@@ -51,13 +56,16 @@ a {
     display: block;
     color: white;
     margin: 20px;
+    /* Removes decorations */
     text-decoration: none;
 }
 
+/* Title positioning */
 .TitleContainer {
     position: relative;
 }
 
+/* Title of page stays in the middle */
 .Title {
     position: absolute;
     top: 0;
@@ -71,28 +79,35 @@ a {
     z-index: 50;
 }
 
+/* The image behind the title */
 .TitleImage {
     background-image: url("../assets/bild4.jpg");
+    /* Gives the image a parallax effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
     width: 100%;
     height: 500px;
     max-height: 80vh;
+    /* Makes the image slightly transparent for increased text visibility */
     opacity: 0.6;
 }
 
+/* Align in mobile resolutions */
 .footer{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap-reverse;
 }
 
+/* Footer photos size */
 .pizzafooter {
     width: 780px;
     max-width: 100%;
     opacity: 0.8;
     padding: 20px;
+    /* Makes the margin and padding part of photo width */
     box-sizing: border-box;
 }
