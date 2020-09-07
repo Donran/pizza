@@ -35,6 +35,8 @@ Plugins för VSCode:
 - Beautify
 - Beautify css/sass/scss/less
 - Live Share
+- Code Spell Checker
+- Swedish - Code Spell Checker
 
 **Fildelning** - GitLab
 <br>
