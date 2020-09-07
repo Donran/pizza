@@ -1,5 +1,12 @@
 /* All the content, is centered, have black background, same font, no margin and white color of text*/
+html {
+    height: -webkit-fill-available;
+}
+
 body {
+    position: relative;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     text-align: center;
     background-color: black;
     font-family: 'Montserrat', sans-serif;
@@ -9,15 +16,17 @@ body {
 
 /* No space around elements */
 ul {
-    margin: 0;
+    box-sizing: border-box;
+    margin: 15px;
     padding: 0;
 }
 
 /* Remove all decoration from list */
 li {
     list-style: none;
-    padding: 15px;
+    /* padding: 15px; */
 }
+
 
 a {
     color: white;
@@ -27,4 +36,6 @@ a {
 /* Title size */
 h1 {
     font-size: 50px;
+    width: max-content;
+    margin: auto;
 }
