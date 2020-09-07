@@ -1,17 +1,24 @@
 /* All the content, is centered, have black background, same font, no margin and white color of text*/
-html {
-    height: -webkit-fill-available;
-}
-
 body {
+    margin: auto;
+    max-width: 1920px;
     position: relative;
     min-height: 100vh;
-    min-height: -webkit-fill-available;
     text-align: center;
     background-color: black;
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
     color: white;
+    display: grid;
+    grid-template-areas: 
+    "."
+    "content"
+    ".";
+    grid-template-rows: auto max-content auto;
+}
+
+/* The  */
+.ContentDiv{
+    grid-area: content;
 }
 
 /* No space around elements */
@@ -21,19 +28,32 @@ ul {
     padding: 0;
 }
 
+.openingLi {
+    padding: 2px;
+}
+
 /* Remove all decoration from list */
 li {
     list-style: none;
+    padding: 10px;
 }
 
+ul li {
+    margin: auto;
+    max-width: 360px;
+
+    /* Aligns weekdays and time to different sides */
+    display: flex;
+    justify-content: space-between;
+}
 
 a {
     display: block;
     color: white;
+    margin: 20px;
     text-decoration: none;
 }
 
-/* Title size */
 h1 {
     font-size: 50px;
     width: max-content;
