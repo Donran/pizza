@@ -6,18 +6,18 @@ body {
     min-height: 100vh;
     text-align: center;
     background-color: black;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: white;
     display: grid;
-    grid-template-areas: 
-    "."
-    "content"
-    ".";
+    grid-template-areas:
+        "."
+        "content"
+        ".";
     grid-template-rows: auto max-content auto;
 }
 
 /* The  */
-.ContentDiv{
+.ContentDiv {
     grid-area: content;
 }
 
@@ -28,20 +28,16 @@ ul {
     padding: 0;
 }
 
-.openingLi {
-    padding: 2px;
-}
-
 /* Remove all decoration from list */
 li {
     list-style: none;
     padding: 10px;
 }
 
-ul li{
+ul li {
     margin: auto;
     max-width: 720px;
-
+    text-align: left;
     /* Aligns weekdays and time to different sides */
     display: flex;
     justify-content: space-between;
@@ -58,7 +54,31 @@ a {
     text-decoration: none;
 }
 
-h1 {
+.TitleContainer {
+    position: relative;
+}
+
+.Title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     font-size: 50px;
     margin: auto;
+    width: fit-content;
+    height: fit-content;
+    z-index: 50;
+}
+
+.TitleImage {
+    background-image: url("../assets/bild1.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    max-height: 80vh;
+    opacity: 0.6;
 }
