@@ -24,7 +24,6 @@ ul {
 /* Remove all decoration from list */
 li {
     list-style: none;
-    /* padding: 15px; */
 }
 
 
