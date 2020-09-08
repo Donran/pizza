@@ -14,7 +14,7 @@ Hemsida: https://fantastic4group.gitlab.io/pizza-website
 <br>
 **Namngivning:** Engelska
 <br>
-**Variabel:** let
+**Variabel:** let, stor bokstav som delar upp flera ord i en variabel som "pizzaFooter"
 <br>
 **Funktioner:** non lambda functions
 <br>
@@ -104,3 +104,9 @@ Koden valideras automatiskt via CI när man har pushat den. Annars kan man valid
 1. Starta Git Bash i **/scripts/validators mappen**
 1. Skriv in **./runValidators.sh** för att starta filen
 1. Sedan resultat visas i fönstret av valideringen
+
+# Innehåll från internet
+
+- Typsnitt är licensierat under Open Font License(OFL) https://scripts.sil.org/OFL_web
+- Bild under titeln är licensierat under Pixabay License, gratis för kommersiellt bruk https://pixabay.com/sv/photos/pizza-mat-italian-bakad-ost-3007395/
+- Bild i footer är från våran Product Owner
