@@ -1,11 +1,11 @@
 import os
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from tests.menuTest import MenuTest
-from tests.infoTest import InfoTest
-from tests.openingHoursTest import OpeningHoursTest
-from tests.titleTest import TitleTest
-from tests.footerTest import FooterTest
+from pythonTests.menuTest import MenuTest
+from pythonTests.infoTest import InfoTest
+from pythonTests.openingHoursTest import OpeningHoursTest
+from pythonTests.titleTest import TitleTest
+from pythonTests.footerTest import FooterTest
 
 options = webdriver.ChromeOptions()
 options.add_argument("--headless")
