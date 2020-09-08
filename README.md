@@ -75,12 +75,10 @@ Koden ska gå igenom valideringen
 # Tester Dokumentation
 **Hur man sätter upp Selenium IDE för tester**
 1. Klona/pulla filerna från Gitlab repot Pizza Website
-1. Ladda ner Selenium IDE tillägget till Firefox, Chrome eller Edge (Chromium)
-1. Öppna tillägget och tryck på Open an existing project
-1. Navigera till mappen Selenium i Git repot och välj filen Fantastic 4.side
-1. För att starta ett test så måste man först välja ett test och sedan trycka på Run current test knappen 
-1. För att köra alla tester så trycker man på knappen till vänster om den förra knappen “Run all tests” 
-1. För att spara ändringar i projektet så trycker du på Ctrl+S och navigerar sedan till mappen Selenium i repot och tryck på Save för att ersätta Fantastic 4.side med den nya filen
+1. Öppna Git Bash och kör kommandot **cd tests && ./setup.sh**
+1. Sedan kör kommandot **python run.py**
+1. Skriv antingen in 1 för den lokala hostningen av index.html med **VSCode Live Server** eller 2 för hemsidan på GitLab
+1. Om allting dyker upp utan errors så hittar testerna allting
 
 **Hur man skapar ett test i Selenium IDE**
 1. Se till att du har den senaste versionen av filerna genom att pulla dem från Gitlab.
