@@ -11,5 +11,10 @@
         "mailto",
         "r",
         "rödlök"
+    ],
+    "cSpell.enableFiletypes": [
+        "dart",
+        "django-txt",
+        "log"
     ]
 }
