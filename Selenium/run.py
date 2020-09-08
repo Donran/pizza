@@ -11,18 +11,25 @@ options = webdriver.ChromeOptions()
 options.add_argument("--headless")
 driver = webdriver.Chrome(options=options)
 
-driver.get("http://localhost:5500/public/")
+print("""1. localhost
+2. public website""")
+choice = input("Choose: ")
+
+url = ""
+if choice == "1":
+    port = input("Choose port (default should be 5500): ")
+    url = "http://localhost:" + port + "/public/"
+elif choice == "2":
+    url = "https://fantastic4group.gitlab.io/pizza-website/"
+
+print("Fetching from: " + url)
+
+driver.get(url)
 
 baseDivPath = "/html/body/div[@class='ContentDiv']"
 
-
-MenuTest(driver, baseDivPath)
-
 InfoTest(driver, baseDivPath)
-
 OpeningHoursTest(driver, baseDivPath)
-
 TitleTest(driver, baseDivPath)
-
+MenuTest(driver, baseDivPath)
 FooterTest(driver, baseDivPath)
-

@@ -1,2 +1,2 @@
-pip3 install webdriverdownloader
+pip3 install selenium webdriverdownloader
 webdriverdownloader chrome:2.38

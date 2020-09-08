@@ -4,6 +4,7 @@ from selenium import webdriver
 class MenuTest:
     def __init__(self, driver: webdriver.Chrome, baseDivPath: str):
         ulPath = baseDivPath + "/ul[@id='menu']"
+        print("")
         # Find menu h2
         driver.find_element_by_xpath(
             "/html/body/div[@class='ContentDiv']/h2[contains(text(),'Meny')]")
