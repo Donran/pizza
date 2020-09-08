@@ -14,7 +14,7 @@ Hemsida: https://fantastic4group.gitlab.io/pizza-website
 <br>
 **Namngivning:** Engelska
 <br>
-**Variabel:** let
+**Variabel:** let, stor bokstav som delar upp flera ord i en variabel som "pizzaFooter"
 <br>
 **Funktioner:** non lambda functions
 <br>
