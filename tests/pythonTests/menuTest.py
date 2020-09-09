@@ -8,7 +8,7 @@ class MenuTest:
         print("")
         # Find menu h2
         driver.find_element_by_xpath(
-            "/html/body/div[@class='ContentDiv']/h2[contains(text(),'Meny')]")
+            "/html/body/div[@class='ContentDiv']/h2[contains(text(),'MENY')]")
 
         # If not true, returns error
         assert len(driver.find_elements_by_xpath(ulPath + "/li")) != 0

@@ -6,7 +6,7 @@ from pythonTests.infoTest import InfoTest
 from pythonTests.openingHoursTest import OpeningHoursTest
 from pythonTests.titleTest import TitleTest
 from pythonTests.picturesTest import PicturesTest
-from pythonTests.daysClodesTest import DaysClosedTest
+from pythonTests.daysClosedTest import DaysClosedTest
 from pythonTests.logoTest import LogoTest
 
 # Configures google web options 
