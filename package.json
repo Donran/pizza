@@ -25,10 +25,12 @@
     "html-validator": "^5.1.16",
     "html5-lint": "^0.3.0",
     "mime": "^2.4.6",
+    "moment": "^2.27.0",
     "ora": "^5.0.0",
     "page-shots": "^1.1.0",
     "path": "^0.12.7",
     "puppeteer": "^5.2.1",
+    "require": "^2.4.20",
     "sanitize-filename": "^1.6.3"
   }
 }

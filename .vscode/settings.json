@@ -1,8 +1,10 @@
 {
     "cSpell.words": [
         "Capricciosa",
+        "Favicon",
         "Fj",
         "Fjällgatan",
+        "NATS",
         "Pompei",
         "Vesuvio",
         "dl",
@@ -10,7 +12,8 @@
         "llgatan",
         "mailto",
         "r",
-        "rödlök"
+        "rödlök",
+        "truetype"
     ],
     "cSpell.enableFiletypes": [
         "dart",

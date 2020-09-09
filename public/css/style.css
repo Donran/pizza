@@ -1,3 +1,9 @@
+/* Imports a local font */
+@font-face {
+    font-family: "NATS";
+    src: url("../assets/fonts/NATS-Regular.ttf") format('truetype');
+}
+
 /* All the content, have black background, same font, no margin and white color of text*/
 body {
     margin: auto;
@@ -7,7 +13,7 @@ body {
     min-height: 100vh;
     /* Text styling and background color */
     text-align: center;
-    font-family: "Montserrat", sans-serif;
+    font-family: "NATS";
     background-color: black;
     color: white;
     /* Used to center page content */
@@ -22,13 +28,67 @@ body {
 /* Aligns content in the middle  */
 .ContentDiv {
     grid-area: content;
+    position: relative;
+}
+
+.Header {
+    max-width: 1920px;
+    margin: auto;
+    height: 75px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    left: 0;
+    right: 0;
+    background-color: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 50;
+}
+
+.Header img {
+    display: flex;
+    height: 75px;
+    padding: 12.5px;
+    box-sizing: border-box;
+}
+
+#Hours {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.openClass {
+    width: 400px;
+    margin: 15px 10px;
+}
+
+@media screen and (max-width: 860px) {
+    .openClass {
+        width: 100%;
+        margin: 15px 10px;
+    }
+}
+
+.openClass li {
+    max-width: 100%;
+}
+
+/* Only last element will get red color*/
+#closedDays li span:nth-last-child(1) {
+    color: red;
+}
+
+h2{
+    color: rgb(204, 180, 100);
 }
 
 ul {
     /*Makes the margin and padding part of photo width*/
-    box-sizing: border-box;
     margin: 15px;
     padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -49,15 +109,7 @@ ul li {
 
 /* Gives every 2nd list item a dark grey background */
 ul li:nth-child(even) {
-    background-color: rgb(30, 30, 30);
-}
-
-a {
-    display: block;
-    color: white;
-    margin: 20px;
-    /* Removes decorations */
-    text-decoration: none;
+    background-color: rgb(20, 20, 20);
 }
 
 /* Title positioning */
@@ -76,7 +128,8 @@ a {
     margin: auto;
     width: fit-content;
     height: fit-content;
-    z-index: 50;
+    z-index: 30;
+    color: rgb(204, 180, 100);
 }
 
 /* The image behind the title */
@@ -87,27 +140,41 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
     width: 100%;
     height: 500px;
-    max-height: 80vh;
+    max-height: calc(80vh - 75px);
     /* Makes the image slightly transparent for increased text visibility */
     opacity: 0.6;
 }
 
 /* Align in mobile resolutions */
-.footer{
+.pictures {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap-reverse;
 }
 
 /* Footer photos size */
-.pizzaFooter {
+.pizzaPictures {
     width: 780px;
     max-width: 100%;
     opacity: 0.8;
     padding: 20px;
     /* Makes the margin and padding part of photo width */
     box-sizing: border-box;
+}
+
+#InfoDiv {
+    background-color: rgb(20, 20, 20);
+    box-sizing: border-box;
+}
+
+.InfoA {
+    display: block;
+    color: white;
+    margin: 0 auto;
+    padding: 10px 0;
+    /* Removes decorations */
+    text-decoration: none;
+    width: max-content;
 }

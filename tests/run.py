@@ -5,8 +5,9 @@ from pythonTests.menuTest import MenuTest
 from pythonTests.infoTest import InfoTest
 from pythonTests.openingHoursTest import OpeningHoursTest
 from pythonTests.titleTest import TitleTest
-from pythonTests.footerTest import FooterTest
-from pythonTests.daysClodesTest import DaysClodesTest
+from pythonTests.picturesTest import PicturesTest
+from pythonTests.daysClodesTest import DaysClosedTest
+from pythonTests.logoTest import LogoTest
 
 # Configures google web options 
 options = webdriver.ChromeOptions()
@@ -31,11 +32,14 @@ print("Fetching from: " + url)
 # Opens the chosen URL
 driver.get(url)
 
+# Creates a variable with the base path to make the code more compact and easier to read
 baseDivPath = "/html/body/div[@class='ContentDiv']"
 
+# Calls all of the classes constructors
+LogoTest(driver, baseDivPath)
 InfoTest(driver, baseDivPath)
 OpeningHoursTest(driver, baseDivPath)
+DaysClosedTest(driver, baseDivPath)
 TitleTest(driver, baseDivPath)
 MenuTest(driver, baseDivPath)
-FooterTest(driver, baseDivPath)
-DaysClodesTest(driver, baseDivPath)
+PicturesTest(driver, baseDivPath)

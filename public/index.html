@@ -7,40 +7,53 @@
     <!-- Controls scaling and dimensions of page -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- First method of adding a favicon -->
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <!-- Second method of adding a favicon -->
+    <link rel="icon" type="image/png" href="./assets/favicon.png" sizes="308x308">
+    <!-- Shows the favicon when adding website as shortcut to the desktop/homescreen -->
+    <link rel="apple-touch-icon" sizes="308x308" href="./assets/favicon.png">
+
     <!-- The title that will be shown on the browser tab -->
     <title>Pizzeria Santos</title>
 
-    <!-- Imports the fonts from Google. The font is licensed under Open Font License (OFL) https://scripts.sil.org/OFL_web -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-
-    <!-- Links the css code -->
+    <!-- Links the css file(s) -->
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Imports the js file(s) -->
+    <script src="js/index.js" type="module"></script>
 </head>
 
 <body>
     <div class="ContentDiv">
-        <!-- Creates a list for contact info-->
-        <div id="InfoDiv">
-            <a href="https://goo.gl/maps/2aqFdNDscvCgKKQR9" target="_blank">Fjällgatan 32H <br>981 39 KIRUNA</a>
-            <a href="mailto:info@fantastic4group.gitlab.io">info@fantastic4group.gitlab.io</a>
-            <a href="tel:0630-555-555">0630-555-555</a>
+        <!-- The logo imports here -->
+        <div class="Header">
+            <img src="./assets/Logo.svg" alt="">
+        </div>
+        <!-- The title of the page -->
+        <div class="TitleContainer">
+            <div class="TitleImage"></div>
+            <h1 class="Title">PIZZERIA SANTOS</h1>
+        </div>
 
-            <!-- Creates the separated list for the opening hours -->
-            <ul id="openingHours">
+        <!-- Creates the separated lists for the opening hours and the dates closed -->
+        <div id="Hours">
+            <ul id="openingHours" class="openClass">
                 <li><span>Mån-Tors</span> <span>10-22</span></li>
                 <li><span>Fredagar</span> <span>10-23</span></li>
                 <li><span>Lördagar</span> <span>12-23</span></li>
                 <li><span>Söndagar</span> <span>12-20</span></li>
             </ul>
-        </div>
-        <!-- The title of the page -->
-        <div class="TitleContainer">
-            <div class="TitleImage"></div>
-            <h1 class="Title">Pizzeria Santos</h1>
+            <ul id="closedDays" class="openClass">
+                <li><span>6 januari</span> <span>Stängt</span></li>
+                <li><span>1 maj</span> <span>Stängt</span></li>
+                <li><span>24 december</span> <span>Stängt</span></li>
+                <li><span>25 december</span> <span>Stängt</span></li>
+                <li><span>26 december</span> <span>Stängt</span></li>
+            </ul>
         </div>
 
-
-        <h2>Meny</h2>
+        <h2>MENY</h2>
         <!-- The list of menu items -->
         <ul id="menu">
             <li><span>Margarita, <i>ost</i></span> <span>80kr</span></li>
@@ -54,12 +67,18 @@
         </ul>
 
         <!-- Photos in the footer-->
-        <div class="footer">
-            <img class="pizzaFooter" src="assets/bild1.jpg" alt="Vesuvio">
-            <img class="pizzaFooter" src="assets/bild2.jpg" alt="Calzone">
-            <img class="pizzaFooter" src="assets/bild3.jpg" alt="Capricciosa">
+        <div class="pictures">
+            <img class="pizzaPictures" src="assets/bild1.jpg" alt="Vesuvio">
+            <img class="pizzaPictures" src="assets/bild2.jpg" alt="Calzone">
+            <img class="pizzaPictures" src="assets/bild3.jpg" alt="Capricciosa">
         </div>
 
+        <!-- Creates a list for contact info-->
+        <div id="InfoDiv">
+            <a class="InfoA" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9" target="_blank">Fjällgatan 32H <br>981 39 KIRUNA</a>
+            <a class="InfoA" href="mailto:info@fantastic4group.gitlab.io">info@fantastic4group.gitlab.io</a>
+            <a class="InfoA" href="tel:0630-555-555">0630-555-555</a>
+        </div>
     </div>
 </body>
 
