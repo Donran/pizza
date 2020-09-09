@@ -107,7 +107,7 @@ let windowClickEvent;
 
 function getOverlayState() {
     if (!overlayDiv) overlayDiv = document.getElementById("orderOverlay");
-    let currentState = overlayDiv.getAttribute("state");
+    let currentState = overlayDiv.getAttribute("data-state");
     return currentState == "visible" ? true : false;
 }
 
