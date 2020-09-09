@@ -69,25 +69,26 @@ Koden ska vara kommenterad och dokumenterad
 Koden ska gå igenom valideringen
 
 
-
-
-
 # Tester Dokumentation
-**Hur man sätter upp Selenium IDE för tester**
+**Hur man sätter upp Selenium for Python för tester**
 1. Klona/pulla filerna från Gitlab repot Pizza Website
 1. Öppna Git Bash och kör kommandot **cd tests && ./setup.sh**
 1. Sedan kör kommandot **python run.py**
 1. Skriv antingen in 1 för den lokala hostningen av index.html med **VSCode Live Server** eller 2 för hemsidan på GitLab
 1. Om allting dyker upp utan errors så hittar testerna allting
-
-**Hur man skapar ett test i Selenium IDE**
+ 
+**Hur man skapar ett test i Selenium for Python**
 1. Se till att du har den senaste versionen av filerna genom att pulla dem från Gitlab.
-1. Öppna Selenium IDE och skapa ett projekt eller välj ett existerande projekt om du redan har ett.
-1. Klicka på + knappen under projekt rubriken och välj ett namn på testet du vill skapa.
-1. Skriv in eller välj “open” från listan på fältet där det står command 
-1. Skriv in url:et  på sidan du vill testa i target fältet på samma rad.
-1. Observera att du måste skriva in hela url:et på sidan du vill testa så du inte glömmer http/https delen. Är sidan lokal måste du skriva in localhost adressen med den rätta porten till din lokala server (VSCode Live Server).
-1. Därefter, skriv på raden/raderna under vad du vill testa. I command inputtar du vad du vill göra, t.ex att klicka eller att selecta en rad text. Sedan på Target så inputtar du vad det är på sidan du vill testa, t.ex h1 tagg osv.  
+1. Öppna **tests** mappen i valfri editor som kan köra Python. 
+1. Skapa en ny python fil i mappen **pythonTests** med namnet på testet
+1. Importera sedan webdriver från selenium: `from selenium import webdriver`
+1. Skapa sedan en klass med samma namn som filen fast med stor bokstav i början
+1. Skapa en `__init__` funktion med variablerna **driver** och **baseDivPath**: `def __init__(self, driver: webdriver.Chrome, baseDivPath: str):`
+1. Navigera till run.py filen och importera testet du skapat genom att skriva: `from pythonTests.(namn på testfilen) import TestKlassen`
+1. Om du t.ex vill hitta texten i en h1 tagg med ID:et “Title” så skriver du: 
+`variabel1 = driver.find_element_by_xpath("/html/body/h1[@id=’Title’]").text`
+1. Efter du hämtar någonting från hemsidan så måste du använda `assert` för att veta om det du har hämtat är korrekt
+1. Ett exempel skulle vara om du ville kontrollera om **variabel1** inte är en tom string: `assert variabel1 != “”`
 
 # Screenshots av websidan
 **För att använda**
