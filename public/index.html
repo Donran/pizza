@@ -19,6 +19,7 @@
 
     <!-- Links the css file(s) -->
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/overlay.css">
 
     <!-- Imports the js file(s) -->
     <script src="js/index.js" type="module"></script>
@@ -26,6 +27,12 @@
 
 <body>
     <div class="ContentDiv">
+        <!-- The overlay. It needs inline css values to be able to change them easily with JavaScript -->
+        <div id="orderOverlay" style="display: none;" state="hidden">
+            <div id="orderContent">
+                
+            </div>
+        </div>
         <!-- The logo imports here -->
         <div class="Header">
             <img src="./assets/Logo.svg" alt="">
@@ -66,6 +73,8 @@
             <li><span>Extra topping</span> <span>5kr</span></li>
         </ul>
 
+        <h2 id="orderButton"><a>BESTÄLL</a></h2>
+
         <!-- Photos in the footer-->
         <div class="pictures">
             <img class="pizzaPictures" src="assets/bild1.jpg" alt="Vesuvio">
@@ -75,9 +84,14 @@
 
         <!-- Creates a list for contact info-->
         <div id="InfoDiv">
-            <a class="InfoA" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9" target="_blank">Fjällgatan 32H <br>981 39 KIRUNA</a>
-            <a class="InfoA" href="mailto:info@fantastic4group.gitlab.io">info@fantastic4group.gitlab.io</a>
-            <a class="InfoA" href="tel:0630-555-555">0630-555-555</a>
+            <div>
+                <a class="InfoA" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9" target="_blank">Fjällgatan 32H</a>
+                <a class="InfoA" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9" target="_blank">981 39 KIRUNA</a>
+            </div>
+            <div>
+                <a class="InfoA" href="mailto:info@fantastic4group.gitlab.io">info@fantastic4group.gitlab.io</a>
+                <a class="InfoA" href="tel:0630-555-555">0630-555-555</a>
+            </div>
         </div>
     </div>
 </body>

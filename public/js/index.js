@@ -17,8 +17,13 @@ let listOfMonths = {
     "december": 12,
 }
 
+/**@type {HTMLHeadingElement} */
+let orderButton;
+
 // The first function that runs when the page loads
 onload = (() => {
+    orderButton = document.getElementById("orderButton");
+    orderButton.addEventListener("click", () => toggleOverlay(getOverlayState()));
     getDaysUntil(document.getElementById("closedDays"));
 });
 
@@ -92,4 +97,31 @@ function getDaysUntil(listElement) {
     });
     // Appends each element from the array to the HTML li
     childrenList.forEach(element => listElement.appendChild(element));
+}
+
+/**
+ * @type {HTMLDivElement}
+ */
+let overlayDiv;
+let windowClickEvent;
+
+function getOverlayState() {
+    if (!overlayDiv) overlayDiv = document.getElementById("orderOverlay");
+    let currentState = overlayDiv.getAttribute("state");
+    return currentState == "visible" ? true : false;
+}
+
+function toggleOverlay(overlayBool) {
+    if (!overlayDiv) overlayDiv = document.getElementById("orderOverlay");
+    overlayDiv.style.display = overlayBool ? "none" : "block";
+    if (!overlayBool) {
+        document.body.style.overflowY = "hidden";
+        windowClickEvent = window.addEventListener("click", (event) => {
+            if (event.target == overlayDiv) toggleOverlay(true);
+        });
+    } else {
+        document.body.style.overflowY = "visible";
+        window.removeEventListener("click", windowClickEvent);
+    }
+
 }

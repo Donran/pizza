@@ -19,5 +19,6 @@
         "dart",
         "django-txt",
         "log"
-    ]
+    ],
+    "cSpell.language": ",sv"
 }

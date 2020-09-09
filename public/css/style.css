@@ -83,6 +83,14 @@ h2{
     color: rgb(204, 180, 100);
 }
 
+#orderButton{
+    border: 2px solid rgb(204, 180, 100);
+    max-width: max-content;
+    margin: auto;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
 ul {
     /*Makes the margin and padding part of photo width*/
     margin: 15px;
@@ -129,6 +137,8 @@ ul li:nth-child(even) {
     height: fit-content;
     z-index: 30;
     color: rgb(204, 180, 100);
+    border: 2px solid rgb(204, 180, 100);
+    padding: 0px 10px;
 }
 
 /* The image behind the title */
@@ -166,6 +176,8 @@ ul li:nth-child(even) {
 #InfoDiv {
     background-color: rgb(20, 20, 20);
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .InfoA {
