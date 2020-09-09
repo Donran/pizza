@@ -8,6 +8,7 @@ from pythonTests.titleTest import TitleTest
 from pythonTests.picturesTest import PicturesTest
 from pythonTests.daysClosedTest import DaysClosedTest
 from pythonTests.logoTest import LogoTest
+from pythonTests.orderTest import OrderTest
 
 # Configures google web options 
 options = webdriver.ChromeOptions()
@@ -43,3 +44,4 @@ DaysClosedTest(driver, baseDivPath)
 TitleTest(driver, baseDivPath)
 MenuTest(driver, baseDivPath)
 PicturesTest(driver, baseDivPath)
+OrderTest(driver, baseDivPath)
