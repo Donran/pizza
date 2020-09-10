@@ -10,9 +10,9 @@ from pythonTests.daysClosedTest import DaysClosedTest
 from pythonTests.logoTest import LogoTest
 from pythonTests.orderTest import OrderTest
 
-# Configures google web options 
+# Configures google web options
 options = webdriver.ChromeOptions()
-# options.add_argument("--headless")
+options.add_argument("--headless")
 driver = webdriver.Chrome(options=options)
 
 # Ask what host you want
@@ -20,7 +20,7 @@ print("""1. localhost
 2. public website""")
 choice = input("Choose: ")
 
-#Configures two alternatives
+# Configures two alternatives
 url = ""
 if choice == "1":
     port = input("Choose port (default should be 5500): ")
@@ -28,20 +28,31 @@ if choice == "1":
 elif choice == "2":
     url = "https://fantastic4group.gitlab.io/pizza-website/"
 
-print("Fetching from: " + url)
+print("""1. index.html
+2. kontakt.html""")
+subSiteChoice = input("Choice: ")
+if int(subSiteChoice) == 1:
+    subsite = "index.html"
+elif int(subSiteChoice) == 2:
+    subsite = "kontakt.html"
+
+print("Fetching from: " + url + subsite)
 
 # Opens the chosen URL
-driver.get(url)
+driver.get(url + subsite)
 
 # Creates a variable with the base path to make the code more compact and easier to read
 baseDivPath = "/html/body/div[@class='ContentDiv']"
 
 # Calls all of the classes constructors
-LogoTest(driver, baseDivPath)
-InfoTest(driver, baseDivPath)
-OpeningHoursTest(driver, baseDivPath)
-DaysClosedTest(driver, baseDivPath)
-TitleTest(driver, baseDivPath)
-MenuTest(driver, baseDivPath)
-PicturesTest(driver, baseDivPath)
-OrderTest(driver, baseDivPath)
+if subsite == "index.html":
+    LogoTest(driver, baseDivPath)
+    InfoTest(driver, baseDivPath)
+    OpeningHoursTest(driver, baseDivPath)
+    DaysClosedTest(driver, baseDivPath)
+    TitleTest(driver, baseDivPath)
+    MenuTest(driver, baseDivPath)
+    PicturesTest(driver, baseDivPath)
+    OrderTest(driver, baseDivPath)
+elif subsite == "kontakt.html":
+    pass
