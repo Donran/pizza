@@ -37,7 +37,7 @@
 
 #orderInput {
     font-family: 'NATS';
-    font-size: 30px;
+    font-size: 24px;
     padding: none;
     border: 2px solid rgb(204, 180, 100);
     box-sizing: border-box;
@@ -51,6 +51,15 @@
     font-family: 'NATS';
     border: 2px solid rgb(204, 180, 100);
     box-sizing: border-box;
+    width: 61px;
+    height: 61px;
+    display: flex;
+    justify-content: center;
+}
+
+#orderConfirmButton img {
+    filter: invert();
+    -webkit-filter: invert();
 }
 
 #orderStatus{
@@ -60,8 +69,4 @@
 /* Wraps order content for flex positioning */
 #orderWrapper {
     display: flex;
-}
-
-.orderConfirmButtonImage {
-    fill: red;
 }
