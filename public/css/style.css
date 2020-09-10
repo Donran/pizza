@@ -120,35 +120,9 @@ ul li:nth-child(even) {
     background-color: rgb(20, 20, 20);
 }
 
-/* Title positioning */
-.TitleContainer {
-    position: relative;
-}
-
-/* Title of page stays in the middle */
-.Title {
-    position: absolute;
-    display: inline-block;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    font-size: 50px;
-    margin: auto;
-    /* To make the border fit around the text in Firefox */
-    width: -moz-max-content;
-    width: -webkit-max-content;
-    width: min-content;
-    max-height: fit-content;
-    height: -moz-min-content;
-    color: rgb(204, 180, 100);
-    border: 2px solid rgb(204, 180, 100);
-    padding: 0px 10px;
-    user-select: none
-}
-
 /* The image behind the title */
 .TitleImage {
+    position: relative;
     background-image: url("../assets/bild4.jpg");
     /* Gives the image a parallax effect */
     background-attachment: fixed;
@@ -158,8 +132,36 @@ ul li:nth-child(even) {
     width: 100%;
     height: 500px;
     max-height: calc(80vh - 75px);
-    /* Makes the image slightly transparent for increased text visibility */
-    opacity: 0.6;
+    display: flex;
+    justify-content: center;
+}
+
+/* Makes the image slightly transparent for increased text visibility */
+.TitleImage div{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Title of page stays in the middle */
+.Title {
+    display: inline-block;
+    font-size: 50px;
+    margin: auto;
+    /* To make the border fit around the text in Firefox */
+    width: fit-content;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    height: fit-content;
+    height: -moz-max-content;
+    color: rgb(204, 180, 100);
+    border: 2px solid rgb(204, 180, 100);
+    padding: 0px 10px;
+    box-sizing: border-box;
+    user-select: none;
+    z-index: 2;
 }
 
 /* Align in mobile resolutions */
@@ -183,7 +185,12 @@ ul li:nth-child(even) {
     background-color: rgb(20, 20, 20);
     box-sizing: border-box;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.infoContainers{
+    margin: 0 10px;
 }
 
 .InfoA {
