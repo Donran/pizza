@@ -158,6 +158,7 @@ function getNumber() {
             }
         }
     }
+    if (value == "") result = "Skriv in ditt postnummer";
     if (!orderStatus) orderStatus = document.getElementById("orderStatus");
     orderStatus.textContent = result;
 }
