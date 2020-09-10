@@ -27,14 +27,16 @@
 </head>
 
 <body>
-    <div class="ContentDiv">
+    <div class="ContentDiv" id="ContentDiv">
         <!-- The overlay. It needs inline css values to be able to change them easily with JavaScript -->
-        <div id="orderOverlay" style="display: none;" data-state="hidden">
+        <div id="orderOverlay" style="display: none; opacity: 0;" data-state="hidden">
             <div id="orderContent">
+                <img id="orderCloseButton" src="assets/close.svg" alt="close">
                 <h2>Se om vi levererar till ditt Postnummer</h2>
                 <!-- Groups order content for flex positioning -->
                 <div id="orderWrapper">
-                    <input id="orderInput" type="text" placeholder="Postnummer" autocomplete="off" value="" maxlength="6">
+                    <input id="orderInput" type="text" placeholder="Postnummer" autocomplete="off" value=""
+                        maxlength="6">
                     <div id="orderConfirmButton"><img src="./assets/magnify.svg" alt="Search"></div>
                 </div>
                 <Span id="orderStatus">Skriv in ditt postnummer</Span>
@@ -42,7 +44,7 @@
         </div>
         <!-- The logo imports here -->
         <div class="Header">
-            <a href="index.html"><img src="./assets/Logo.svg" alt=""></a>
+            <a href="index.html"><img src="./assets/Logo.svg" alt="Logo"></a>
             <div class="navbar">
                 <a href="index.html#menuText">MENY</a>
                 <a href="kontakt.html">HITTA OSS</a>

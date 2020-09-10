@@ -13,10 +13,13 @@
         ". content ."
         ". . .";
     grid-template-rows: 0 min-content auto;
-    grid-template-columns: auto min-content auto;
+    grid-template-columns: auto fit-content auto;
+    transition: opacity 150ms ease-in-out;
+    cursor: pointer;
 }
 
 #orderContent {
+    cursor: default;
     grid-area: content;
     background-color: rgb(30, 30, 30);
     width: 100%;
@@ -31,11 +34,18 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 50px;
     box-sizing: border-box;
 }
 
+#orderCloseButton{
+    filter: invert();
+    -webkit-filter: invert();
+    cursor: pointer;
+    user-select: none;
+}
+
 #orderInput {
+    max-width: 180px;
     font-family: 'NATS';
     font-size: 24px;
     padding: none;
@@ -48,6 +58,7 @@
 }
 
 #orderConfirmButton {
+    margin-left: -2px;
     font-family: 'NATS';
     border: 2px solid rgb(204, 180, 100);
     box-sizing: border-box;
@@ -55,15 +66,18 @@
     height: 61px;
     display: flex;
     justify-content: center;
+    user-select: none;
 }
 
 #orderConfirmButton img {
     filter: invert();
     -webkit-filter: invert();
+    user-select: none;
 }
 
 #orderStatus{
     min-height: min-content;
+    user-select: none;
 }
 
 /* Wraps order content for flex positioning */

@@ -20,22 +20,33 @@ let listOfMonths = {
 /**@type {HTMLHeadingElement} */
 let orderButton;
 
-/**
- * @type {HTMLDivElement}
- */
+/** @type {HTMLDivElement} */
 let overlayDiv;
+
+/** @type {HTMLDivElement} */
+let contentDiv;
+
 let windowClickEvent;
 /**@type {HTMLInputElement} */
 let textInput;
 /**@type {HTMLDivElement} */
 let orderSearchButton;
+/**@type {HTMLDivElement} */
+let orderCloseButton;
 /**@type {HTMLSpanElement} */
 let orderStatus;
 let listOfZipCodes = [98139, 98140, 98142, 98138]
 
+function getScrollWidth() {
+    console.log(window.innerWidth - document.body.clientWidth)
+    return window.innerWidth - document.body.clientWidth;
+}
+
 
 // The first function that runs when the page loads
 onload = (() => {
+    contentDiv = document.getElementById("ContentDiv");
+
     orderButton = document.getElementById("orderButton");
     orderButton.addEventListener("click", () => toggleOverlay(getOverlayState()));
 
@@ -133,16 +144,28 @@ function getOverlayState() {
 
 function toggleOverlay(overlayBool) {
     if (!overlayDiv) overlayDiv = document.getElementById("orderOverlay");
-    overlayDiv.style.display = overlayBool ? "none" : "grid";
+    // Change the attribute to visible or hidden depending on the overlayBool value
     overlayDiv.setAttribute("data-state", overlayBool ? "hidden" : "visible");
     if (!overlayBool) {
+        // When the overlay should hide
+        contentDiv.style.marginRight = getScrollWidth() + "px"
         document.body.style.overflowY = "hidden";
         windowClickEvent = window.addEventListener("mousedown", (event) => {
             if (event.target == overlayDiv) toggleOverlay(true);
         });
+        if (!orderCloseButton) orderCloseButton = document.getElementById("orderCloseButton");
+        orderCloseButton.addEventListener("click", (event) => toggleOverlay(true));
+        overlayDiv.style.display = "grid";
+        // Call width to update the component after display change to fix transition not working
+        overlayDiv.clientWidth;
+        overlayDiv.style.opacity = 1;
     } else {
+         // Show overlay
+        contentDiv.style.marginRight = 0;
         document.body.style.overflowY = "visible";
         window.removeEventListener("click", windowClickEvent);
+        overlayDiv.style.opacity = 0;
+        setTimeout(() => overlayDiv.style.display = "none", 150);
     }
 }
 
