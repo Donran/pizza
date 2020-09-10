@@ -1,5 +1,5 @@
-#orderOverlay{
-    background-color: rgba(0, 0, 0, 0.5);
+#orderOverlay {
+    background-color: rgba(0, 0, 0, 0.8);
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -8,17 +8,60 @@
     right: 0;
     bottom: 0;
     z-index: 100;
+    grid-template-areas:
+        ". . ."
+        ". content ."
+        ". . .";
+    grid-template-rows: 0 min-content auto;
+    grid-template-columns: auto min-content auto;
 }
 
-#orderContent{
-    background-color: rgba(255, 0, 0, 0.5);
+#orderContent {
+    grid-area: content;
+    background-color: rgb(30, 30, 30);
+    width: 100%;
     max-width: 1920px;
-    margin: auto;
-    height: 500px;
+    height: 300px;
     max-height: 80vh;
-    position: fixed;
     top: 0px;
     left: 0;
     right: 0;
     z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+#orderInput {
+    font-family: 'NATS';
+    font-size: 30px;
+    padding: none;
+    border: 2px solid rgb(204, 180, 100);
+    box-sizing: border-box;
+}
+
+#orderInput:focus{
+    outline: none;
+}
+
+#orderConfirmButton {
+    font-family: 'NATS';
+    border: 2px solid rgb(204, 180, 100);
+    box-sizing: border-box;
+}
+
+#orderStatus{
+    min-height: min-content;
+}
+
+/* Wraps order content for flex positioning */
+#orderWrapper {
+    display: flex;
+}
+
+.orderConfirmButtonImage {
+    fill: red;
 }

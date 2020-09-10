@@ -30,6 +30,14 @@
         <!-- The overlay. It needs inline css values to be able to change them easily with JavaScript -->
         <div id="orderOverlay" style="display: none;" data-state="hidden">
             <div id="orderContent">
+                <h2>Se om vi levererar till ditt Postnummer</h2>
+                
+                <!-- Groups order content for flex positioning -->
+                <div id="orderWrapper">
+                    <input id="orderInput" type="text" placeholder="Postnummer" autocomplete="off" >
+                    <div id="orderConfirmButton"><img class="orderConfirmButtonImage" src="./assets/magnify.svg" alt="Magnify"></div>
+                </div>
+                <Span id="orderStatus">Skriv in ditt postnummer</Span>
             </div>
         </div>
         <!-- The logo imports here -->

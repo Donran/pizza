@@ -20,10 +20,36 @@ let listOfMonths = {
 /**@type {HTMLHeadingElement} */
 let orderButton;
 
+/**
+ * @type {HTMLDivElement}
+ */
+let overlayDiv;
+let windowClickEvent;
+/**@type {HTMLInputElement} */
+let textInput;
+/**@type {HTMLDivElement} */
+let orderSearchButton;
+/**@type {HTMLSpanElement} */
+let orderStatus;
+let listOfZipCodes = [98139, 98140, 98142, 98138]
+
+
 // The first function that runs when the page loads
 onload = (() => {
     orderButton = document.getElementById("orderButton");
     orderButton.addEventListener("click", () => toggleOverlay(getOverlayState()));
+
+    orderSearchButton = document.getElementById("orderConfirmButton");
+    orderSearchButton.addEventListener("click", () => getNumber());
+
+    textInput = document.getElementById("orderInput");
+    textInput.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            orderSearchButton.click();
+        }
+    });
+
     getDaysUntil(document.getElementById("closedDays"));
 });
 
@@ -99,12 +125,6 @@ function getDaysUntil(listElement) {
     childrenList.forEach(element => listElement.appendChild(element));
 }
 
-/**
- * @type {HTMLDivElement}
- */
-let overlayDiv;
-let windowClickEvent;
-
 function getOverlayState() {
     if (!overlayDiv) overlayDiv = document.getElementById("orderOverlay");
     let currentState = overlayDiv.getAttribute("data-state");
@@ -113,15 +133,31 @@ function getOverlayState() {
 
 function toggleOverlay(overlayBool) {
     if (!overlayDiv) overlayDiv = document.getElementById("orderOverlay");
-    overlayDiv.style.display = overlayBool ? "none" : "block";
+    overlayDiv.style.display = overlayBool ? "none" : "grid";
+    overlayDiv.setAttribute("data-state", overlayBool ? "hidden" : "visible");
     if (!overlayBool) {
         document.body.style.overflowY = "hidden";
-        windowClickEvent = window.addEventListener("click", (event) => {
+        windowClickEvent = window.addEventListener("mousedown", (event) => {
             if (event.target == overlayDiv) toggleOverlay(true);
         });
     } else {
         document.body.style.overflowY = "visible";
         window.removeEventListener("click", windowClickEvent);
     }
+}
 
+function getNumber() {
+    /** @type {String} */
+    let value = textInput.value.replace(" ", "").replace("-", "");
+    let result = "Vi levererar inte till dig";
+    if (value.match(RegExp("^[0-9]+$"))) {
+        for (let index = 0; index < listOfZipCodes.length; index++) {
+            if (listOfZipCodes[index].toString() == value) {
+                result = "Vi levererar till dig";
+                index = listOfZipCodes.length;
+            }
+        }
+    }
+    if (!orderStatus) orderStatus = document.getElementById("orderStatus");
+    orderStatus.textContent = result;
 }

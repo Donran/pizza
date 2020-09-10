@@ -17,17 +17,17 @@ body {
     background-color: black;
     color: white;
     /* Used to center page content */
-    display: grid;
+    /* display: grid;
     grid-template-areas:
         "."
         "content"
         ".";
-    grid-template-rows: auto max-content auto;
+    grid-template-rows: auto max-content auto; */
 }
 
 /* Aligns content in the middle  */
 .ContentDiv {
-    grid-area: content;
+    /* grid-area: content; */
     position: relative;
 }
 
@@ -79,11 +79,12 @@ body {
     color: red;
 }
 
-h2{
+h2 {
     color: rgb(204, 180, 100);
+    user-select: none;
 }
 
-#orderButton{
+#orderButton {
     border: 2px solid rgb(204, 180, 100);
     max-width: max-content;
     margin: auto;
@@ -127,18 +128,23 @@ ul li:nth-child(even) {
 /* Title of page stays in the middle */
 .Title {
     position: absolute;
+    display: inline-block;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     font-size: 50px;
     margin: auto;
-    width: fit-content;
-    height: fit-content;
-    z-index: 30;
+    /* To make the border fit around the text in Firefox */
+    width: -moz-max-content;
+    width: -webkit-max-content;
+    width: min-content;
+    max-height: fit-content;
+    height: -moz-min-content;
     color: rgb(204, 180, 100);
     border: 2px solid rgb(204, 180, 100);
     padding: 0px 10px;
+    user-select: none
 }
 
 /* The image behind the title */
