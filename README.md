@@ -37,6 +37,7 @@ Plugins för VSCode:
 - Live Share
 - Code Spell Checker
 - Swedish - Code Spell Checker
+- Python
 
 **Fildelning** - GitLab
 <br>
