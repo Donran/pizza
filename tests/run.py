@@ -12,7 +12,7 @@ from pythonTests.orderTest import OrderTest
 
 # Configures google web options 
 options = webdriver.ChromeOptions()
-options.add_argument("--headless")
+# options.add_argument("--headless")
 driver = webdriver.Chrome(options=options)
 
 # Ask what host you want
