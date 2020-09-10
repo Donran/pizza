@@ -155,7 +155,7 @@ ul li:nth-child(even) {
     width: -moz-fit-content;
     width: -webkit-fit-content;
     height: fit-content;
-    height: -moz-max-content;
+    height: -moz-fit-content;
     color: rgb(204, 180, 100);
     border: 2px solid rgb(204, 180, 100);
     padding: 0px 10px;
@@ -171,7 +171,7 @@ ul li:nth-child(even) {
     flex-wrap: wrap-reverse;
 }
 
-/* Footer photos size */
+/* Bottom photos size */
 .pizzaPictures {
     width: 780px;
     max-width: 100%;
