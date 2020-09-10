@@ -45,7 +45,7 @@ body {
 }
 
 .Header img {
-    display: flex;
+    float: left;
     height: 75px;
     padding: 12.5px;
     box-sizing: border-box;

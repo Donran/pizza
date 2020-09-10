@@ -20,6 +20,7 @@
     <!-- Links the css file(s) -->
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/overlay.css">
+    <link rel="stylesheet" href="./css/navbar.css">
 
     <!-- Imports the js file(s) -->
     <script src="js/index.js" type="module"></script>
@@ -41,7 +42,11 @@
         </div>
         <!-- The logo imports here -->
         <div class="Header">
-            <img src="./assets/Logo.svg" alt="">
+            <a href="index.html"><img src="./assets/Logo.svg" alt=""></a>
+            <div class="navbar">
+                <a href="index.html#menuText">MENY</a>
+                <a href="kontakt.html">HITTA OSS</a>
+            </div>
         </div>
         <!-- The title of the page -->
         <div class="TitleImage">
@@ -66,7 +71,7 @@
             </ul>
         </div>
 
-        <h2>MENY</h2>
+        <h2 id="menuText">MENY</h2>
         <!-- The list of menu items -->
         <ul id="menu">
             <li><span>Margarita, <i>ost</i></span> <span>80kr</span></li>
