@@ -23,7 +23,7 @@ class OrderTest:
         overlay = driver.find_element_by_id("orderOverlay")
         assert overlay
         orderButton.click()
-        # assert overlay.get_attribute("data-state") == "visible"
+        assert overlay.get_attribute("data-state") == "visible"
 
         self.inputElement = driver.find_element_by_id("orderInput")
         self.confirmButton = driver.find_element_by_id("orderConfirmButton")
