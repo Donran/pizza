@@ -1,0 +1,236 @@
+/* Imports a local font */
+@font-face {
+    font-family: "NATS";
+    src: url("../assets/fonts/NATS-Regular.ttf") format('truetype');
+}
+
+/* All the content, have black background, same font, no margin and white color of text*/
+body {
+    margin: auto;
+    /* content width is not higher then 1920 pixels*/
+    max-width: 1920px;
+    position: relative;
+    min-height: 100vh;
+    /* Text styling and background color */
+    text-align: center;
+    font-family: "NATS";
+    background-color: black;
+    color: white;
+    /* Used to center page content */
+}
+
+/* Aligns content in the middle  */
+.ContentDiv {
+    position: relative;
+}
+
+.Header {
+    max-width: 1920px;
+    margin: auto;
+    height: 75px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    left: 0;
+    right: 0;
+    background-color: rgba(20, 20, 20, 0.85);
+    z-index: 50;
+}
+
+.Header img {
+    display: flex;
+    height: 75px;
+    padding: 12.5px;
+    box-sizing: border-box;
+}
+
+/* Title positioning */
+.TitleContainer {
+    padding-bottom: 10px;
+}
+
+/* Title of page stays in the middle */
+.Title {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 50px;
+    margin: auto;
+    width: -moz-max-content;
+    width: -webkit-max-content;
+    width: max-content;
+    height: min-content;
+    max-height: 106px;
+    z-index: 30;
+    color: rgb(204, 180, 100);
+    border: 2px solid rgb(204, 180, 100);
+    padding: 0px 10px;
+    margin-top: 20px;
+}
+
+#InfoDiv{
+    background-color: rgb(20, 20, 20);
+    padding: 0px 100px;
+    border: 4px solid rgb(204, 180, 100);
+    box-sizing: border-box;
+}
+
+.InfoA {
+    display: block;
+    color: white;
+    margin: auto;
+    padding: 10px 0;
+    /* Removes decorations */
+    text-decoration: none;  
+    width: max-content;
+}
+
+
+.map iframe{
+    border: 4px solid rgb(204, 180, 100);   
+    line-height: 0;
+    position:relative;
+    width: 800px;
+    max-width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1183px){
+    #InfoDiv{
+        margin-top: 10px;
+    }
+    .map iframe{
+        height: 500px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h2{
+    color: rgb(204, 180, 100);
+}
+
+.contact {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
