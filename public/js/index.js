@@ -37,11 +37,6 @@ let orderCloseButton;
 let orderStatus;
 let listOfZipCodes = [98139, 98140, 98142, 98138]
 
-function getScrollWidth() {
-    console.log(window.innerWidth - document.body.clientWidth)
-    return window.innerWidth - document.body.clientWidth;
-}
-
 
 // The first function that runs when the page loads
 onload = (() => {
@@ -145,15 +140,22 @@ function getOverlayState() {
     return currentState == "visible" ? true : false;
 }
 
+function noScroll() {
+    window.scrollTo(0, scrollPosition);
+}
+
+let scrollPosition = 0;
+
 function toggleOverlay(overlayBool) {
     if (!overlayDiv) overlayDiv = document.getElementById("orderOverlay");
     // Change the attribute to visible or hidden depending on the overlayBool value
     overlayDiv.setAttribute("data-state", overlayBool ? "hidden" : "visible");
     if (!overlayBool) {
         // When the overlay should hide
-        contentDiv.style.marginRight = getScrollWidth() + "px"
-        // Remove page scroll which will introduce a shift in the page which is mitigated by the margin right
-        document.body.style.overflowY = "hidden";
+        // Add the current scroll position
+        scrollPosition = window.scrollY;
+        // Uses the scrollPosition to force the scroll position to stay in its place
+        window.addEventListener('scroll', noScroll);
         // When clicking the outerDiv, close the overlay
         windowClickEvent = window.addEventListener("mousedown", (event) => {
             if (event.target == overlayDiv) toggleOverlay(true);
@@ -162,18 +164,16 @@ function toggleOverlay(overlayBool) {
         if (!orderCloseButton) orderCloseButton = document.getElementById("orderCloseButton");
         // Set an event listener to the close button
         orderCloseButton.addEventListener("click", (event) => toggleOverlay(true));
-        // Sets the display of the overlay to grid
-        overlayDiv.style.display = "grid";
+        // Sets the display of the overlay to flex
+        overlayDiv.style.display = "block";
         // Call width to update the component after display change to fix transition not working
         overlayDiv.clientWidth;
         // Set the opacity to 1 to start the transition
         overlayDiv.style.opacity = 1;
     } else {
         // Show overlay
-        // Sets a margin of zero to the upper div
-        contentDiv.style.marginRight = 0;
-        // Restore scroll
-        document.body.style.overflowY = "visible";
+        // Removes the listener to allow the user to scroll
+        window.removeEventListener('scroll', noScroll);
         // Remove the window eventListener
         window.removeEventListener("click", windowClickEvent);
         // Set the opacity of the overlay to 0
