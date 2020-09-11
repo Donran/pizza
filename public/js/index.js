@@ -137,8 +137,11 @@ function getDaysUntil(listElement) {
 }
 
 function getOverlayState() {
+    // If the element is undefined, get the element
     if (!overlayDiv) overlayDiv = document.getElementById("orderOverlay");
+    // Get the attribute value
     let currentState = overlayDiv.getAttribute("data-state");
+    // Return the correct bool depending on the value
     return currentState == "visible" ? true : false;
 }
 
@@ -149,39 +152,60 @@ function toggleOverlay(overlayBool) {
     if (!overlayBool) {
         // When the overlay should hide
         contentDiv.style.marginRight = getScrollWidth() + "px"
+        // Remove page scroll which will introduce a shift in the page which is mitigated by the margin right
         document.body.style.overflowY = "hidden";
+        // When clicking the outerDiv, close the overlay
         windowClickEvent = window.addEventListener("mousedown", (event) => {
             if (event.target == overlayDiv) toggleOverlay(true);
         });
+        // If the element is undefined, get the element
         if (!orderCloseButton) orderCloseButton = document.getElementById("orderCloseButton");
+        // Set an event listener to the close button
         orderCloseButton.addEventListener("click", (event) => toggleOverlay(true));
+        // Sets the display of the overlay to grid
         overlayDiv.style.display = "grid";
         // Call width to update the component after display change to fix transition not working
         overlayDiv.clientWidth;
+        // Set the opacity to 1 to start the transition
         overlayDiv.style.opacity = 1;
     } else {
-         // Show overlay
+        // Show overlay
+        // Sets a margin of zero to the upper div
         contentDiv.style.marginRight = 0;
+        // Restore scroll
         document.body.style.overflowY = "visible";
+        // Remove the window eventListener
         window.removeEventListener("click", windowClickEvent);
+        // Set the opacity of the overlay to 0
         overlayDiv.style.opacity = 0;
+        // Sets the overlay to display none after a set delay to let the transition finish
         setTimeout(() => overlayDiv.style.display = "none", 150);
     }
 }
 
 function getNumber() {
     /** @type {String} */
+    // Replace all of the spaces and dashes with an empty space
     let value = textInput.value.replace(" ", "").replace("-", "");
+    // The default result
     let result = "Vi levererar inte till dig";
+    // If the text only contains numbers
     if (value.match(RegExp("^[0-9]+$"))) {
+        // To check if the given number matches any of the 
         for (let index = 0; index < listOfZipCodes.length; index++) {
+            // If the number matches
             if (listOfZipCodes[index].toString() == value) {
+                // Change the result if the number matches
                 result = "Vi levererar till dig";
+                // End the loop
                 index = listOfZipCodes.length;
             }
         }
     }
+    // If the value wasn't typed in
     if (value == "") result = "Skriv in ditt postnummer";
+    // If the element is undefined, get the element
     if (!orderStatus) orderStatus = document.getElementById("orderStatus");
+    // Show the message to the user
     orderStatus.textContent = result;
 }
