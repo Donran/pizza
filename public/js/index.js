@@ -126,6 +126,7 @@ function getDaysUntil(listElement) {
 }
 
 function getOverlayState() {
+    // If the element is undefined, fetch the element
     if (!overlayDiv) overlayDiv = document.getElementById("orderOverlay");
     let currentState = overlayDiv.getAttribute("data-state");
     return currentState == "visible" ? true : false;
