@@ -72,14 +72,14 @@ Koden ska gå igenom valideringen
 
 # Tester Dokumentation
 **Hur man sätter upp Selenium for Python för tester**
-1. Klona/pulla filerna från Gitlab repot Pizza Website
+1. Klona/pulla filerna från GitLab repot Pizza Website
 1. Öppna Git Bash och kör kommandot **cd tests && ./setup.sh**
 1. Sedan kör kommandot **python run.py**
 1. Skriv antingen in 1 för den lokala hostningen av index.html med **VSCode Live Server** eller 2 för hemsidan på GitLab
 1. Om allting dyker upp utan errors så hittar testerna allting
  
 **Hur man skapar ett test i Selenium for Python**
-1. Se till att du har den senaste versionen av filerna genom att pulla dem från Gitlab.
+1. Se till att du har den senaste versionen av filerna genom att pulla dem från GitLab.
 1. Öppna **tests** mappen i valfri editor som kan köra Python. 
 1. Skapa en ny python fil i mappen **pythonTests** med namnet på testet
 1. Importera sedan webdriver från selenium: `from selenium import webdriver`
@@ -91,7 +91,7 @@ Koden ska gå igenom valideringen
 1. Efter du hämtar någonting från hemsidan så måste du använda `assert` för att veta om det du har hämtat är korrekt
 1. Ett exempel skulle vara om du ville kontrollera om **variabel1** inte är en tom string: `assert variabel1 != “”`
 
-# Screenshots av websidan
+# Screenshots av webbsidan
 **För att använda**
 1.  Gå in i "shot.json" via VSCode.
 1.  Under rubriken "urls" kan man skriva in det adress man vill.

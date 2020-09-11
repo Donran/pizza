@@ -16,5 +16,6 @@
     text-decoration: none;
     margin: 5px;
     font-size: 20px;
+    user-select: none;
 }
 

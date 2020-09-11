@@ -37,7 +37,7 @@ let orderCloseButton;
 let orderStatus;
 let listOfZipCodes = [98139, 98140, 98142, 98138]
 
-getScrollWidth => window.innerWidth - document.body.clientWidth;
+let getScrollWidth = (_) => window.innerWidth - document.body.clientWidth;
 
 
 // The first function that runs when the page loads
