@@ -18,7 +18,8 @@ Hemsida: https://fantastic4group.gitlab.io/pizza-website
 <br>
 **Funktioner:** non lambda functions
 <br>
-Ingen css i html-filer när det inte behövs
+**HTML/CSS:** 
+- Bara CSS inline i HTML filen när det är någonting som ändras med JavaScript
 
 # Programmeringsspråk
 HTML 5
