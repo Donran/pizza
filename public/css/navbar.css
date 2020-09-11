@@ -7,6 +7,7 @@
     flex-wrap: nowrap;
     align-items: center;
     height: 100%;
+    width: max-content;
 }
 
 /* Navbar */
@@ -15,5 +16,6 @@
     text-decoration: none;
     margin: 5px;
     font-size: 20px;
+    user-select: none;
 }
 
