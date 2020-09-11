@@ -7,6 +7,7 @@
     flex-wrap: nowrap;
     align-items: center;
     height: 100%;
+    width: max-content;
 }
 
 /* Navbar */

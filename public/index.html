@@ -27,12 +27,12 @@
 </head>
 
 <body>
-    <div class="ContentDiv" id="ContentDiv">
+    <div class="contentDiv" id="contentDiv">
         <!-- The overlay. It needs inline css values to be able to change them easily with JavaScript -->
         <div id="orderOverlay" style="display: none; opacity: 0;" data-state="hidden">
             <div id="orderContent">
                 <img id="orderCloseButton" src="assets/close.svg" alt="close">
-                <h2>Se om vi levererar till ditt Postnummer</h2>
+                <h2>Se om vi levererar till ditt postnummer</h2>
                 <!-- Groups order content for flex positioning -->
                 <div id="orderWrapper">
                     <input id="orderInput" type="text" placeholder="Postnummer" autocomplete="off" value=""
@@ -43,7 +43,7 @@
             </div>
         </div>
         <!-- The logo imports here -->
-        <div class="Header">
+        <div class="header">
             <a href="index.html"><img src="./assets/Logo.svg" alt="Logo"></a>
             <div class="navbar">
                 <a href="index.html#menuText">MENY</a>
@@ -51,13 +51,21 @@
             </div>
         </div>
         <!-- The title of the page -->
-        <div class="TitleImage">
-            <div></div>
-            <h1 class="Title">PIZZERIA SANTOS</h1>
+        <div class="titleImage">
+            <div class="titleContainer">
+                <h1 class="title">PIZZERIA SANTOS</h1>
+                <div>
+                    <a id="titleNummer" href="tel:0630-555-555">0630-555-555 </a>
+                    <a id="titleNummer" href="">| </a>
+                    <a id="titleNummer" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9" target="_blank">Fjällgatan 32H</a>
+                </div>
+                
+            </div>
+            
         </div>
 
         <!-- Creates the separated lists for the opening hours and the dates closed -->
-        <div id="Hours">
+        <div id="hours">
             <ul id="openingHours" class="openClass">
                 <li><span>Mån-Tors</span> <span>10-22</span></li>
                 <li><span>Fredagar</span> <span>10-23</span></li>
@@ -76,34 +84,34 @@
         <h2 id="menuText">MENY</h2>
         <!-- The list of menu items -->
         <ul id="menu">
-            <li><span>Margarita, <i>ost</i></span> <span>80kr</span></li>
-            <li><span>Calzone inbakad, <i>skinka</i></span> <span>85kr</span></li>
-            <li><span>Vesuvio, <i>skinka</i></span> <span>85kr</span></li>
-            <li><span>Hawaii, <i>skinka, ananas</i></span> <span>90kr</span></li>
-            <li><span>Capricciosa, <i>skinka, champinjoner</i></span> <span>90kr</span></li>
-            <li><span>Pompei, <i>bacon, rödlök, ägg, curry</i></span> <span>90kr</span></li>
-            <li><span>La Casa, <i>champinjoner, räkor, skinka</i></span> <span>95kr</span></li>
-            <li><span>Extra topping</span> <span>5kr</span></li>
+            <li><span>Margarita, <i>ost</i></span> <span>80 kr</span></li>
+            <li><span>Calzone inbakad, <i>skinka</i></span> <span>85 kr</span></li>
+            <li><span>Vesuvio, <i>skinka</i></span> <span>85 kr</span></li>
+            <li><span>Hawaii, <i>skinka, ananas</i></span> <span>90 kr</span></li>
+            <li><span>Capricciosa, <i>skinka, champinjoner</i></span> <span>90 kr</span></li>
+            <li><span>Pompei, <i>bacon, rödlök, ägg, curry</i></span> <span>90 kr</span></li>
+            <li><span>La Casa, <i>champinjoner, räkor, skinka</i></span> <span>95 kr</span></li>
+            <li><span>Extra topping</span> <span>5 kr</span></li>
         </ul>
 
-        <h2 id="orderButton"><a>BESTÄLL</a></h2>
+        <h2 id="orderButton"><a>UTKÖRNING</a></h2>
 
         <!-- Photos in the footer-->
         <div class="pictures">
-            <img class="pizzaPictures" src="assets/bild1.jpg" alt="Vesuvio">
-            <img class="pizzaPictures" src="assets/bild2.jpg" alt="Calzone">
-            <img class="pizzaPictures" src="assets/bild3.jpg" alt="Capricciosa">
+            <img class="pizzaPictures" src="assets/bild1.jpg" alt="Picture of pizza">
+            <img class="pizzaPictures" src="assets/bild2.jpg" alt="Picture of pizza">
+            <img class="pizzaPictures" src="assets/bild3.jpg" alt="Picture of pizza">
         </div>
 
         <!-- Creates a list for contact info-->
-        <div id="InfoDiv">
+        <div id="infoDiv">
             <div id="addressDiv" class="infoContainers">
-                <a class="InfoA" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9" target="_blank">Fjällgatan 32H</a>
-                <a class="InfoA" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9" target="_blank">981 39 KIRUNA</a>
+                <a class="infoA" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9" target="_blank">Fjällgatan 32H</a>
+                <a class="infoA" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9" target="_blank">981 39 KIRUNA</a>
             </div>
             <div id="otherInfoDiv" class="infoContainers">
-                <a class="InfoA" href="mailto:info@fantastic4group.gitlab.io">info@fantastic4group.gitlab.io</a>
-                <a class="InfoA" href="tel:0630-555-555">0630-555-555</a>
+                <a class="infoA" href="mailto:info@fantastic4group.gitlab.io">info@fantastic4group.gitlab.io</a>
+                <a class="infoA" href="tel:0630-555-555">0630-555-555</a>
             </div>
         </div>
     </div>

@@ -18,7 +18,7 @@ body {
 }
 
 /* Aligns content in the middle  */
-.ContentDiv {
+.contentDiv {
     margin: auto;
     display: inline-block;
     /* content width is not higher then 1920 pixels*/
@@ -26,7 +26,7 @@ body {
     position: relative;
 }
 
-.Header {
+.header {
     max-width: 1920px;
     margin: auto;
     height: 75px;
@@ -39,14 +39,14 @@ body {
     z-index: 50;
 }
 
-.Header img {
+.header img {
     float: left;
     height: 75px;
     padding: 12.5px;
     box-sizing: border-box;
 }
 
-#Hours {
+#hours {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -116,7 +116,7 @@ ul li:nth-child(even) {
 }
 
 /* The image behind the title */
-.TitleImage {
+.titleImage {
     position: relative;
     background-image: url("../assets/bild4.jpg");
     /* Gives the image a parallax effect */
@@ -126,25 +126,27 @@ ul li:nth-child(even) {
     background-size: cover;
     width: 100%;
     height: 500px;
-    max-height: calc(80vh - 75px);
-    display: flex;
-    justify-content: center;
+    max-height: calc(85vh - 75px);
 }
 
-/* Makes the image slightly transparent for increased text visibility */
-.TitleImage div{
+.titleContainer{
     position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 100%;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    align-items: center;
 }
 
 /* Title of page stays in the middle */
-.Title {
+.title {
     display: inline-block;
     font-size: 50px;
-    margin: auto;
+    margin: 0;
+    line-height: 90px;
     /* To make the border fit around the text in Firefox */
     width: fit-content;
     width: -moz-fit-content;
@@ -157,6 +159,24 @@ ul li:nth-child(even) {
     box-sizing: border-box;
     user-select: none;
     z-index: 2;
+}
+
+#titleNummer{
+    text-align: center;
+    text-decoration: none;
+    font-size: 2em;
+    color: rgb(204, 180, 100);
+    white-space: nowrap;
+}
+
+#titleNummer:nth-of-type(1){
+    margin-left: 6px;
+}
+
+@media screen and (max-width: 344px) {
+    #titleNummer:nth-of-type(2){
+        visibility: hidden;
+    }
 }
 
 /* Align in mobile resolutions */
@@ -176,7 +196,7 @@ ul li:nth-child(even) {
     box-sizing: border-box;
 }
 
-#InfoDiv {
+#infoDiv {
     background-color: rgb(20, 20, 20);
     box-sizing: border-box;
     display: flex;
@@ -188,11 +208,10 @@ ul li:nth-child(even) {
     margin: 0 10px;
 }
 
-.InfoA {
+.infoA {
     display: block;
     color: white;
     margin: 0 auto;
-    padding: 10px 0;
     /* Removes decorations */
     text-decoration: none;
     width: max-content;

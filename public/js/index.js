@@ -37,15 +37,12 @@ let orderCloseButton;
 let orderStatus;
 let listOfZipCodes = [98139, 98140, 98142, 98138]
 
-function getScrollWidth() {
-    console.log(window.innerWidth - document.body.clientWidth)
-    return window.innerWidth - document.body.clientWidth;
-}
+getScrollWidth => window.innerWidth - document.body.clientWidth;
 
 
 // The first function that runs when the page loads
 onload = (() => {
-    contentDiv = document.getElementById("ContentDiv");
+    contentDiv = document.getElementById("contentDiv");
 
     orderButton = document.getElementById("orderButton");
     orderButton.addEventListener("click", () => toggleOverlay(getOverlayState()));
