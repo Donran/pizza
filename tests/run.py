@@ -9,6 +9,10 @@ from pythonTests.picturesTest import PicturesTest
 from pythonTests.daysClosedTest import DaysClosedTest
 from pythonTests.logoTest import LogoTest
 from pythonTests.orderTest import OrderTest
+from pythonTests.contactWebsiteTests.titleTestContact import TitleTestContact
+from pythonTests.contactWebsiteTests.textTestContact import TextTestContact
+from pythonTests.contactWebsiteTests.infoTestContact import InfoTestContact
+from pythonTests.contactWebsiteTests.mapTestContact import MapTestContact
 
 # Configures google web options
 options = webdriver.ChromeOptions()
@@ -55,4 +59,9 @@ if subsite == "index.html":
     PicturesTest(driver, baseDivPath)
     OrderTest(driver, baseDivPath)
 elif subsite == "kontakt.html":
+    LogoTest(driver, baseDivPath)
+    TitleTestContact(driver, baseDivPath)
+    TextTestContact(driver, baseDivPath)
+    InfoTestContact(driver, baseDivPath)
+    MapTestContact(driver, baseDivPath)
     pass
