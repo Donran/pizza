@@ -47,7 +47,7 @@ Plugins för VSCode:
 <br>
 **Skärmupplösning** - 2560x1440, 1920x1080
 <br>
-**Tester** - Selenium IDE Chrome
+**Tester** - Selenium for Python
 <br>
 **Validering** - HTML Validator, CSS Validator
 <br>
