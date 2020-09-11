@@ -6,9 +6,7 @@
 
 /* All the content, have black background, same font, no margin and white color of text*/
 body {
-    margin: auto;
-    /* content width is not higher then 1920 pixels*/
-    max-width: 1920px;
+    margin: 0;
     position: relative;
     min-height: 100vh;
     /* Text styling and background color */
@@ -17,17 +15,14 @@ body {
     background-color: black;
     color: white;
     /* Used to center page content */
-    /* display: grid;
-    grid-template-areas:
-        "."
-        "content"
-        ".";
-    grid-template-rows: auto max-content auto; */
 }
 
 /* Aligns content in the middle  */
 .ContentDiv {
-    /* grid-area: content; */
+    margin: auto;
+    display: inline-block;
+    /* content width is not higher then 1920 pixels*/
+    max-width: 1920px;
     position: relative;
 }
 
@@ -45,7 +40,7 @@ body {
 }
 
 .Header img {
-    display: flex;
+    float: left;
     height: 75px;
     padding: 12.5px;
     box-sizing: border-box;

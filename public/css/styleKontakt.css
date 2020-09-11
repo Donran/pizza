@@ -6,9 +6,7 @@
 
 /* All the content, have black background, same font, no margin and white color of text*/
 body {
-    margin: auto;
-    /* content width is not higher then 1920 pixels*/
-    max-width: 1920px;
+    margin: 0;
     position: relative;
     min-height: 100vh;
     /* Text styling and background color */
@@ -21,6 +19,9 @@ body {
 
 /* Aligns content in the middle  */
 .ContentDiv {
+    margin: auto;
+    /* content width is not higher then 1920 pixels*/
+    max-width: 1920px;
     position: relative;
 }
 
@@ -38,7 +39,7 @@ body {
 }
 
 .Header img {
-    display: flex;
+    float: left;
     height: 75px;
     padding: 12.5px;
     box-sizing: border-box;
@@ -66,13 +67,16 @@ body {
     box-sizing: border-box;
     user-select: none;
     z-index: 2;
+    margin-top: 20px;
 }
 
 #InfoDiv{
     background-color: rgb(20, 20, 20);
-    padding: 0px 100px;
+    padding: 0px 0;
+    width: 100%;
+    max-width: 400px;
     border: 4px solid rgb(204, 180, 100);
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 .InfoA {
