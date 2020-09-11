@@ -46,7 +46,7 @@ print("Fetching from: " + url + subsite)
 driver.get(url + subsite)
 
 # Creates a variable with the base path to make the code more compact and easier to read
-baseDivPath = "/html/body/div[@class='ContentDiv']"
+baseDivPath = "/html/body/div[@class='contentDiv']"
 
 # Calls all of the classes constructors
 if subsite == "index.html":
