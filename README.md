@@ -27,6 +27,8 @@ HTML 5
 CSS 3
 <br>
 Javascript (ECMAScript 2018)
+<br>
+Python 3.8.2
 
 # Utvecklingsmiljöstandard
 **Editor** - Visual Studio Code 1.48.2
@@ -73,10 +75,14 @@ Koden ska gå igenom valideringen
 
 # Tester Dokumentation
 **Hur man sätter upp Selenium for Python för tester**
+1. Installera senaste python och tryck på **Add Python to path**
+1. Starta om datorn
 1. Klona/pulla filerna från GitLab repot Pizza Website
-1. Öppna Git Bash och kör kommandot **cd tests && ./setup.sh**
-1. Sedan kör kommandot **python run.py**
-1. Skriv antingen in 1 för den lokala hostningen av index.html med **VSCode Live Server** eller 2 för hemsidan på GitLab
+1. Öppna **Git Bash** och kör kommandot `cd tests && ./setup.sh`
+1. Sedan kör kommandot **python ./run.py -s argument1 -p argument2 -f argument3**
+1. Scriptet tar argument. Argument1 kan antingen vara "local" eller "web". Local betyder att testa localhosten och web betyder att testa live sidan på gitlab
+1. Argument2 spelar igentligen roll om argument1 är "local" då du ska skriva in localhost porten. Standard porten är 5500. Om din localhost port är 5500 så behöver du inte använda detta argument
+1. Argument3 är för att välja vilken html fil som ska testas. Ex är "index.html" eller "kontakt.html"
 1. Om allting dyker upp utan errors så hittar testerna allting
  
 **Hur man skapar ett test i Selenium for Python**
