@@ -11,7 +11,6 @@ from pythonTests.picturesTest import PicturesTest
 from pythonTests.daysClosedTest import DaysClosedTest
 from pythonTests.logoTest import LogoTest
 from pythonTests.orderTest import OrderTest
-from pythonTests.navbarTest import NavbarTest
 from pythonTests.contactWebsiteTests.titleTestContact import TitleTestContact
 from pythonTests.contactWebsiteTests.textTestContact import TextTestContact
 from pythonTests.contactWebsiteTests.infoTestContact import InfoTestContact
@@ -57,10 +56,8 @@ if file == "index.html":
     PicturesTest(driver)
     #OrderTest(driver)
     #InfoTest(driver)
-    NavbarTest(driver)
 elif file == "kontakt.html":
     LogoTest(driver)
-    NavbarTest(driver)
     TitleTestContact(driver)
     TextTestContact(driver)
     InfoTestContact(driver)

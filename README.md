@@ -12,13 +12,14 @@ Hemsida: https://fantastic4group.gitlab.io/pizza-website
 <br>
 **Kommentarer:** Engelska över funktionen, mellanslag mellan "//" och meningen, stor bokstav
 <br>
-**Namngivning:** Engelska, Klasser med storbokstav (UpperCamelCase)
+**Namngivning:** Engelska
 <br>
-**Variabel:** let, stor bokstav som delar upp flera ord i en variabel som "pizzaFooter". Liten bokstav i början (lowerCamelCase)
+**Variabel:** let, stor bokstav som delar upp flera ord i en variabel som "pizzaFooter". Liten bokstav i början
 <br>
 **Funktioner:** non lambda functions
 <br>
-**HTML/CSS:** Bara CSS inline i HTML filen när det är någonting som ändras med JavaScript
+**HTML/CSS:** 
+- Bara CSS inline i HTML filen när det är någonting som ändras med JavaScript
 
 # Programmeringsspråk
 HTML 5
@@ -26,8 +27,6 @@ HTML 5
 CSS 3
 <br>
 Javascript (ECMAScript 2018)
-<br>
-Python 3.8.2
 
 # Utvecklingsmiljöstandard
 **Editor** - Visual Studio Code 1.48.2
@@ -74,14 +73,10 @@ Koden ska gå igenom valideringen
 
 # Tester Dokumentation
 **Hur man sätter upp Selenium for Python för tester**
-1. Installera senaste python och tryck på **Add Python to path**
-1. Starta om datorn
 1. Klona/pulla filerna från GitLab repot Pizza Website
-1. Öppna **Git Bash** och kör kommandot `cd tests && ./setup.sh`
-1. Sedan kör kommandot **python ./run.py -s argument1 -p argument2 -f argument3**
-1. Scriptet tar argument. Argument1 kan antingen vara "local" eller "web". Local betyder att testa localhosten och web betyder att testa live sidan på gitlab
-1. Argument2 spelar igentligen roll om argument1 är "local" då du ska skriva in localhost porten. Standard porten är 5500. Om din localhost port är 5500 så behöver du inte använda detta argument
-1. Argument3 är för att välja vilken html fil som ska testas. Ex är "index.html" eller "kontakt.html"
+1. Öppna Git Bash och kör kommandot **cd tests && ./setup.sh**
+1. Sedan kör kommandot **python run.py**
+1. Skriv antingen in 1 för den lokala hostningen av index.html med **VSCode Live Server** eller 2 för hemsidan på GitLab
 1. Om allting dyker upp utan errors så hittar testerna allting
  
 **Hur man skapar ett test i Selenium for Python**
@@ -90,11 +85,10 @@ Koden ska gå igenom valideringen
 1. Skapa en ny python fil i mappen **pythonTests** med namnet på testet
 1. Importera sedan webdriver från selenium: `from selenium import webdriver`
 1. Skapa sedan en klass med samma namn som filen fast med stor bokstav i början
-1. Skapa en `__init__` funktion med variablerna **driver** och **baseDivPath**: `def __init__(self, driver: webdriver.Chrome):`
+1. Skapa en `__init__` funktion med variablerna **driver** och **baseDivPath**: `def __init__(self, driver: webdriver.Chrome, baseDivPath: str):`
 1. Navigera till run.py filen och importera testet du skapat genom att skriva: `from pythonTests.(namn på testfilen) import TestKlassen`
-1. Navigera tillbaka till test filen
-1. Om du t.ex vill hitta texten i en h1 tagg med ID:et “title” så skriver du: 
-`variabel1 = driver.find_element_by_id("title").text`
+1. Om du t.ex vill hitta texten i en h1 tagg med ID:et “Title” så skriver du: 
+`variabel1 = driver.find_element_by_xpath("/html/body/h1[@id=’Title’]").text`
 1. Efter du hämtar någonting från hemsidan så måste du använda `assert` för att veta om det du har hämtat är korrekt
 1. Ett exempel skulle vara om du ville kontrollera om **variabel1** inte är en tom string: `assert variabel1 != “”`
 
