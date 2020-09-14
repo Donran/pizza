@@ -51,19 +51,21 @@ onload = (() => {
     // Adds a key listener to the overlay input element and registers a search when the Enter key is pressed
     textInputElement.addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
+            // Prevents the default function of the Enter key
             event.preventDefault();
             orderSearchButton.click();
         }
     });
 
     reorderListByClosestDate(document.getElementById("closedDays"));
+    window.list = reorderListByClosestDate(document.getElementById("closedDays"), true)
 });
 
 /**
  * The function that gets and reorders the list passed to the function
  * @param {HTMLElement} listElement 
  */
-function reorderListByClosestDate(listElement) {
+function reorderListByClosestDate(listElement, test = false) {
     // The list of all of the child nodes 
     let list = listElement.children;
     for (let index = 0; index < list.length; index++) {
@@ -129,6 +131,9 @@ function reorderListByClosestDate(listElement) {
     });
     // Appends each element from the array to the HTML li
     childrenList.forEach(element => listElement.appendChild(element));
+    if (test) {
+        return list;
+    }
 }
 
 function getOverlayDataState() {
