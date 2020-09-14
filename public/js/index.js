@@ -48,21 +48,22 @@ onload = (() => {
     orderSearchButton.addEventListener("click", () => getZipCodeFromInput());
 
     textInputElement = document.getElementById("orderInput");
+    // Adds a key listener to the overlay input element and registers a search when the Enter key is pressed
     textInputElement.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
+        if (event.key === "Enter") {
             event.preventDefault();
             orderSearchButton.click();
         }
     });
 
-    getDaysUntil(document.getElementById("closedDays"));
+    reorderListByClosestDate(document.getElementById("closedDays"));
 });
 
 /**
  * The function that gets and reorders the list passed to the function
  * @param {HTMLElement} listElement 
  */
-function getDaysUntil(listElement) {
+function reorderListByClosestDate(listElement) {
     // The list of all of the child nodes 
     let list = listElement.children;
     for (let index = 0; index < list.length; index++) {
@@ -153,7 +154,10 @@ function toggleOverlayVisibility(overlayBool) {
     // Change the attribute to visible or hidden depending on the overlayBool value
     overlayDiv.setAttribute("data-state", overlayBool ? "hidden" : "visible");
     if (!overlayBool) {
-        // When the overlay should hide
+        // When the overlay should be shown
+        // Reset the value shown
+        if (!orderStatusElement) orderStatusElement = document.getElementById("orderStatus");
+        orderStatusElement.textContent = "Skriv in ditt postnummer";
         // Add the current scroll position
         currentScrollPosition = window.scrollY;
         // Uses the scrollPosition to force the scroll position to stay in its place
@@ -173,7 +177,7 @@ function toggleOverlayVisibility(overlayBool) {
         // Set the opacity to 1 to start the transition
         overlayDiv.style.opacity = 1;
     } else {
-        // Show overlay
+        // Hide overlay
         // Removes the listener to allow the user to scroll
         window.removeEventListener('scroll', noScroll);
         // Remove the window eventListener

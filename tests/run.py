@@ -11,6 +11,7 @@ from pythonTests.picturesTest import PicturesTest
 from pythonTests.daysClosedTest import DaysClosedTest
 from pythonTests.logoTest import LogoTest
 from pythonTests.orderTest import OrderTest
+from pythonTests.navbarTest import NavbarTest
 from pythonTests.contactWebsiteTests.titleTestContact import TitleTestContact
 from pythonTests.contactWebsiteTests.textTestContact import TextTestContact
 from pythonTests.contactWebsiteTests.infoTestContact import InfoTestContact
@@ -49,6 +50,7 @@ driver.get(url + file)
 # Calls all of the classes constructors
 if file == "index.html":
     LogoTest(driver) 
+    NavbarTest(driver)
     TitleTest(driver)
     OpeningHoursTest(driver)
     DaysClosedTest(driver)
@@ -58,6 +60,7 @@ if file == "index.html":
     InfoTest(driver)
 elif file == "kontakt.html":
     LogoTest(driver)
+    NavbarTest(driver)
     TitleTestContact(driver)
     TextTestContact(driver)
     InfoTestContact(driver)
