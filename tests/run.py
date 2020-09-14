@@ -1,5 +1,7 @@
 # Imports Selenium python module
 from selenium import webdriver
+# Imports the module for commandline arguments
+import argparse
 # Imports all of the classes from the files in the "pythonTests" directory
 from pythonTests.menuTest import MenuTest
 from pythonTests.infoTest import InfoTest
@@ -14,36 +16,35 @@ from pythonTests.contactWebsiteTests.textTestContact import TextTestContact
 from pythonTests.contactWebsiteTests.infoTestContact import InfoTestContact
 from pythonTests.contactWebsiteTests.mapTestContact import MapTestContact
 
+parser = argparse.ArgumentParser(description='Test website')
+
+parser.add_argument("--source", '-s', default="web", choices=["local", "web"])
+parser.add_argument("--port", '-p', default="5500", help="The port to use when using localhost")
+parser.add_argument("--file", '-f', default="index.html", help="Select the file to test")
+args = vars(parser.parse_args())
+
+source = args["source"]
+port = args["port"]
+file = args["file"]
+
 # Configures google web options
 options = webdriver.ChromeOptions()
 options.add_argument("--headless")
 driver = webdriver.Chrome(options=options)
 
-# Ask what host you want
-print("""1. localhost
-2. public website""")
-choice = input("Choose: ")
-
 # Configures two alternatives
 url = ""
-if choice == "1":
-    port = input("Choose port (default should be 5500): ")
+if str(source) == "local":
     url = "http://localhost:" + port + "/public/"
-elif choice == "2":
+elif str(source) == "web":
     url = "https://fantastic4group.gitlab.io/pizza-website/"
 
-print("""1. index.html
-2. kontakt.html""")
-subSiteChoice = input("Choice: ")
-if int(subSiteChoice) == 1:
-    subsite = "index.html"
-elif int(subSiteChoice) == 2:
-    subsite = "kontakt.html"
 
-print("Fetching from: " + url + subsite)
+print("Fetching from: " + url + file)
+print("")
 
 # Opens the chosen URL
-driver.get(url + subsite)
+driver.get(url + file)
 
 # Calls all of the classes constructors
 if subsite == "index.html":
