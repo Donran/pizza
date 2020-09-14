@@ -2,7 +2,7 @@
 from selenium import webdriver
 
 class LogoTest:
-    def __init__(self, driver: webdriver.Chrome, baseDivPath: str):
+    def __init__(self, driver: webdriver.Chrome):
 
         print("")
 

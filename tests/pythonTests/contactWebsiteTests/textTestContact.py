@@ -3,7 +3,7 @@ from selenium import webdriver
 
 
 class TextTestContact:
-    def __init__(self, driver: webdriver.Chrome, baseDivPath: str):
+    def __init__(self, driver: webdriver.Chrome):
 
         print("")
 
