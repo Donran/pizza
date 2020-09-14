@@ -12,14 +12,13 @@ Hemsida: https://fantastic4group.gitlab.io/pizza-website
 <br>
 **Kommentarer:** Engelska över funktionen, mellanslag mellan "//" och meningen, stor bokstav
 <br>
-**Namngivning:** Engelska
+**Namngivning:** Engelska, Klasser med storbokstav (UpperCamelCase)
 <br>
-**Variabel:** let, stor bokstav som delar upp flera ord i en variabel som "pizzaFooter". Liten bokstav i början
+**Variabel:** let, stor bokstav som delar upp flera ord i en variabel som "pizzaFooter". Liten bokstav i början (lowerCamelCase)
 <br>
 **Funktioner:** non lambda functions
 <br>
-**HTML/CSS:** 
-- Bara CSS inline i HTML filen när det är någonting som ändras med JavaScript
+**HTML/CSS:** Bara CSS inline i HTML filen när det är någonting som ändras med JavaScript
 
 # Programmeringsspråk
 HTML 5
@@ -91,10 +90,11 @@ Koden ska gå igenom valideringen
 1. Skapa en ny python fil i mappen **pythonTests** med namnet på testet
 1. Importera sedan webdriver från selenium: `from selenium import webdriver`
 1. Skapa sedan en klass med samma namn som filen fast med stor bokstav i början
-1. Skapa en `__init__` funktion med variablerna **driver** och **baseDivPath**: `def __init__(self, driver: webdriver.Chrome, baseDivPath: str):`
+1. Skapa en `__init__` funktion med variablerna **driver** och **baseDivPath**: `def __init__(self, driver: webdriver.Chrome):`
 1. Navigera till run.py filen och importera testet du skapat genom att skriva: `from pythonTests.(namn på testfilen) import TestKlassen`
-1. Om du t.ex vill hitta texten i en h1 tagg med ID:et “Title” så skriver du: 
-`variabel1 = driver.find_element_by_xpath("/html/body/h1[@id=’Title’]").text`
+1. Navigera tillbaka till test filen
+1. Om du t.ex vill hitta texten i en h1 tagg med ID:et “title” så skriver du: 
+`variabel1 = driver.find_element_by_id("title").text`
 1. Efter du hämtar någonting från hemsidan så måste du använda `assert` för att veta om det du har hämtat är korrekt
 1. Ett exempel skulle vara om du ville kontrollera om **variabel1** inte är en tom string: `assert variabel1 != “”`
 
