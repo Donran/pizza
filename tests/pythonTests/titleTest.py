@@ -17,11 +17,13 @@ class TitleTest:
         titleImage = driver.find_element_by_id("titleImageTest")
         # Write image patch
         print(titleImage.get_attribute("url"))
+        
         # Find the title phone number by id
         titleNumber = driver.find_element_by_id("titlePhoneNumberTest").text
         # Write title patch
         assert "0630-555-555" in titleNumber
         print(titleNumber)
+
         # Find the title adress by id
         titleAdress = driver.find_element_by_id("titleAdressTest").text
         # Write title patch

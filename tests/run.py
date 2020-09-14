@@ -47,7 +47,7 @@ print("")
 driver.get(url + file)
 
 # Calls all of the classes constructors
-if subsite == "index.html":
+if file == "index.html":
     LogoTest(driver) 
     TitleTest(driver)
     OpeningHoursTest(driver)
@@ -56,7 +56,7 @@ if subsite == "index.html":
     PicturesTest(driver)
     #OrderTest(driver)
     #InfoTest(driver)
-elif subsite == "kontakt.html":
+elif file == "kontakt.html":
     LogoTest(driver)
     TitleTestContact(driver)
     TextTestContact(driver)
