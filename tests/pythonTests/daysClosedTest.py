@@ -6,7 +6,7 @@ class DaysClosedTest:
 
         print("")
 
-        #Find the closed day list by id
+        # Find closed days list by id
         closedDays = driver.find_elements_by_id("closedDays")
         # For loop that loops through all the items in the list and prints them
         for item in closedDays:

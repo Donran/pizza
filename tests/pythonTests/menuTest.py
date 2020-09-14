@@ -7,7 +7,7 @@ class MenuTest:
      
         print("")
 
-        #Find the closed day list by id
+        # Find menu by id
         menu = driver.find_elements_by_id("menu")
         # For loop that loops through all the items in the list and prints them
         for item in menu:

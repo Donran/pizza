@@ -7,13 +7,13 @@ class InfoTestContact:
 
         print("")
 
-        # Find the text by id
-        text = driver.find_element_by_id("adress").text
+        # Find address by id
+        text = driver.find_element_by_id("address").text
         # If not true, returns error
         assert "Fjällgatan 32H" in text
         print(text)
 
-        # Find the text by id
+        # Find zipcode by id
         text = driver.find_element_by_id("zipCode").text
         # If not true, returns error
         assert "981 39 KIRUNA" in text
@@ -21,14 +21,14 @@ class InfoTestContact:
 
         print("")
 
-        # Find the email by id
+        # Find email by id
         text = driver.find_element_by_id("email")
-        # Write emails patch
+        # Write email href
         print(text.get_attribute("href"))
 
         print("")
 
-        # Find the mobile by id
-        adress = driver.find_element_by_id("phoneNumber")
-        # Write mobiles patch
-        print(adress.get_attribute("href"))
+        # Find phone number by id
+        address = driver.find_element_by_id("phoneNumber")
+        # Write mobile href
+        print(address.get_attribute("href"))

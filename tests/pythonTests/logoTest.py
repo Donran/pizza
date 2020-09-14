@@ -8,5 +8,5 @@ class LogoTest:
 
         # Find the logo picture by id
         logo = driver.find_element_by_id("logo")
-        # Write logos patch
+        # Write logo source
         print(logo.get_attribute("src"))
