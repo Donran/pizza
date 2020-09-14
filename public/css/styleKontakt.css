@@ -51,7 +51,7 @@ body {
 }
 
 /* Title of page stays in the middle */
-.title {
+#title {
     display: inline-block;
     font-size: 50px;
     margin: auto;
@@ -128,7 +128,7 @@ h2{
     color: rgb(204, 180, 100);
 }
 
-.contact {
+.contactDiv {
     box-sizing: border-box;
     display: flex;
     justify-content: space-evenly;
