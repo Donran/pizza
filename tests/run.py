@@ -47,14 +47,14 @@ driver.get(url + subsite)
 
 # Calls all of the classes constructors
 if subsite == "index.html":
-    LogoTest(driver)
-    #InfoTest(driver)
-    #OpeningHoursTest(driver)
-    #DaysClosedTest(driver)
+    LogoTest(driver) 
     TitleTest(driver)
-    #MenuTest(driver)
-    #PicturesTest(driver)
+    OpeningHoursTest(driver)
+    DaysClosedTest(driver)
+    MenuTest(driver)
+    PicturesTest(driver)
     #OrderTest(driver)
+    #InfoTest(driver)
 elif subsite == "kontakt.html":
     LogoTest(driver)
     TitleTestContact(driver)

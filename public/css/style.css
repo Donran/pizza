@@ -206,7 +206,7 @@ ul li:nth-child(even) {
     justify-content: space-evenly;
 }
 
-.infoContainers{
+.footerContainers{
     margin: 0 10px;
 }
 
@@ -221,7 +221,7 @@ ul li:nth-child(even) {
     line-height: 20px;
 }
 
-.infoA {
+.infoLink {
     display: block;
     color: white;
     margin: 0 auto;

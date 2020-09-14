@@ -8,7 +8,7 @@ class TextTestContact:
         print("")
 
         # Find the text by id
-        text = driver.find_element_by_id("text").text
+        text = driver.find_element_by_id("welcomeText").text
         # If not true, returns error
         assert "HITTA HIT TILL OSS!" in text
         print(text)

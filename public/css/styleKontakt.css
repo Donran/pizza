@@ -128,7 +128,7 @@ h2{
     color: rgb(204, 180, 100);
 }
 
-.contact {
+.contactDiv {
     box-sizing: border-box;
     display: flex;
     justify-content: space-evenly;

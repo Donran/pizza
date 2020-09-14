@@ -8,13 +8,13 @@ class InfoTestContact:
         print("")
 
         # Find the text by id
-        text = driver.find_element_by_id("adress1").text
+        text = driver.find_element_by_id("adress").text
         # If not true, returns error
         assert "Fjällgatan 32H" in text
         print(text)
 
         # Find the text by id
-        text = driver.find_element_by_id("adress2").text
+        text = driver.find_element_by_id("zipCode").text
         # If not true, returns error
         assert "981 39 KIRUNA" in text
         print(text)
@@ -29,6 +29,6 @@ class InfoTestContact:
         print("")
 
         # Find the mobile by id
-        adress = driver.find_element_by_id("tele")
+        adress = driver.find_element_by_id("phoneNumber")
         # Write mobiles patch
         print(adress.get_attribute("href"))

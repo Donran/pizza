@@ -8,7 +8,7 @@ class TitleTestContact:
         print("")
 
         # Find the title by id
-        title = driver.find_element_by_id("title").text
+        title = driver.find_element_by_id("titleTextTest").text
         # If not true, returns error
         assert "PIZZERIA SANTOS" in title
         print(title)

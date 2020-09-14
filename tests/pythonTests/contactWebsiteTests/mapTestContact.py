@@ -8,6 +8,6 @@ class MapTestContact:
         print("")
 
         # Find map by id
-        gMap = driver.find_element_by_id("gMap")
+        gMap = driver.find_element_by_id("googleMaps")
         # If not true, returns error
         print(gMap.get_attribute("src"))

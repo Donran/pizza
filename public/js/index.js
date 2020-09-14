@@ -28,13 +28,13 @@ let contentDiv;
 
 let windowClickEvent;
 /**@type {HTMLInputElement} */
-let textInput;
+let textInputElement;
 /**@type {HTMLDivElement} */
 let orderSearchButton;
 /**@type {HTMLDivElement} */
 let orderCloseButton;
 /**@type {HTMLSpanElement} */
-let orderStatus;
+let orderStatusElement;
 let listOfZipCodes = [98139, 98140, 98142, 98138]
 
 // The first function that runs when the page loads
@@ -42,13 +42,13 @@ onload = (() => {
     contentDiv = document.getElementById("contentDiv");
 
     orderButton = document.getElementById("orderButton");
-    orderButton.addEventListener("click", () => toggleOverlay(getOverlayState()));
+    orderButton.addEventListener("click", () => toggleOverlayVisibility(getOverlayDataState()));
 
     orderSearchButton = document.getElementById("orderConfirmButton");
-    orderSearchButton.addEventListener("click", () => getNumber());
+    orderSearchButton.addEventListener("click", () => getZipCodeFromInput());
 
-    textInput = document.getElementById("orderInput");
-    textInput.addEventListener("keyup", function (event) {
+    textInputElement = document.getElementById("orderInput");
+    textInputElement.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
             event.preventDefault();
             orderSearchButton.click();
@@ -71,14 +71,14 @@ function getDaysUntil(listElement) {
 
         // Initial variables
         let daysBetween = 0;
-        let sameDay = false;
+        let isSameDay = false;
 
         // Splitting the dates into an array with month and year
         let dateSplit = dateString.split(" ");
 
         // Creates variables with the month/date numbers as value
         let monthNumber = listOfMonths[dateSplit[1]]
-        let dateNumber = dateSplit[0];
+        let dayNumber = dateSplit[0];
 
         // Creates the same variables above but with the current month and date
         let monthNowNumber = dateNow.getMonth() + 1;
@@ -95,22 +95,22 @@ function getDaysUntil(listElement) {
             year = dateNow.getFullYear();
         } else {
             // Same Month
-            if (dateNumber < dayNowNumber) {
+            if (dayNumber < dayNowNumber) {
                 // When the date is smaller than the current date
                 // We know that it's next year
                 year = dateNow.getFullYear() + 1;
-            } else if (dateNumber > dayNowNumber) {
+            } else if (dayNumber > dayNowNumber) {
                 // When the date is larger than the current date
                 // We know that it's this year
                 year = dateNow.getFullYear();
             } else {
                 // Same day
-                sameDay = true;
+                isSameDay = true;
             }
         }
-        if (!sameDay) {
+        if (!isSameDay) {
             // Calculate the number of days left when the date isn't the current date
-            let date = Date.parse(monthNumber + " " + dateNumber + " " + year);
+            let date = Date.parse(monthNumber + " " + dayNumber + " " + year);
             let deltaTime = new Date(date).getTime() - dateNow.getTime();
             daysBetween = Math.ceil(deltaTime / (1000 * 60 * 60 * 24));
         }
@@ -130,7 +130,7 @@ function getDaysUntil(listElement) {
     childrenList.forEach(element => listElement.appendChild(element));
 }
 
-function getOverlayState() {
+function getOverlayDataState() {
     // If the element is undefined, get the element
     if (!overlayDiv) overlayDiv = document.getElementById("orderOverlay");
     // Get the attribute value
@@ -139,30 +139,33 @@ function getOverlayState() {
     return currentState == "visible" ? true : false;
 }
 
+/**
+ * Disables scroll by locking the scroll to the variable currentScrollPosition
+ */
 function noScroll() {
-    window.scrollTo(0, scrollPosition);
+    window.scrollTo(0, currentScrollPosition);
 }
 
-let scrollPosition = 0;
+let currentScrollPosition = 0;
 
-function toggleOverlay(overlayBool) {
+function toggleOverlayVisibility(overlayBool) {
     if (!overlayDiv) overlayDiv = document.getElementById("orderOverlay");
     // Change the attribute to visible or hidden depending on the overlayBool value
     overlayDiv.setAttribute("data-state", overlayBool ? "hidden" : "visible");
     if (!overlayBool) {
         // When the overlay should hide
         // Add the current scroll position
-        scrollPosition = window.scrollY;
+        currentScrollPosition = window.scrollY;
         // Uses the scrollPosition to force the scroll position to stay in its place
         window.addEventListener('scroll', noScroll);
         // When clicking the outerDiv, close the overlay
         windowClickEvent = window.addEventListener("mousedown", (event) => {
-            if (event.target == overlayDiv) toggleOverlay(true);
+            if (event.target == overlayDiv) toggleOverlayVisibility(true);
         });
         // If the element is undefined, get the element
         if (!orderCloseButton) orderCloseButton = document.getElementById("orderCloseButton");
         // Set an event listener to the close button
-        orderCloseButton.addEventListener("click", (event) => toggleOverlay(true));
+        orderCloseButton.addEventListener("click", (event) => toggleOverlayVisibility(true));
         // Sets the display of the overlay to flex
         overlayDiv.style.display = "block";
         // Call width to update the component after display change to fix transition not working
@@ -182,29 +185,28 @@ function toggleOverlay(overlayBool) {
     }
 }
 
-function getNumber() {
-    /** @type {String} */
+function getZipCodeFromInput() {
     // Replace all of the spaces and dashes with an empty space
-    let value = textInput.value.replace(" ", "").replace("-", "");
+    let inputValue = textInputElement.value.replace(" ", "").replace("-", "");
     // The default result
-    let result = "Vi levererar inte till dig";
+    let finalResult = "Vi levererar inte till dig";
     // If the text only contains numbers
-    if (value.match(RegExp("^[0-9]+$"))) {
+    if (inputValue.match(RegExp("^[0-9]+$"))) {
         // To check if the given number matches any of the 
         for (let index = 0; index < listOfZipCodes.length; index++) {
             // If the number matches
-            if (listOfZipCodes[index].toString() == value) {
+            if (listOfZipCodes[index].toString() == inputValue) {
                 // Change the result if the number matches
-                result = "Vi levererar till dig";
+                finalResult = "Vi levererar till dig";
                 // End the loop
                 index = listOfZipCodes.length;
             }
         }
     }
     // If the value wasn't typed in
-    if (value == "") result = "Skriv in ditt postnummer";
+    if (inputValue == "") finalResult = "Skriv in ditt postnummer";
     // If the element is undefined, get the element
-    if (!orderStatus) orderStatus = document.getElementById("orderStatus");
+    if (!orderStatusElement) orderStatusElement = document.getElementById("orderStatus");
     // Show the message to the user
-    orderStatus.textContent = result;
+    orderStatusElement.textContent = finalResult;
 }

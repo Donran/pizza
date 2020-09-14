@@ -3,15 +3,12 @@ from selenium import webdriver
 
 
 class PicturesTest:
-    def __init__(self, driver: webdriver.Chrome, baseDivPath: str):
-        divPath = baseDivPath + "/div[@class='pictures']"
+    def __init__(self, driver: webdriver.Chrome):
 
         print("")
 
-        # Find title h1
-        images: list = driver.find_elements_by_xpath(divPath + "/img[@class='pizzaPictures']")
-        # If not true, returns error
-        assert len(images) != 0
-        # Loops through all of the images and prints the src
-        for item in images:
-            print(item.get_attribute("src"))
+        #Find the images by class name
+        imagesTest = driver.find_elements_by_class_name("pizzaPictures")
+        # For loop that loops through all the items in the div and prints their source
+        for item in imagesTest:
+             print(item.get_attribute("src"))
