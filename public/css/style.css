@@ -162,7 +162,7 @@ ul li:nth-child(even) {
     z-index: 2;
 }
 
-#titleNummer{
+.titleInformation{
     text-align: center;
     text-decoration: none;
     font-size: 2em;
@@ -170,13 +170,13 @@ ul li:nth-child(even) {
     white-space: nowrap;
 }
 
-#titleNummer:nth-of-type(1){
+.titleInformation:nth-of-type(1){
     margin-left: 6px;
 }
 
 /* Hides the '|' when the width reaches the point where the text wraps */
 @media screen and (max-width: 344px) {
-    #titleNummer:nth-of-type(2){
+    .titleInformation:nth-of-type(2){
         visibility: hidden;
     }
 }
