@@ -55,7 +55,7 @@ if file == "index.html":
     MenuTest(driver)
     PicturesTest(driver)
     #OrderTest(driver)
-    #InfoTest(driver)
+    InfoTest(driver)
 elif file == "kontakt.html":
     LogoTest(driver)
     TitleTestContact(driver)

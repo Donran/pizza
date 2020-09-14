@@ -3,28 +3,34 @@ from selenium import webdriver
 
 
 class InfoTest:
-    def __init__(self, driver: webdriver.Chrome, baseDivPath: str):
-        divpath = baseDivPath + "/div[@id='InfoDiv']"
+    def __init__(self, driver: webdriver.Chrome):
+        
         print("")
-        # Find address
-        address = driver.find_elements_by_xpath(
-            divpath + "/div[@id='addressDiv']/a[@href='https://goo.gl/maps/2aqFdNDscvCgKKQR9']")
-        # If not true, returns error
-        print(address)
-        assert len(address) != 0
-        for item in range(len(address)):
-             print(address[item].text)
 
-        # Find email
-        address = driver.find_element_by_xpath(
-            divpath + "/div[@id='otherInfoDiv']/a[@href='mailto:info@fantastic4group.gitlab.io']").text
+        # Find address by id
+        footerAddressText = driver.find_element_by_id("footerAddress").text
         # If not true, returns error
-        assert address != ""
-        print(address)
+        assert "Fjällgatan 32H" in footerAddressText
+        print(footerAddressText)
 
-        # Find phone number
-        address = driver.find_element_by_xpath(
-            divpath + "/div[@id='otherInfoDiv']/a[@href='tel:0630-555-555']").text
+        # Find address link 
+        footerAddress = driver.find_element_by_id("footerAddress")
+        print(footerAddress.get_attribute("href"))
+
+        # Find zipcode by id
+        footerZipCodeText = driver.find_element_by_id("footerZipCode").text
         # If not true, returns error
-        assert address != ""
-        print(address)
+        assert "981 39 KIRUNA" in footerZipCodeText
+        print(footerZipCodeText)
+
+        # Find zipcode link
+        footerZipCode = driver.find_element_by_id("footerZipCode")
+        print(footerZipCode.get_attribute("href"))
+
+        # Find email by id
+        footerEmail = driver.find_element_by_id("footerEmail")
+        print(footerEmail.get_attribute("href"))
+
+        # Find phone number by id
+        footerPhoneNumber = driver.find_element_by_id("footerPhoneNumber")
+        print(footerPhoneNumber.get_attribute("href"))
