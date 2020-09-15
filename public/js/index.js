@@ -10,9 +10,11 @@ let listOfMonths = {
     "maj": 5,
     "juni": 6,
     "juli": 7,
-    "september": 8,
-    "november": 9,
-    "december": 10,
+    "augusti": 8,
+    "september": 9,
+    "oktober": 10,
+    "november": 11,
+    "december": 12,
 }
 
 /**@type {HTMLHeadingElement} */
