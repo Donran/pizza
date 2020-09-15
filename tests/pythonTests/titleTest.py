@@ -15,8 +15,8 @@ class TitleTest:
 
         # Find title image by id
         titleImage = driver.find_element_by_id("titleImageTest")
-        # Find title image url
-        print(titleImage.get_attribute("url"))
+        # Find title image by style property
+        print(titleImage.value_of_css_property("background-image"))
         
         # Find title phone number by id
         titlePhoneNumber = driver.find_element_by_id("titlePhoneNumberTest").text

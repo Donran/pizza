@@ -17,12 +17,14 @@ from pythonTests.contactWebsiteTests.textTestContact import TextTestContact
 from pythonTests.contactWebsiteTests.infoTestContact import InfoTestContact
 from pythonTests.contactWebsiteTests.mapTestContact import MapTestContact
 
-
+# Initializing argument parser
 parser = argparse.ArgumentParser(description='Test website')
 
-
+# Choose between a local file or webhosted file
 parser.add_argument("--source", '-s', default="web", choices=["local", "web"])
+# The port to use when using localhost
 parser.add_argument("--port", '-p', default="5500", help="The port to use when using localhost")
+# Select the file to test
 parser.add_argument("--file", '-f', default="index.html", help="Select the file to test")
 args = vars(parser.parse_args())
 
