@@ -117,3 +117,7 @@ Koden valideras automatiskt via CI när man har pushat den. Annars kan man valid
 - Typsnitt är licensierat under Open Font License(OFL) http://scripts.sil.org/OFL
 - Bild under titeln är licensierat under Pixabay License, gratis för kommersiellt bruk https://pixabay.com/sv/photos/pizza-mat-italian-bakad-ost-3007395/
 - Bild i footer är från våran Product Owner
+
+# Problemlogg 
+
+- Använder man **flex-direction: row** (default om man inte specifierar något annat om **display: flex**) kan det behövas att lägga till **align-items: flex-start** för att fixa att vissa objekt inte stretchar i Safari (ex. bilder).
