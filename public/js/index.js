@@ -17,24 +17,46 @@ let listOfMonths = {
     "december": 12,
 }
 
-/**@type {HTMLHeadingElement} */
+/**@type {HTMLHeadingElement} 
+ * The button that shows the overlay
+*/
 let orderButton;
 
-/** @type {HTMLDivElement} */
+/** @type {HTMLDivElement}
+ * The whole overlay
+ */
 let overlayDiv;
 
-/** @type {HTMLDivElement} */
+/** @type {HTMLDivElement}
+ * The div that contains all of the overlay content inside of the overlayDiv
+ */
 let contentDiv;
 
+/** 
+ * The Window click event that closes the overlay when clicked on
+ */
 let windowClickEvent;
-/**@type {HTMLInputElement} */
+
+/**@type {HTMLInputElement}
+ * The overlay input element
+ */
 let textInputElement;
-/**@type {HTMLDivElement} */
+
+/**@type {HTMLDivElement} 
+ * The overlay search button
+*/
 let orderSearchButton;
-/**@type {HTMLDivElement} */
+
+/**@type {HTMLDivElement}
+ * The overlay close button
+ */
 let orderCloseButton;
-/**@type {HTMLSpanElement} */
+
+/**@type {HTMLSpanElement} 
+ * The span that shows the user if their zip-code is valid
+*/
 let orderStatusElement;
+
 let listOfZipCodes = [98139, 98140, 98142, 98138]
 
 // The first function that runs when the page loads
@@ -62,10 +84,14 @@ onload = (() => {
 });
 
 /**
- * The function that gets and reorders the list passed to the function
- * @param {HTMLElement} listElement 
+ * The function that gets and reorders the list passed to the function. 
+ * It gets the current order and converts the text to a Date variable.
+ * If the variables month number is larger than the current month number, it knows that it's this year
+ * Else if the variables month number is smaller, it knows that it's next year
+ * It then calculate the difference in days between the dates and sort the children and re-append the children to the original element (listElement)
+ * @param {HTMLElement} listElement The list element with the dates as children
  */
-function reorderListByClosestDate(listElement, test = false) {
+function reorderListByClosestDate(listElement) {
     // The list of all of the child nodes 
     let list = listElement.children;
     for (let index = 0; index < list.length; index++) {
@@ -131,9 +157,6 @@ function reorderListByClosestDate(listElement, test = false) {
     });
     // Appends each element from the array to the HTML li
     childrenList.forEach(element => listElement.appendChild(element));
-    if (test) {
-        return list;
-    }
 }
 
 function getOverlayDataState() {
