@@ -50,6 +50,8 @@ body {
 #hours {
     width: 100%;
     display: flex;
+    /* Support for old Safari & Chrome */
+    display: -webkit-flex;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -108,6 +110,8 @@ ul li {
     text-align: left;
     /* Aligns weekdays and time to different sides */
     display: flex;
+    /* Support for old Safari & Chrome */
+    display: -webkit-flex;
     justify-content: space-between;
 }
 
@@ -137,6 +141,8 @@ ul li:nth-child(even) {
     height: 100%;
     z-index: 1;
     display: flex;
+    /* Support for old Safari & Chrome */
+    display: -webkit-flex;
     justify-content: center;
     flex-flow: column wrap;
     align-items: center;
@@ -184,8 +190,10 @@ ul li:nth-child(even) {
 /* Align in mobile resolutions */
 .pictures {
     display: flex;
+    /* Support for old Safari & Chrome */
     display: -webkit-flex;
     justify-content: space-evenly;
+    /* Fix for images stretching in Safari */
     align-items: flex-start;
     flex-wrap: wrap-reverse;
 }
@@ -204,6 +212,8 @@ ul li:nth-child(even) {
     background-color: rgb(20, 20, 20);
     box-sizing: border-box;
     display: flex;
+    /* Support for old Safari & Chrome */
+    display: -webkit-flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
@@ -214,6 +224,8 @@ ul li:nth-child(even) {
 
 #addressDiv{
     display: flex;
+    /* Support for old Safari & Chrome */
+    display: -webkit-flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
