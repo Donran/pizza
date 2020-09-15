@@ -7,25 +7,25 @@ class TitleTest:
 
         print("")
 
-        # Find title h1
+        # Find title by id
         titleText = driver.find_element_by_id("titleTextTest").text
-        # Write title patch
+        # If not true, returns error
         assert "PIZZERIA SANTOS" in titleText
         print(titleText)
 
-        # Find the image picture by id
+        # Find title image by id
         titleImage = driver.find_element_by_id("titleImageTest")
-        # Write image patch
+        # Find title image url
         print(titleImage.get_attribute("url"))
         
-        # Find the title phone number by id
-        titleNumber = driver.find_element_by_id("titlePhoneNumberTest").text
-        # Write title patch
-        assert "0630-555-555" in titleNumber
-        print(titleNumber)
+        # Find title phone number by id
+        titlePhoneNumber = driver.find_element_by_id("titlePhoneNumberTest").text
+        # If not true, returns error
+        assert "0630-555-555" in titlePhoneNumber
+        print(titlePhoneNumber)
 
-        # Find the title adress by id
-        titleAdress = driver.find_element_by_id("titleAdressTest").text
-        # Write title patch
-        assert "Fjällgatan 32H" in titleAdress
-        print(titleAdress)
+        # Find title address by id
+        titleAddress = driver.find_element_by_id("titleAddressTest").text
+        # If not true, returns error
+        assert "Fjällgatan 32H" in titleAddress
+        print(titleAddress)

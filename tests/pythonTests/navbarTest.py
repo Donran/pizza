@@ -7,9 +7,9 @@ class NavbarTest:
 
         print("")
  
-        # Find the title phone number by id
+        # Find the navbar by id
         navbarTest = driver.find_element_by_class_name("navbar")
-        # Write title patch
+        # Find navbar children and find href attribute
         for item in navbarTest.find_elements_by_xpath(".//*"):
             print(item.get_attribute("href"))
 

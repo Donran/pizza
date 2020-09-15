@@ -7,7 +7,7 @@ class PicturesTest:
 
         print("")
 
-        #Find the images by class name
+        # Find pizza images by class name
         imagesTest = driver.find_elements_by_class_name("pizzaPictures")
         # For loop that loops through all the items in the div and prints their source
         for item in imagesTest:

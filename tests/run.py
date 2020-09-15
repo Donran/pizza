@@ -17,7 +17,9 @@ from pythonTests.contactWebsiteTests.textTestContact import TextTestContact
 from pythonTests.contactWebsiteTests.infoTestContact import InfoTestContact
 from pythonTests.contactWebsiteTests.mapTestContact import MapTestContact
 
+
 parser = argparse.ArgumentParser(description='Test website')
+
 
 parser.add_argument("--source", '-s', default="web", choices=["local", "web"])
 parser.add_argument("--port", '-p', default="5500", help="The port to use when using localhost")
@@ -40,7 +42,7 @@ if str(source) == "local":
 elif str(source) == "web":
     url = "https://fantastic4group.gitlab.io/pizza-website/"
 
-
+# Write chosen url(s)
 print("Fetching from: " + url + file)
 print("")
 
@@ -55,8 +57,8 @@ if file == "index.html":
     OpeningHoursTest(driver)
     DaysClosedTest(driver)
     MenuTest(driver)
+    OrderTest(driver)
     PicturesTest(driver)
-    #OrderTest(driver)
     InfoTest(driver)
 elif file == "kontakt.html":
     LogoTest(driver)
