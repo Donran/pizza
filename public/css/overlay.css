@@ -47,6 +47,7 @@
     padding: 0;
     border: 2px solid rgb(204, 180, 100);
     box-sizing: border-box;
+    user-select: none;
 }
 
 #orderInput:focus{
