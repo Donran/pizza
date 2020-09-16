@@ -55,7 +55,7 @@ Plugins för VSCode:
 <br>
 **Dokumentation** - Svenska, kortfattat med bilder
 <br>
-**Git Branches** Branch namnen ska följa camelCase standarden
+**Git Branches** Branch namnen ska följa (lowerCamelCase) standarden
 <br>
 **Annat** - node.js v.14.9.0, npm v.6.14.8
 
