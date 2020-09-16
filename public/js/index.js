@@ -19,7 +19,7 @@ let listOfMonths = {
 
 /**@type {HTMLHeadingElement} 
  * The button that shows the overlay
-*/
+ */
 let orderButton;
 
 /** @type {HTMLDivElement}
@@ -44,7 +44,7 @@ let textInputElement;
 
 /**@type {HTMLDivElement} 
  * The overlay search button
-*/
+ */
 let orderSearchButton;
 
 /**@type {HTMLDivElement}
@@ -54,7 +54,7 @@ let orderCloseButton;
 
 /**@type {HTMLSpanElement} 
  * The span that shows the user if their zip-code is valid
-*/
+ */
 let orderStatusElement;
 
 let listOfZipCodes = [98139, 98140, 98142, 98138]
@@ -86,9 +86,8 @@ onload = (() => {
 /**
  * The function that gets and reorders the list passed to the function. 
  * It gets the current order and converts the text to a Date variable.
- * If the variables month number is larger than the current month number, it knows that it's this year
- * Else if the variables month number is smaller, it knows that it's next year
- * It then calculate the difference in days between the dates and sort the children and re-append the children to the original element (listElement)
+ * If the next closed date month number is larger than the current month number, the date is this year.
+ * It then calculates the difference in days between the dates and sort the children and re-append the children to the original element (listElement)
  * @param {HTMLElement} listElement The list element with the dates as children
  */
 function reorderListByClosestDate(listElement) {
@@ -159,6 +158,10 @@ function reorderListByClosestDate(listElement) {
     childrenList.forEach(element => listElement.appendChild(element));
 }
 
+/**
+ * Gets the data attribute "data-state" from the overlay element and returns true if it's visible and false if it's hidden
+ * @returns {Boolean}
+ */
 function getOverlayDataState() {
     // If the element is undefined, get the element
     if (!overlayDiv) overlayDiv = document.getElementById("orderOverlay");
@@ -175,8 +178,15 @@ function noScroll() {
     window.scrollTo(0, currentScrollPosition);
 }
 
+/**
+ * The current scroll position
+ */
 let currentScrollPosition = 0;
 
+/**
+ * Toggles the visibility by switching the overlay display property while adding a few click event listeners to hide the overlay when clicking outside of the overlay
+ * @param {Boolean} overlayBool If the overlay is visible or not
+ */
 function toggleOverlayVisibility(overlayBool) {
     if (!overlayDiv) overlayDiv = document.getElementById("orderOverlay");
     // Change the attribute to visible or hidden depending on the overlayBool value
@@ -217,6 +227,10 @@ function toggleOverlayVisibility(overlayBool) {
     }
 }
 
+/**
+ * Gets the overlays input value and validates if it's a number and if it's a valid zip-code.
+ * The overlay status element then shows if the zip-code is valid or not
+ */
 function getZipCodeFromInput() {
     // Replace all of the spaces and dashes with an empty space
     let inputValue = textInputElement.value.replace(" ", "").replace("-", "");
