@@ -55,8 +55,12 @@ Plugins för VSCode:
 <br>
 **Dokumentation** - Svenska, kortfattat med bilder
 <br>
-**Git Branches** Branch namnen ska följa (lowerCamelCase) standarden
-<br>
+**Git Branches** 
+- Branch namnen ska följa (lowerCamelCase) standarden. 
+- De används när vi skapar nya funktioner som då måste godkännas av resten av gruppen via merge request.
+
+**Alla Git Kommandon** - https://about.gitlab.com/images/press/git-cheat-sheet.pdf
+
 **Annat** - node.js v.14.9.0, npm v.6.14.8
 
 
