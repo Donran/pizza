@@ -106,11 +106,12 @@ Koden ska gå igenom valideringen
 
 # Screenshots av webbsidan
 **För att använda**
+1.  Öppna foldern pizza-website/scripts/screenshots/
 1.  Gå in i "shot.json" via VSCode.
 1.  Under rubriken "urls" kan man skriva in det adress man vill.
 1.  Under rubriken "sizes" kan man skriva in det upplösning man vill.
 1.  Starta "takeScreenshot.sh"
-1.  Sedan alla screenshots ska sparas i scripts/screenshots
+1.  Sedan alla screenshots ska sparas i pizza-website/scripts/screenshots/screenshots/
 
 # HTML och CSS Validering
 Koden valideras automatiskt via CI när man har pushat den. Annars kan man validera den lokalt genom att:
