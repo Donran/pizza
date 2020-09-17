@@ -1,6 +1,3 @@
-// Creates a date variable with the current date
-const dateNow = new Date();
-
 // The map of all of the months with its corresponding number
 let listOfMonths = {
     "januari": 1,
@@ -79,8 +76,7 @@ onload = (() => {
         }
     });
 
-    reorderListByClosestDate(document.getElementById("closedDays"));
-    window.list = reorderListByClosestDate(document.getElementById("closedDays"), true)
+    reorderListByClosestDate(new Date());
 });
 
 /**
@@ -90,8 +86,9 @@ onload = (() => {
  * It then calculates the difference in days between the dates and sort the children and re-append the children to the original element (listElement)
  * @param {HTMLElement} listElement The list element with the dates as children
  */
-function reorderListByClosestDate(listElement) {
+function reorderListByClosestDate(dateNow) {
     // The list of all of the child nodes 
+    let listElement = document.getElementById("closedDays");
     let list = listElement.children;
     for (let index = 0; index < list.length; index++) {
         // The next date from the for loop as a string ex: january 8
