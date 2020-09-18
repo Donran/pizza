@@ -3,19 +3,19 @@ from selenium import webdriver
 # Imports the module for commandline arguments
 import argparse
 # Imports all of the classes from the files in the "pythonTests" directory
-from pythonTests.menuTest import MenuTest
-from pythonTests.infoTest import InfoTest
-from pythonTests.openingHoursTest import OpeningHoursTest
-from pythonTests.titleTest import TitleTest
-from pythonTests.picturesTest import PicturesTest
-from pythonTests.daysClosedTest import DaysClosedTest
-from pythonTests.logoTest import LogoTest
-from pythonTests.orderTest import OrderTest
-from pythonTests.navbarTest import NavbarTest
-from pythonTests.contactWebsiteTests.titleTestContact import TitleTestContact
-from pythonTests.contactWebsiteTests.textTestContact import TextTestContact
-from pythonTests.contactWebsiteTests.infoTestContact import InfoTestContact
-from pythonTests.contactWebsiteTests.mapTestContact import MapTestContact
+from webtests.menu_test import MenuTest
+from webtests.info_test import InfoTest
+from webtests.opening_hours_test import OpeningHoursTest
+from webtests.title_test import TitleTest
+from webtests.pictures_test import PicturesTest
+from webtests.days_closed_test import DaysClosedTest
+from webtests.logo_test import LogoTest
+from webtests.order_test import OrderTest
+from webtests.navbar_test import NavbarTest
+from webtests.contact_tests.title_test_contact import TitleTestContact
+from webtests.contact_tests.text_test_contact import TextTestContact
+from webtests.contact_tests.info_test_contact import InfoTestContact
+from webtests.contact_tests.map_test_contact import MapTestContact
 
 # Initializing argument parser
 parser = argparse.ArgumentParser(description='Test website')
