@@ -53,7 +53,7 @@ driver.get(url + file)
 
 # Calls all of the classes constructors
 if file == "index.html":
-    LogoTest(driver) 
+    LogoTest(driver)
     NavbarTest(driver)
     TitleTest(driver)
     OpeningHoursTest(driver)

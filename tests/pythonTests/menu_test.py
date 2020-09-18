@@ -4,7 +4,7 @@ from selenium import webdriver
 
 class MenuTest:
     def __init__(self, driver: webdriver.Chrome):
-     
+
         print("")
 
         # Find menu by id
