@@ -30,6 +30,7 @@ static_validation:
     changes:
       - less/**
       - public/**
+      - .gitlab-ci.yml
 
 webtest:
   stage: test
@@ -43,3 +44,4 @@ webtest:
       - public/**/*
       - tests/**/*
       - less/**/*
+      - .gitlab-ci.yml
