@@ -1,3 +1,5 @@
+@main-gold-color: rgb(204, 180, 100);
+
 /* Imports a local font */
 @font-face {
     font-family: "NATS";
@@ -78,12 +80,12 @@ body {
 }
 
 h2 {
-    color: rgb(204, 180, 100);
+    color: @main-gold-color;
     user-select: none;
 }
 
 #orderButton {
-    border: 2px solid rgb(204, 180, 100);
+    border: 2px solid @main-gold-color;
     max-width: max-content;
     margin: auto;
     padding: 0px 10px;
@@ -177,8 +179,8 @@ ul li:nth-child(even) {
     width: -webkit-fit-content;
     height: fit-content;
     height: -moz-fit-content;
-    color: rgb(204, 180, 100);
-    border: 2px solid rgb(204, 180, 100);
+    color: @main-gold-color;
+    border: 2px solid @main-gold-color;
     padding: 0px 10px;
     box-sizing: border-box;
     user-select: none;
@@ -190,7 +192,7 @@ ul li:nth-child(even) {
     text-align: center;
     text-decoration: none;
     font-size: 2em;
-    color: rgb(204, 180, 100);
+    color: @main-gold-color;
     white-space: nowrap;
 }
 
