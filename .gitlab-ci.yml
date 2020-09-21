@@ -30,3 +30,11 @@ static_validation:
     changes:
       - less/**
       - public/**
+
+webtest:
+  stage: test
+  image: donran/pizza-docker:latest
+  script:
+    - python3 -m http.server 8080 --directory public > /dev/null 2>&1 &
+    - cd tests/webtests
+    - python3 -m unittest
