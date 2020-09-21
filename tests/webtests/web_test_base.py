@@ -27,6 +27,8 @@ class WebTestBase(unittest.TestCase):
 
         self.driver = webdriver.Firefox(service=serv, options=ops)
 
+        self.driver.implicitly_wait(3)
+
     @classmethod
     def tearDownClass(self):
         self.driver.quit()
