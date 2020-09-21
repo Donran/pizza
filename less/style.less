@@ -198,16 +198,17 @@ ul li:nth-child(even) {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.titleInformation{
+.titleInformation {
     text-align: center;
     text-decoration: none;
     font-size: 2em;
     color: @main-gold-color;
     white-space: nowrap;
-}
-
-.titleInformation:nth-of-type(1){
-    margin-left: 6px;
+    transition: 0.1s;
+    &:hover {
+        color: rgb(230, 205, 115);
+        text-decoration: none;
+    }
 }
 
 /* Hides the '|' when the width reaches the point where the text wraps */
