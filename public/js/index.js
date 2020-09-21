@@ -213,7 +213,7 @@ function toggleOverlayVisibility(overlayBool) {
         // Set an event listener to the close button
         orderCloseButton.addEventListener("click", (event) => toggleOverlayVisibility(true));
         // Sets the display of the overlay to flex
-        overlayDiv.style.display = "block";
+        overlayDiv.style.display = "flex";
         // Call width to update the component after display change to fix transition not working
         overlayDiv.clientWidth;
         // Set the opacity to 1 to start the transition
