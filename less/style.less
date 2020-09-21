@@ -255,11 +255,40 @@ ul li:nth-child(even) {
     line-height: 20px;
 }
 
-.infoLink {
+.footer-row {
+    width: 100%;
     display: block;
-    color: white;
     margin: 0 auto;
-    /* Removes decorations */
-    text-decoration: none;
-    width: max-content;
+}
+
+#footer {
+    overflow: hidden;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+#footer h3 {
+    color: @main-gold-color;
+}
+
+#footer ul li a {
+    color: #FFF;
+    font-size: 1.2em;
+}
+
+#footer ul li span {
+    color: #FFF;
+    font-size: 1.2em;
+}
+
+#footer .opening-hours .list-group-item{
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: space-between;
+    width: 40%;
+}
+
+#footer .list-group-item {
+    background-color: #000;
 }
