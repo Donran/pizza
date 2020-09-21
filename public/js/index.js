@@ -229,10 +229,16 @@ function toggleOverlayVisibility(overlayBool) {
  * The overlay status element then shows if the zip-code is valid or not
  */
 function getZipCodeFromInput() {
+    if (!orderStatusElement) orderStatusElement = document.getElementById("orderStatus");
+    // Clear previous classes
+    for (let i = 0; i < orderStatusElement.classList.length; ++i)
+        orderStatusElement.classList.remove(orderStatusElement.classList[i]);
+    console.log("yeet");
     // Replace all of the spaces and dashes with an empty space
     let inputValue = textInputElement.value.replace(" ", "").replace("-", "");
     // The default result
     let finalResult = "Vi levererar inte till dig";
+    let finalClass = "orderFail";
     // If the text only contains numbers
     if (inputValue.match(RegExp("^[0-9]+$"))) {
         // To check if the given number matches any of the 
@@ -241,15 +247,19 @@ function getZipCodeFromInput() {
             if (listOfZipCodes[index].toString() == inputValue) {
                 // Change the result if the number matches
                 finalResult = "Vi levererar till dig";
+                finalClass = "orderSuccess";
                 // End the loop
                 index = listOfZipCodes.length;
             }
         }
     }
     // If the value wasn't typed in
-    if (inputValue == "") finalResult = "Skriv in ditt postnummer";
+    if (inputValue == "") {
+        finalResult = "Skriv in ditt postnummer";
+        finalClass = "orderInfo";
+    }
     // If the element is undefined, get the element
-    if (!orderStatusElement) orderStatusElement = document.getElementById("orderStatus");
     // Show the message to the user
     orderStatusElement.textContent = finalResult;
+    orderStatusElement.classList.add(finalClass);
 }
