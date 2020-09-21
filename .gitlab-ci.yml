@@ -17,10 +17,6 @@ pages:
     paths:
       - public
   rules:
-    - changes:
-      - public/**
-      - less/**
-      - .gitlab-ci.yml
       if: '$CI_COMMIT_BRANCH == "master"'
 
 static_validation:
