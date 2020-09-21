@@ -36,7 +36,7 @@
                 <!-- Groups order content for flex positioning -->
                 <div id="orderWrapper">
                     <input id="orderInput" type="text" placeholder="Postnummer" autocomplete="off" value=""
-                        maxlength="6">
+                        maxlength="6" onkeypress="return isNumberKey(event)">
                     <div id="orderConfirmButton"><img src="./assets/magnify.svg" alt="Search"></div>
                 </div>
                 <Span id="orderStatus" class="orderInfo">Skriv in ditt postnummer</Span>
