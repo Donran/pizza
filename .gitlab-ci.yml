@@ -21,5 +21,6 @@ static_validation:
   stage: test
   image: donran/pizza-docker:latest
   script:
-    - ./scripts/validators/css_validator.sh
-    - ./scripts/validators/validator_html.js
+    - ./scripts/validators/css_validator.sh public
+    - ./scripts/validators/html_validator.sh public
+
