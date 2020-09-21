@@ -2,3 +2,4 @@
 node_modules
 scripts/screenshots/screenshots
 __pycache__
+geckodriver.log

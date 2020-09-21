@@ -1,31 +1,27 @@
-# Imports Selenium python module
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from web_test_base import WebTestBase
 
+class TestTitle(WebTestBase):
 
-class TitleTest:
-    def __init__(self, driver: webdriver.Chrome):
-
-        print("")
+    def test_title(self):
+        driver = self.driver
+        driver.get(self.WEBSITE_URL)
 
         # Find title by id
-        titleText = driver.find_element_by_id("titleTextTest").text
+        titleText = driver.find_element(By.ID, "titleTextTest").text
         # If not true, returns error
-        assert "PIZZERIA SANTOS" in titleText
-        print(titleText)
+        self.assertIn("PIZZERIA SANTOS", titleText)
 
         # Find title image by id
-        titleImage = driver.find_element_by_id("titleImageTest")
-        # Find title image by style property
-        print(titleImage.value_of_css_property("background-image"))
+        titleImage = driver.find_element(By.ID, "titleImageTest")
 
         # Find title phone number by id
-        titlePhoneNumber = driver.find_element_by_id("titlePhoneNumberTest").text
+        titlePhoneNumber = driver.find_element(By.ID, "titlePhoneNumberTest").text
         # If not true, returns error
-        assert "0630-555-555" in titlePhoneNumber
-        print(titlePhoneNumber)
+        self.assertIn("0630-555-555", titlePhoneNumber)
 
         # Find title address by id
-        titleAddress = driver.find_element_by_id("titleAddressTest").text
+        titleAddress = driver.find_element(By.ID, "titleAddressTest").text
         # If not true, returns error
-        assert "Fjällgatan 32H" in titleAddress
-        print(titleAddress)
+        self.assertIn("Fjällgatan 32H", titleAddress)

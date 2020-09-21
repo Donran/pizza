@@ -1,26 +1,32 @@
+image: donran/pizza-docker:latest
+
 stages:
   - test
   - deploy
-
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
 pages:
   stage: deploy
   script:
-    - mkdir .public
-    - cp -r ./public/* .public
-    - mv .public public
+    - lessc less/style.less public/css/style.css
   artifacts:
     paths:
       - public
-  only:
-    - master
   rules:
-    changes:
+    - changes:
       - public/**
+      - less/**
+      - .gitlab-ci.yml
+      if: '$CI_COMMIT_BRANCH == "master"'
 
 static_validation:
   stage: test
-  image: donran/pizza-docker:latest
   script:
+    - lessc less/style.less public/css/style.css
     - ./scripts/validators/css_validator.sh public
     - ./scripts/validators/html_validator.sh public
-
+  only:
+    changes:
+      - less/**
+      - public/**
