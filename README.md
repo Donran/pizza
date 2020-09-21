@@ -65,17 +65,14 @@ Plugins för VSCode:
 
 
 # Definition of Done
-Godkänd av gruppen, både design och utseende. Samt kodmässigt, om det följer kodningsstandarden och är förståelig.
-<br>
-Bearbetat feedback från gruppmedlemmar.
-<br>
-Ska klara av tester
-<br>
-Överens med gruppens kodningsstandard
-<br>
-Koden ska vara kommenterad och dokumenterad
-<br>
-Koden ska gå igenom valideringen
++ Godkänd av gruppen, både design och utseende. Samt kodmässigt, om det följer kodningsstandarden och är förståelig.
++ Bearbetat feedback från gruppmedlemmar.
++ Ska klara av tester.
++ Överens med gruppens kodningsstandard.
++ Koden ska vara dokumenterad.
++ Alla i gruppen ska förstå koden.
++ Allt ska vara presenterbart.
++ Alla dokument ska vara hela och täcka hela sprinten.
 
 
 # Tester Dokumentation
