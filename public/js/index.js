@@ -77,6 +77,13 @@ onload = (() => {
     });
 
     reorderListByClosestDate(new Date());
+
+    document.body.addEventListener("keyup", event => {
+        if((event.key === "Esc" || event.key === "Escape") && getOverlayDataState()) {
+            event.preventDefault();
+            toggleOverlayVisibility(getOverlayDataState());
+        }
+    });
 });
 
 /**
@@ -233,7 +240,6 @@ function getZipCodeFromInput() {
     // Clear previous classes
     for (let i = 0; i < orderStatusElement.classList.length; ++i)
         orderStatusElement.classList.remove(orderStatusElement.classList[i]);
-    console.log("yeet");
     // Replace all of the spaces and dashes with an empty space
     let inputValue = textInputElement.value.replace(" ", "").replace("-", "");
     // The default result
