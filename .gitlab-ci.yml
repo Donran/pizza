@@ -40,6 +40,6 @@ webtest:
     - python3 -m unittest
   only:
     changes:
-      - public/**
-      - tests/**
-      - less/**
+      - public/**/*
+      - tests/**/*
+      - less/**/*
