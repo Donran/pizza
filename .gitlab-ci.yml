@@ -1,5 +1,7 @@
-# This file is a template, and might need editing before it works on your project.
-# Full project: https://gitlab.com/pages/plain-html
+stages:
+  - test
+  - deploy
+
 pages:
   stage: deploy
   script:
@@ -11,15 +13,13 @@ pages:
       - public
   only:
     - master
+  rules:
+    changes:
+      - public/**
 
-css:
-  image: chrben/ubuntu-npm-nonroot:latest
+static_validation:
+  stage: test
+  image: donran/pizza-docker:latest
   script:
-    - npm install css-validator fs glob
-    - npm run test:css
-
-html:
-  image: chrben/ubuntu-npm-nonroot:latest
-  script:
-    - npm install html-validator fs glob
-    - npm run test:html
+    - ./scripts/validators/css_validator.sh
+    - ./scripts/validators/validator_html.js
