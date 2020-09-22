@@ -22,7 +22,6 @@ body {
 /* Aligns content in the middle  */
 .contentDiv {
     margin: auto;
-    display: inline-block;
     /* content width is not higher then 1920 pixels*/
     max-width: 1920px;
     position: relative;
@@ -218,25 +217,33 @@ ul li:nth-child(even) {
     }
 }
 
-/* Align in mobile resolutions */
-.pictures {
-    display: flex;
-    /* Support for old Safari & Chrome */
-    display: -webkit-flex;
-    justify-content: space-evenly;
-    /* Fix for images stretching in Safari */
-    align-items: flex-start;
-    flex-wrap: wrap-reverse;
+.dark-overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 30vh;
 }
 
-/* Bottom photos size */
-.pizzaPictures {
-    width: 780px;
-    max-width: 100%;
-    opacity: 0.8;
-    padding: 20px;
-    /* Makes the margin and padding part of photo width */
-    box-sizing: border-box;
+.parallax-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    height: 30vh;
+    width: 100%;
+}
+
+.bg1 {
+    background-image: url("/assets/bild1.jpg");
+}
+
+.bg2 {
+    background-image: url("/assets/bild2.jpg");
+ }
+
+.bg3 {
+     background-image: url("/assets/bild3.jpg");
 }
 
 #infoDiv {
