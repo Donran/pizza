@@ -6,20 +6,24 @@ layout: default
 <!-- The overlay. It needs inline css values to be able to change them easily with JavaScript -->
 <div id="orderOverlay" style="display: none; opacity: 0;" data-state="hidden">
     <div id="orderContent">
-        <img id="orderCloseButton" src="./assets/svg/close.svg" alt="close">
+        <i id="orderCloseButton" class="fas fa-times"></i>
         <h2>Se om vi levererar till ditt postnummer</h2>
         <!-- Groups order content for flex positioning -->
         <div id="orderWrapper">
             <input id="orderInput" type="text" placeholder="Postnummer" autocomplete="off" value=""
                 maxlength="6" onkeypress="return isNumberKey(event)">
-            <div id="orderConfirmButton"><img src="./assets/svg/magnify.svg" alt="Search"></div>
+            <div id="orderConfirmButton">
+                <i class="fas fa-search-location fa-2x"></i>
+            </div>
         </div>
         <Span id="orderStatus" class="orderInfo">Skriv in ditt postnummer</Span>
     </div>
 </div>
 <!-- The logo imports here -->
 <div class="header">
-    <a href="index.html"><img id="logo" src="./assets/svg/logo.svg" alt=""></a>
+    <a href="index.html">
+        <i class="fas fa-search-location"></i>
+        <img id="logo" src="./assets/svg/logo.svg" alt=""></a>
     <div class="navbar">
         <a href="index.html#menuText">MENY</a>
         <a href="kontakt.html">HITTA OSS</a>
