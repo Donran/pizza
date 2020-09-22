@@ -66,11 +66,11 @@ onload = (() => {
             var scroll = $(document).scrollTop();
             if($bgobj.attr("class").split(/\s+/).includes("bg2")){
                 $bgobj.css({
-                    'background-position':'10% '+(-.4*scroll / 10)+'px'
+                    'background-position':'10% '+(-.4*scroll / 6)+'px'
                 });
             } else {
                 $bgobj.css({
-                    'background-position':'50% '+(-.4*scroll)+'px'
+                    'background-position':'50% '+(-.4*scroll / 1.5)+'px'
                 });
             }
         });
