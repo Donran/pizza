@@ -1,0 +1,25 @@
+- name: Margarita
+  toppings: ost
+  price: 80
+- name: Calzone inbakad
+  toppings: skinka
+  price: 85
+- name: Vesuvio
+  toppings: skinka
+  price: 85
+- name: Hawaii
+  toppings: skinka, ananas
+  price: 90
+- name: Capricciosa
+  toppings: skinka, champinjoner
+  price: 90
+- name: Pompei
+  toppings: bacon, rödlök, ägg, curry
+  price: 90
+- name: La Casa
+  toppings: skinka, champinjoner, räkor
+  price: 95
+- name: Extra topping
+  break: true
+  toppings:
+  price: 5
