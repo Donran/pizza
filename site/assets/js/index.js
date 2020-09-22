@@ -64,9 +64,9 @@ onload = (() => {
         var $bgobj = $(this);
         $(window).on('scroll', function () {
             var scroll = $(document).scrollTop();
-            if($bgobj.attr("class").split(/\s+/).includes("bg2")){
+            if($bgobj.attr("class").split(/\s+/).includes("bg3")){
                 $bgobj.css({
-                    'background-position':'10% '+(-.4*scroll / 6)+'px'
+                    'background-position':'10% '+(-.4*scroll / 14)+'px'
                 });
             } else {
                 $bgobj.css({
