@@ -36,7 +36,7 @@ webtest:
   stage: test
   image: donran/pizza-docker:latest
   script:
-    - jekyll serve -s site -d public -H 0.0.0.0 -P 8080 > /dev/null 2>&1 &
+    - jekyll serve -s site -d public -H 0.0.0.0 -P 8080 -B -q
     - cd tests/webtests
     - python3 -m unittest
   only:
