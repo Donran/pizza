@@ -29,7 +29,7 @@ static_validation:
     - ./scripts/validators/html_validator.sh public
   only:
     changes:
-      - site/**
+      - site/**/*
       - .gitlab-ci.yml
 
 webtest:
