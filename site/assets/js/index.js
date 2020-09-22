@@ -57,10 +57,6 @@ $(document).ready(() => {
 
 /**
  * The function that gets and reorders the list passed to the function.
- * It gets the current order and converts the text to a Date variable.
- * If the next closed date month number is larger than the current month number, the date is this year.
- * It then calculates the difference in days between the dates and sort the children and re-append the children to the original element (listElement)
- * @param {HTMLElement} listElement The list element with the dates as children
  */
 function reorderListByClosestDate(date) {
     let strList = $("#closedDays").children().map((_, val) => val.children[0].innerText);
@@ -82,22 +78,6 @@ function reorderListByClosestDate(date) {
         $("#closedDays").append("<li><span class='closedDay'>"+day+" "+month+"</span><span>Stängt</span></li>");
     });
 }
-
-/**
- * The current scroll position
- */
-function toggleScroll() {
-    let status = $._data($("#orderButton")[0], "events") === undefined;
-    if(status) {
-        $('body').on('scroll touchmove mousewheel', function(e){
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        });
-    } else {
-        $('body').off('scroll touchmove mousewheel');
-    }
-}
 /**
  * Toggles the visibility by switching the overlay display property while adding a few click event listeners to hide the overlay when clicking outside of the overlay
  * @param {Boolean} overlayBool If the overlay is visible or not
@@ -108,18 +88,15 @@ function toggleOverlayVisibility(status = false) {
     if (status) {
         $("#orderStatus").text("Skriv in ditt postnummer");
         $("#orderInput").val("");
-        toggleScroll();
-
+        $('body').addClass("stop-scrolling");
         $(window).on("mousedown", ev => {
             ev.target == overlayDiv[0] ? toggleOverlayVisibility(false):null;
         });
         $("#orderCloseButton").on("click", (_) => toggleOverlayVisibility(false));
         $("#orderOverlay").css({ "display": "flex", "opacity": 1});
     } else {
-        $(window).off('scroll');
-        $(window).off('click');
+        $('body').removeClass("stop-scrolling");
         overlayDiv.css("opacity", 0);
-        // Sets the overlay to display none after a set delay to let the transition finish
         setTimeout(() => {
             overlayDiv.css("display", "none");
             $("#orderStatus").removeClass();
