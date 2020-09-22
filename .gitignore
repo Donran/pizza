@@ -7,3 +7,4 @@ Gemfile.lock
 public
 _site
 .jekyll-cache
+site/_site
