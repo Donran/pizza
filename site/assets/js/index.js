@@ -58,6 +58,24 @@ let listOfZipCodes = [98139, 98140, 98142, 98138]
 
 // The first function that runs when the page loads
 onload = (() => {
+
+    // Code that adds the parallax effect to our background images!
+    $('div[data-type="background"]').each(function(){
+        var $bgobj = $(this);
+        $(window).on('scroll', function () {
+            var scroll = $(document).scrollTop();
+            if($bgobj.attr("class").split(/\s+/).includes("bg2")){
+                $bgobj.css({
+                    'background-position':'10% '+(-.4*scroll / 10)+'px'
+                });
+            } else {
+                $bgobj.css({
+                    'background-position':'50% '+(-.4*scroll)+'px'
+                });
+            }
+        });
+    });
+
     contentDiv = document.getElementById("contentDiv");
 
     orderButton = document.getElementById("orderButton");
