@@ -1,8 +1,8 @@
-
 node_modules
 scripts/screenshots/screenshots
 __pycache__
 geckodriver.log
-public/css/*.css
 tests/screenshots
 Gemfile.lock
+public
+_site
