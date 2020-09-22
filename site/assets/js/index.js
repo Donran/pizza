@@ -245,10 +245,12 @@ function toggleOverlayVisibility(overlayBool) {
         // Set the opacity of the overlay to 0
         overlayDiv.style.opacity = 0;
         // Sets the overlay to display none after a set delay to let the transition finish
-        setTimeout(() => overlayDiv.style.display = "none", 150);
-        if (!orderStatusElement) orderStatusElement = document.getElementById("orderStatus");
-        for (let i = 0; i < orderStatusElement.classList.length; ++i)
-            orderStatusElement.classList.remove(orderStatusElement.classList[i]);
+        setTimeout(() => {
+            overlayDiv.style.display = "none";
+            if (!orderStatusElement) orderStatusElement = document.getElementById("orderStatus");
+            for (let i = 0; i < orderStatusElement.classList.length; ++i)
+                orderStatusElement.classList.remove(orderStatusElement.classList[i]);
+        }, 150);
     }
 }
 
