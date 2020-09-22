@@ -211,7 +211,7 @@ function toggleOverlayVisibility(overlayBool) {
         // If the element is undefined, get the element
         if (!orderCloseButton) orderCloseButton = document.getElementById("orderCloseButton");
         // Set an event listener to the close button
-        orderCloseButton.addEventListener("click", (event) => toggleOverlayVisibility(true));
+        orderCloseButton.addEventListener("click", (_) => toggleOverlayVisibility(true));
         // Sets the display of the overlay to flex
         overlayDiv.style.display = "flex";
         // Call width to update the component after display change to fix transition not working
@@ -228,6 +228,9 @@ function toggleOverlayVisibility(overlayBool) {
         overlayDiv.style.opacity = 0;
         // Sets the overlay to display none after a set delay to let the transition finish
         setTimeout(() => overlayDiv.style.display = "none", 150);
+        if (!orderStatusElement) orderStatusElement = document.getElementById("orderStatus");
+        for (let i = 0; i < orderStatusElement.classList.length; ++i)
+            orderStatusElement.classList.remove(orderStatusElement.classList[i]);
     }
 }
 
