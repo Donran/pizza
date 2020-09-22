@@ -14,7 +14,7 @@ let listOfMonths = {
     "december": 12,
 }
 
-/**@type {HTMLHeadingElement} 
+/**@type {HTMLHeadingElement}
  * The button that shows the overlay
  */
 let orderButton;
@@ -29,7 +29,7 @@ let overlayDiv;
  */
 let contentDiv;
 
-/** 
+/**
  * The Window click event that closes the overlay when clicked on
  */
 let windowClickEvent;
@@ -39,7 +39,7 @@ let windowClickEvent;
  */
 let textInputElement;
 
-/**@type {HTMLDivElement} 
+/**@type {HTMLDivElement}
  * The overlay search button
  */
 let orderSearchButton;
@@ -49,7 +49,7 @@ let orderSearchButton;
  */
 let orderCloseButton;
 
-/**@type {HTMLSpanElement} 
+/**@type {HTMLSpanElement}
  * The span that shows the user if their zip-code is valid
  */
 let orderStatusElement;
