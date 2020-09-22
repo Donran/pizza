@@ -32,8 +32,8 @@ static_validation:
     - lessc less/navbar.less public/css/navbar.css
     - lessc less/overlay.less public/css/overlay.css
     - lessc less/styleKontakt.less public/css/styleKontakt.css
-    - ./scripts/validators/css_validator.sh public
-    - ./scripts/validators/html_validator.sh public
+    - ./tests/validators/css_validator.sh public
+    - ./tests/validators/html_validator.sh public
   only:
     changes:
       - less/**
