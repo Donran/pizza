@@ -16,6 +16,7 @@ class TestMenu(WebTestBase):
             ["Capricciosa", "skinka, champinjoner", 90],
             ["Pompei", "bacon, rödlök, ägg, curry", 90],
             ["La Casa", "skinka, champinjoner, räkor", 95],
+            ["","",""],
             ["Extra topping", "", 5]
         ]
 

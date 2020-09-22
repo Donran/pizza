@@ -1,3 +1,5 @@
+@main-gold-color: rgb(204, 180, 100);
+
 #orderOverlay {
     background-color: rgba(0, 0, 0, 0.8);
     height: 100%;
@@ -27,21 +29,20 @@
     right: 0;
     z-index: 100;
     display: flex;
-    justify-content: center;
+    //justify-content: center;
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
+    padding: 30px;
 }
 
 #orderCloseButton{
-    filter: invert(100%);
-    -webkit-filter: invert(100%);
     cursor: pointer;
     user-select: none;
     align-self: flex-end;
-    margin-right: 30px;
     height: 50px;
     transition: 0.1s;
+    font-size: 35px;
     &:hover {
         opacity: 0.5;
     }
@@ -74,12 +75,20 @@
     display: flex;
     justify-content: center;
     user-select: none;
+    font-size: 17px;
+    transition: 0.2s;
+    cursor: pointer;
+    color: @main-gold-color;
+    &:hover {
+        color: #171717cf;
+        background-color: #ccb464;
+    }
 }
 
-#orderConfirmButton img {
-    filter: invert(100%);
-    -webkit-filter: invert(100%);
+#orderConfirmButton i {
     user-select: none;
+    height: 34px;
+    margin: auto auto;
 }
 
 #orderStatus{
