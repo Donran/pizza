@@ -28,7 +28,6 @@ body {
 }
 
 .header {
-    max-width: 900px;
     margin: auto;
     height: 75px;
     position: sticky;
@@ -38,6 +37,14 @@ body {
     right: 0;
     background-color: rgba(20, 20, 20, 0.85);
     z-index: 50;
+}
+
+.header-container {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
 }
 
 .header img {
@@ -151,12 +158,7 @@ ul li:nth-child(even) {
 /* The image behind the title */
 .titleImage {
     position: relative;
-    background-image: url("../images/bild4.jpg");
-    /* Gives the image a parallax effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: url("../images/bild4.jpg") 50% 0 no-repeat fixed;
     width: 100%;
     height: 500px;
     max-height: calc(85vh);
@@ -220,30 +222,29 @@ ul li:nth-child(even) {
 .dark-overlay {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
+    width: 100vw;
     height: 30vh;
 }
 
 .parallax-section {
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     z-index: -1;
     height: 30vh;
     width: 100%;
+    perspective: 8px;
+    perspective-origin: 0%;
+    overflow: hidden;
 }
 
 .bg1 {
-    background-image: url("../images/bild1.jpg");
+    background: url("../images/bild1.jpg") 50% 0 no-repeat fixed;
 }
 
 .bg2 {
-    background-image: url("../images/bild2.jpg");
- }
+    background: url("../images/bild2.jpg") 50% 0 no-repeat fixed;
+}
 
 .bg3 {
-     background-image: url("../images/bild3.jpg");
+    background: url("../images/bild3.jpg") 50% 0 no-repeat fixed;
 }
 
 #infoDiv {

@@ -17,7 +17,6 @@ let listOfZipCodes = [98139, 98140, 98142, 98138]
 
 // The first function that runs when the page loads
 $(document).ready(() => {
-
     $("#orderButton").on("click", () => toggleOverlayVisibility(true));
 
     $("#orderConfirmButton").on("click", () => getZipCodeFromInput());
@@ -37,6 +36,22 @@ $(document).ready(() => {
             ev.preventDefault();
             toggleOverlayVisibility(false);
         }
+    });
+
+    $('div[data-type="background"]').each(function(){
+        var $bgobj = $(this);
+        $(window).on('scroll', function () {
+            var scroll = $(document).scrollTop();
+            if($bgobj.attr("class").split(/\s+/).includes("bg3")){
+                $bgobj.css({
+                    'background-position':'50% '+(-.4*scroll / 20)+'px'
+                });
+            } else {
+                $bgobj.css({
+                    'background-position':'50% '+(-.4*scroll / 1.5)+'px'
+                });
+            }
+        });
     });
 });
 

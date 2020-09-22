@@ -3,6 +3,19 @@ title: Hem
 layout: default
 ---
 
+
+<!-- The logo imports here -->
+<div class="header">
+    <div class="header-container">
+        <a href="index.html">
+            <img id="logo" src="./assets/svg/logo.svg" alt=""></a>
+        <div class="navbar">
+            <a href="index.html#menuText">MENY</a>
+            <a href="kontakt.html">HITTA OSS</a>
+        </div>
+    </div>
+</div>
+
 <!-- The overlay. It needs inline css values to be able to change them easily with JavaScript -->
 <div id="orderOverlay" style="display: none; opacity: 0;" data-state="hidden">
     <div id="orderContent">
@@ -19,18 +32,9 @@ layout: default
         <Span id="orderStatus" class="orderInfo">Skriv in ditt postnummer</Span>
     </div>
 </div>
-<!-- The logo imports here -->
-<div class="header">
-    <a href="index.html">
-        <img id="logo" src="./assets/svg/logo.svg" alt=""></a>
-    <div class="navbar">
-        <a href="index.html#menuText">MENY</a>
-        <a href="kontakt.html">HITTA OSS</a>
-    </div>
-</div>
 
 <!-- The title of the page -->
-<div class="titleImage" id="titleImageTest">
+<div class="titleImage" id="titleImageTest" data-type="background" data-speed="40">
     <div class="titleContainer">
         <h1 class="title" id="titleTextTest">PIZZERIA SANTOS</h1>
         <div>
@@ -59,7 +63,7 @@ layout: default
     </ul>
 </div>
 
-<div class="parallax-section bg1 mt-5 mb-5">
+<div class="parallax-section bg1 mt-5 mb-5" data-type="background" data-speed="40">
     <div class="dark-overlay"></div>
 </div>
 
@@ -77,6 +81,6 @@ layout: default
     {% endfor %}
 </ul>
 
-<div class="parallax-section bg3 mt-5 mb-5">
+<div class="parallax-section bg3 mt-5" data-type="background" data-speed="40">
     <div class="dark-overlay"></div>
 </div>
