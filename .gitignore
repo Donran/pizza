@@ -7,4 +7,7 @@ Gemfile.lock
 public
 _site
 .jekyll-cache
+<<<<<<< HEAD
 site/.jekyll-cache
+=======
+>>>>>>> 449c588ebacbfce8f691e3dad9e7ef7c5cf51e60
