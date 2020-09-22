@@ -6,3 +6,5 @@ tests/screenshots
 Gemfile.lock
 public
 _site
+.jekyll-cache
+site/.jekyll-cache
