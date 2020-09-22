@@ -21,12 +21,12 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
         <!-- Links the css file(s) -->
-        <link rel="stylesheet" href="./css/style.css">
-        <link rel="stylesheet" href="./css/overlay.css">
-        <link rel="stylesheet" href="./css/navbar.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/overlay.css">
+        <link rel="stylesheet" href="./assets/css/navbar.css">
 
         <!-- Imports the js file(s) -->
-        <script src="js/index.js"></script>
+        <script src="./assets/js/index.js"></script>
     </head>
 
     <body>
@@ -34,20 +34,20 @@
             <!-- The overlay. It needs inline css values to be able to change them easily with JavaScript -->
             <div id="orderOverlay" style="display: none; opacity: 0;" data-state="hidden">
                 <div id="orderContent">
-                    <img id="orderCloseButton" src="assets/close.svg" alt="close">
+                    <img id="orderCloseButton" src="./assets/svg/close.svg" alt="close">
                     <h2>Se om vi levererar till ditt postnummer</h2>
                     <!-- Groups order content for flex positioning -->
                     <div id="orderWrapper">
                         <input id="orderInput" type="text" placeholder="Postnummer" autocomplete="off" value=""
                             maxlength="6" onkeypress="return isNumberKey(event)">
-                        <div id="orderConfirmButton"><img src="./assets/magnify.svg" alt="Search"></div>
+                        <div id="orderConfirmButton"><img src="./assets/svg/magnify.svg" alt="Search"></div>
                     </div>
                     <Span id="orderStatus" class="orderInfo">Skriv in ditt postnummer</Span>
                 </div>
             </div>
             <!-- The logo imports here -->
             <div class="header">
-                <a href="index.html"><img id="logo" src="./assets/logo.svg" alt=""></a>
+                <a href="index.html"><img id="logo" src="./assets/svg/logo.svg" alt=""></a>
                 <div class="navbar">
                     <a href="index.html#menuText">MENY</a>
                     <a href="kontakt.html">HITTA OSS</a>
@@ -87,9 +87,9 @@
                 </ul>
             </div>
 
-            <div class="parallax-section bg1 mt-5 mb-5">                    
+            <div class="parallax-section bg1 mt-5 mb-5">
                 <div class="dark-overlay"></div>
-            </div> 
+            </div>
 
             <h2 id="menuText">MENY</h2>
             <!-- The list of menu items -->
