@@ -20,6 +20,10 @@ $(document).ready(() => {
     // Sets display: none on elements that should only be visible without js running.
     $(".rm-on-js").css("display", "none");
 
+    // Displays elements that uses js.
+    $(".only-js").css("display", "block");
+
+
     $("#orderButton").on("click", () => toggleOverlayVisibility(true));
 
     $("#orderConfirmButton").on("click", () => getZipCodeFromInput());
