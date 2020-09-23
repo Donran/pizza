@@ -71,7 +71,7 @@ layout: default
 <!-- The list of menu items -->
 <ul id="menu">
     {% for pizza in site.data.pizza %}
-    {% if pizza.break %}<li><br/></li>{% endif %}
+    {% if pizza.break %}<li class="no-background"><br/></li>{% endif %}
     <li>
         <span>{{ pizza.name }}
             <span>{{ pizza.toppings }}</span>
