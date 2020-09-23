@@ -1,24 +1,43 @@
 /* This css file is for styling the Navbar */
+@main-gold-color: rgb(204, 180, 100);
+@gold-active-color: rgb(230, 205, 115);
 
-
-/* Positioning items in Navbar */
 .navbar {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    height: 100%;
-    width: max-content;
+    background-color: #000;
+    padding: 0;
 }
 
-/* Navbar */
-.navbar a {
-    color: rgb(204, 180, 100);
-    text-decoration: none;
-    margin: 5px;
-    font-size: 20px;
-    user-select: none;
+.nav-item {
+    background-color: #000 !important;
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+.navbar img {
+    height: 75px;
+    padding: 12.5px;
+}
+
+.custom-toggler .navbar-toggler-icon { 
+    background-image: url( 
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(204, 180, 100, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
+}
+
+.navbar-nav {
+    margin: 0;
+}
+
+.navbar-nav a {
+    color: @main-gold-color;
     transition: 0.1s;
     &:hover {
-        color: rgb(230, 205, 115);
+        color: @gold-active-color;
+    }
+    &.active {
+        color: @gold-active-color;
     }
 }
+
+
