@@ -13,7 +13,7 @@ class TestDaysClosed(WebTestBase):
             "reorderListByClosestDate(new Date(2020," + str(month - 1) + "," + str(date) + "))")
         # Gets the current sorted order from the classes closedDate
         websiteOrder = list(map(
-            lambda date: date.text, self.driver.find_elements(By.CLASS_NAME, "closedDate")))
+            lambda date: date.text, driver.find_elements(By.CLASS_NAME, "closedDay")))
         # Asserts that the expected order and the website order is the same
         self.assertEqual(expectedOrder, websiteOrder)
 
