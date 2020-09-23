@@ -2,25 +2,21 @@
 
 Backlogg: https://docs.google.com/spreadsheets/d/131Dxy4QplduNJaxo41rS0nOelqbk0bQTxoG1y0TOsho/edit#gid=0
 
-Hemsida: https://fantastic4group.gitlab.io/pizza-website
-**(För att hosta HTML sida används GitLab Pages, därför behövs .gitlab-ci.yml filen.)**
+Website: https://fantastic4group.gitlab.io/pizza-website
+**(GitLab pages is used to host this website)**
 
-**Viktigt! Installera Node.js från https://nodejs.org/en/ . Sedan navigera till pizza-website foldern i valfri kommandoprompt och skriv in "npm install" . Detta krävs för att allt ska funka som det ska.**
-
-# Kodningsstandard
+# Coding Conventions
 **Spaces:** 4
 <br>
-**Kommentarer:** Engelska över funktionen, mellanslag mellan "//" och meningen, stor bokstav
+**Comments:** English, space between `//` and the comment, capitalized.
 <br>
 **Namngivning:** Engelska, Klasser med storbokstav (UpperCamelCase)
 <br>
-**Variabel:** let, stor bokstav som delar upp flera ord i en variabel som "pizzaFooter". Liten bokstav i början (lowerCamelCase)
+**Variable naming:** CSS/HTML: kebab-case, JS: camelCase, classes: UpperCamelCase, Python: snake_case
 <br>
-**Funktioner:** non lambda functions
-<br>
-**HTML/CSS:** Bara CSS inline i HTML filen när det är någonting som ändras med JavaScript
+**HTML/CSS:** Only use inline CSS with JavaScript actions.
 
-# Programmeringsspråk
+# Programming Languages
 HTML 5
 <br>
 CSS 3
@@ -29,99 +25,92 @@ Javascript (ECMAScript 2018)
 <br>
 Python 3.8.2
 
-# Utvecklingsmiljöstandard
-**Editor** - Visual Studio Code 1.48.2
+# Development environment
+**Editor** - Personal preference
 <br>
-Plugins för VSCode: 
-- Live Server
-- Beautify
-- Beautify css/sass/scss/less
-- Live Share
-- Code Spell Checker
-- Swedish - Code Spell Checker
-- Python
 
-**Fildelning** - GitLab
+**Version Control Host** - GitLab
 <br>
-**OS** - Windows 10 1909
+**OS** - WSL/Ubuntu
 <br>
-**Browsers** - Edge 85 / Chrome 85
+**Browsers** - Firefox
 <br>
-**Skärmupplösning** - 2560x1440, 1920x1080
+**Tests** - Python selenium library with the unreleased version 4
 <br>
-**Tester** - Selenium for Python
+**Static validation** - HTML Validator, CSS Validator
 <br>
-**Validering** - HTML Validator, CSS Validator
-<br>
-**Dokumentation** - Svenska, kortfattat med bilder
+**Documentation** - English
 <br>
 **Git Branches** 
-- Branch namnen ska följa (lowerCamelCase) standarden. 
-- De används när vi skapar nya funktioner som då måste godkännas av resten av gruppen via merge request.
+- Branch names should use kebab-case.
+- Needs to be approved by at least 2 members of the group, besides the marge request creator.
 
-**Alla Git Kommandon** - https://about.gitlab.com/images/press/git-cheat-sheet.pdf
-
-**Annat** - node.js v.14.9.0, npm v.6.14.8
-
+**Git Command Reference** - https://about.gitlab.com/images/press/git-cheat-sheet.pdf
 
 # Definition of Done
-+ Godkänd av gruppen, både design och utseende. Samt kodmässigt, om det följer kodningsstandarden och är förståelig.
-+ Bearbetat feedback från gruppmedlemmar.
-+ Ska klara av tester.
-+ Överens med gruppens kodningsstandard.
-+ Koden ska vara dokumenterad.
-+ Alla i gruppen ska förstå koden.
++ Approved by the group, both and code structure. All code needs to follow the standards we have in place.
++ Get feedback from group members.
++ Tests should be green.
++ The code shall be documented.
++ Everyone in the group shall understand the code.
 + Allt ska vara presenterbart.
-+ Alla dokument ska vara hela och täcka hela sprinten.
++ Everything shall be presentable. (If it's frontend)
++ All documents shall cover the whole sprint.
+
+# Compiling
+**Compile the website**
+1. First you need to install the dependencies with the following commands: (if `firefox-esr` does not exist on your distro, use `firefox`)
+```bash
+apt update && apt upgrade && apt install -yqq curl jq sudo firefox-esr ruby-full build-essential zlib1g-dev
+gem install jekyll bundler jekyll-less therubyracer
+```
+1. With the dependencies installed, to compile/run the website you can run:
+```bash
+# To compile the website
+jekyll build -s site -d public
+# To compile and run webserver
+jekyll serve -s site -d public -P 8080
+```
+
+# Test Documentation
+**How to run the tests**
+1. Jekyll needs to compile the code.
+1. A webserver needs to run the directory containing the compiled site, this can be done with jekyll, or with `python3 -m http.server --directory=public`. (What webserver you use does not matter)
+1. Go to the tests folder, `cd tests/webtests`
+1. Install required dependencies with `pip3 install selenium==4.0.0a6.post2 requests`
+1. Now simply run `python3 -m unittest`
 
 
-# Tester Dokumentation
-**Hur man sätter upp Selenium for Python för tester**
-1. Installera senaste python och tryck på **Add Python to path**
-1. Starta om datorn
-1. Klona/pulla filerna från GitLab repot Pizza Website
-1. Öppna **Git Bash** och kör kommandot `cd tests && ./setup.sh`
-1. Sedan kör kommandot **python ./run.py -s argument1 -p argument2 -f argument3**
-1. Scriptet tar argument. Argument1 kan antingen vara "local" eller "web". Local betyder att testa localhosten och web betyder att testa live sidan på gitlab
-1. Argument2 spelar igentligen roll om argument1 är "local" då du ska skriva in localhost porten. Standard porten är 5500. Om din localhost port är 5500 så behöver du inte använda detta argument
-1. Argument3 är för att välja vilken html fil som ska testas. Ex är "index.html" eller "kontakt.html"
-1. Om allting dyker upp utan errors så hittar testerna allting
- 
-**Hur man skapar ett test i Selenium for Python**
-1. Se till att du har den senaste versionen av filerna genom att pulla dem från GitLab.
-1. Öppna **tests** mappen i valfri editor som kan köra Python. 
-1. Skapa en ny python fil i mappen **pythonTests** med namnet på testet
-1. Importera sedan webdriver från selenium: `from selenium import webdriver`
-1. Skapa sedan en klass med samma namn som filen fast med stor bokstav i början
-1. Skapa en `__init__` funktion med variablerna **driver** och **baseDivPath**: `def __init__(self, driver: webdriver.Chrome):`
-1. Navigera till run.py filen och importera testet du skapat genom att skriva: `from pythonTests.(namn på testfilen) import TestKlassen`
-1. Navigera tillbaka till test filen
-1. Om du t.ex vill hitta texten i en h1 tagg med ID:et “title” så skriver du: 
-`variabel1 = driver.find_element_by_id("title").text`
-1. Efter du hämtar någonting från hemsidan så måste du använda `assert` för att veta om det du har hämtat är korrekt
-1. Ett exempel skulle vara om du ville kontrollera om **variabel1** inte är en tom string: `assert variabel1 != “”`
+**How to add a new test**
+1. Head to the tests directory with `cd tests/webtests`
+1. Here you can create a new file with the name prefix `test_` (e.g `test_example.py`)
+1. Inside your file you can create a test with this template:
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from web_test_base import WebTestBase
+class ExampleTest(WebTestBase):
+    def test_example(self):
+        driver = self.driver
+        driver.get(self.WEBSITE_URL)
+```
+1. When you save this file you can simply run all tests with `python3 -m unittest` or to run a specific with `python3 -m unittest test_example`
 
-# Screenshots av webbsidan
-**För att använda**
-1.  Öppna foldern pizza-website/scripts/screenshots/
-1.  Gå in i "shot.json" via VSCode.
-1.  Under rubriken "urls" kan man skriva in det adress man vill.
-1.  Under rubriken "sizes" kan man skriva in det upplösning man vill.
-1.  Starta "takeScreenshot.sh"
-1.  Sedan alla screenshots ska sparas i pizza-website/scripts/screenshots/screenshots/
+# Automatic screenshots
+1. Run a webserver like described earlier in this document.
+1. Go to the folder `tests` and run `./screenshots.py`
+1. The script will then create a new folder called `screenshots` containing the different pages with different resolutions, including full pages.
 
-# HTML och CSS Validering
-Koden valideras automatiskt via CI när man har pushat den. Annars kan man validera den lokalt genom att:
-1. Starta Git Bash i **/scripts/validators mappen**
-1. Skriv in **./runValidators.sh** för att starta filen
-1. Sedan resultat visas i fönstret av valideringen
+# Static validation
+1. Compile the website as described earlier. (No need to run it)
+1. Run the following commands to validate CSS and HTML:
+```bash
+./tests/validators/css_validator.sh public
+./tests/validators/html_validator.sh public
+```
+# CI/CD
+CI/CD will run all these tests and validations automatically before deploying, please refer to the [.gitlab-ci.yml](.gitlab-ci.yml) file for more information.
 
-# Innehåll från internet
-
-- Typsnitt är licensierat under Open Font License(OFL) http://scripts.sil.org/OFL
-- Bild under titeln är licensierat under Pixabay License, gratis för kommersiellt bruk https://pixabay.com/sv/photos/pizza-mat-italian-bakad-ost-3007395/
-- Bild i footer är från våran Product Owner
-
-# Problemlogg 
-
-- Använder man **flex-direction: row** (default om man inte specifierar något annat om **display: flex**) kan det behövas att lägga till **align-items: flex-start** för att fixa att vissa objekt inte stretchar i Safari (ex. bilder).
+# Various licenses this project use  
+- Fonts are from Google Fonts.
+- All images are either from the owner or Unsplash.
