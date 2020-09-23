@@ -4,8 +4,15 @@
 @import "contact.less";
 @main-gold-color: rgb(204, 180, 100);
 @pizza-red: rgb(255, 100, 0);
+
+html, body {
+    height: 100%;
+}
+
 body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
     position: relative;
     min-height: 100%;
     text-align: center;
@@ -131,6 +138,7 @@ h2 { // Section header class?
 
 #contentDiv {
     margin-top: 75px;
+    flex: 1 0 auto;
 }
 
 .titleImage {
@@ -169,6 +177,7 @@ h2 { // Section header class?
 }
 #footer {
     overflow: hidden;
+    flex-shrink: 0;
     padding-top: 20px;
     padding-bottom: 40px;
     background-color: rgb(20, 20, 20);
