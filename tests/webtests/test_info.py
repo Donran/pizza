@@ -11,32 +11,32 @@ class TestInfo(WebTestBase):
         driver.get(self.WEBSITE_URL)
 
         # Find address by id
-        footerAddressText = driver.find_element(By.ID, "footerAddress").text
+        footerAddressText = driver.find_element(By.ID, "address").text
         # If not true, returns error
         self.assertIn("Fjällgatan 32H", footerAddressText)
 
         # Find address link by id
-        footerAddress = driver.find_element(By.ID, "footerAddress")
+        footerAddress = driver.find_element(By.ID, "address")
 
         # Find zipcode by id
-        footerZipCodeText = driver.find_element(By.ID, "footerZipCode").text
+        footerZipCodeText = driver.find_element(By.ID, "zipCode").text
         # If not true, returns error
         self.assertIn("981 39 KIRUNA", footerZipCodeText)
 
         try:
             # Find zipcode link by id
-            driver.find_element(By.ID, "footerZipCode")
+            driver.find_element(By.ID, "zipCode")
         except NoSuchElementException:
             self.fail("Couldnt find zipcode")
 
         try:
             # Find email by id
-           driver.find_element(By.ID, "footerEmail")
+           driver.find_element(By.ID, "email")
         except NoSuchElementException:
             self.fail("Couldnt find email")
 
         try:
             # Find phone number by id
-            driver.find_element(By.ID, "footerPhoneNumber")
+            driver.find_element(By.ID, "phoneNumber")
         except NoSuchElementException:
             self.fail("Couldnt find phonenumber")
