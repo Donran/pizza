@@ -69,7 +69,7 @@ function reorderListByClosestDate(date) {
             newDate.setFullYear(newDate.getFullYear() + 1);
 
         return newDate;
-    }).sort((a, b) => a > b);
+    }).sort((a, b) => a - b);
 
     $("#closedDays").html("");
     dates.each((_, val) => {
