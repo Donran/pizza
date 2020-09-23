@@ -1,24 +1,238 @@
+@import "helpers.less";
+@import "overlay.less";
+@import "navbar.less";
+@main-gold-color: rgb(204, 180, 100);
+@pizza-red: rgb(255, 100, 0);
+body {
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    background-color: black;
+    color: white;
+}
 
-@media screen and (min-width: 320px){
-    #footer .opening-hours .list-group-item{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        max-width: 300px;
-        width: 100%;
+#hours {
+    width: 100%;
+    display: flex;
+    font-size: 1em;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    > .openClass {
+        width: 400px;
+        margin: 15px 10px;
+        > li {
+            max-width: 100%;
+        }
+        @media screen and (max-width: 860px) {
+            width: 100%;
+        }
     }
 }
 
-@media screen and (min-width: 768px){
-    #footer .opening-hours .list-group-item {
-        width: 90%;
+#closedDays {
+    li span:nth-last-child(1) {
+        color: @pizza-red;
     }
 }
 
-#footer .list-group-item {
+h2 { // Section header class?
+    color: @main-gold-color;
+    user-select: none;
+    margin-top: 15px;
+}
+
+#orderButton {
+    border: 2px solid @main-gold-color;
+    max-width: max-content;
+    margin: auto;
+    padding: 0px 10px;
+    cursor: pointer;
+    margin-top: 60px;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: 0.2s;
+    padding: 10px;
+    &:hover {
+        color: #171717cf;
+        background-color: #ccb464;
+    }
+}
+#menu {
+    li span {
+        &:first-child {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.1em;
+            color: @main-gold-color;
+        }
+        &:first-child span {
+            line-height: 10px;
+            font-size: 0.8em;
+            color: #FFF;
+        }
+        &:last-child{
+            font-size: 1.3em;
+        }
+    }
+    > li.no-background {
+        background-color: #00000000;
+    }
+}
+
+.titleContainer {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    align-items: center;
+    > h1 {
+        display: inline-block;
+        font-size: 50px;
+        margin: 0;
+        line-height: 90px;
+        /* To make the border fit around the text in Firefox */
+        width: fit-content;
+        width: -moz-fit-content;
+        width: -webkit-fit-content;
+        height: fit-content;
+        height: -moz-fit-content;
+        color: @main-gold-color;
+        border: 2px solid @main-gold-color;
+        padding: 0px 10px;
+        box-sizing: border-box;
+        user-select: none;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    .titleInformation {
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.8em;
+        color: @main-gold-color;
+        white-space: nowrap;
+        transition: 0.1s;
+        &:hover {
+            color: rgb(230, 205, 115);
+            text-decoration: none;
+        }
+        @media screen and (max-width: 344px) {
+            visibility: hidden;
+        }
+    }
+}
+
+.titleImage {
+    position: relative;
+    background: url("../images/bild4.jpg") 50% 0 no-repeat fixed;
+    width: 100%;
+    height: 500px;
+    max-height: calc(85vh);
+}
+
+.parallax-section {
+    z-index: -1;
+    height: 30vh;
+    width: 100%;
+    perspective: 8px;
+    perspective-origin: 0%;
+    overflow: hidden;
+    > div {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        height: 30vh;
+    }
+    &.bg1 {
+        background: url("../images/bild1.jpg") 50% 0 no-repeat fixed;
+    }
+
+    &.bg2 {
+        background: url("../images/bild2.jpg") 50% 0 no-repeat fixed;
+    }
+
+    &.bg3 {
+        background: url("../images/bild5unsplash.jpg") 50% 0 no-repeat fixed;
+        background-size: 2000px;
+    }
+}
+#footer {
+    overflow: hidden;
+    padding-top: 20px;
+    padding-bottom: 40px;
     background-color: rgb(20, 20, 20);
+    h3 {
+        color: @main-gold-color;
+    }
+    ul {
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        li {
+            background-color: rgb(20, 20, 20);
+            a {
+                line-height: 20px;
+                color: #FFF;
+                font-size: 1em;
+                span {
+                    color: #FFF;
+                    font-size: 1em;
+                }
+            }
+            @media screen and (min-width: 320px){
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                max-width: 300px;
+                width: 100%;
+            }
+            @media screen and (min-width: 768px){
+                width: 90%;
+            }
+        }
+    }
 }
 
-#menu > li.no-background {
-    background-color: #00000000;
+
+
+
+
+
+
+
+
+
+
+
+// Needs class?
+ul {
+    margin: 15px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+}
+
+ul li {
+    margin: auto;
+    max-width: 720px;
+    text-align: left;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+}
+
+ul li:nth-child(even) {
+    background-color: rgb(20, 20, 20);
 }
