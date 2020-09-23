@@ -17,6 +17,9 @@ let listOfZipCodes = [98139, 98140, 98142, 98138]
 
 // The first function that runs when the page loads
 $(document).ready(() => {
+    // Sets display: none on elements that should only be visible without js running.
+    $(".rm-on-js").css("display", "none");
+
     $("#orderButton").on("click", () => toggleOverlayVisibility(true));
 
     $("#orderConfirmButton").on("click", () => getZipCodeFromInput());
