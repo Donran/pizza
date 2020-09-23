@@ -121,7 +121,7 @@ function getZipCodeFromInput() {
         finalResult = "Skriv in ditt postnummer";
         finalClass = "orderInfo";
     } else {
-        finalResult = "Vi levererar inte till dig";
+        finalResult = "Tyvärr kör vi inte ut inom detta område";
         finalClass = "orderFail";
     }
     orderStatus.text(finalResult);
