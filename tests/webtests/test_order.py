@@ -54,7 +54,7 @@ class TestOrder(WebTestBase):
 
         order_button = driver.find_element(By.CLASS_NAME, "order-button")
         order_button.click()
-        
+
         overlay = driver.find_element(By.CLASS_NAME, "order-overlay")
 
         input_element = overlay.find_element(By.TAG_NAME, "input")
@@ -79,11 +79,4 @@ class TestOrder(WebTestBase):
         input_element.send_keys(Keys.RETURN)
 
         self.assertIn("Vi levererar till dig", driver.page_source)
-
-        webdriver.ActionChains(driver).send_keys(Keys.ESCAPE).perform()
-
-        #driver.find_element(By.TAG_NAME, "body").send_keys(Keys.ESCAPE)
-
-        self.assertEqual(overlay.get_attribute("data-state"), "hidden")
-
 
