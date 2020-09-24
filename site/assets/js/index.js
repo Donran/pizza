@@ -15,6 +15,17 @@ let listOfMonths = [
 ];
 let listOfZipCodes = [98139, 98140, 98142, 98138]
 
+function isInViewport(node) {
+  var rect = node.getBoundingClientRect()
+  return (
+    (rect.height > 0 || rect.width > 0) &&
+    rect.bottom >= 0 &&
+    rect.right >= 0 &&
+    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+  )
+}
+
 // The first function that runs when the page loads
 $(document).ready(() => {
     // Sets display: none on elements that should only be visible without js running.
@@ -45,21 +56,23 @@ $(document).ready(() => {
         }
     });
 
-    $('div[data-type="background"]').each(function(){
-        var $bgobj = $(this);
-        $(window).on('scroll', function () {
-            var scroll = $(document).scrollTop();
-            if($bgobj.attr("class").split(/\s+/).includes("bg3")){
-                $bgobj.css({
-                    'background-position':'50% '+(-.4*scroll / 20)+'px'
-                });
-            } else {
-                $bgobj.css({
-                    'background-position':'50% '+(-.4*scroll / 1.5)+'px'
-                });
+    $(window).scroll(function() {
+        var scrolled = $(window).scrollTop()
+        $('.parallax').each(function(index, element) {
+            var initY = $(this).offset().top
+            var height = $(this).height()
+            var endY  = initY + $(this).height()
+
+            // Check if the element is in the viewport.
+            var visible = isInViewport(this)
+            if(visible) {
+              var diff = scrolled - initY
+              var ratio = Math.round((diff / height) * 100)
+              $(this).css('background-position','center ' + parseInt(-(ratio * 1.5)) + 'px')
             }
-        });
+        })
     });
+
 });
 
 /**
