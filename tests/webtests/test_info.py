@@ -6,7 +6,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 
 class TestInfo(WebTestBase):
-    
+
     @classmethod
     def setUpClass(self):
         super(TestInfo, self).setUpClass()
@@ -32,7 +32,7 @@ class TestInfo(WebTestBase):
         driver.get(self.WEBSITE_URL)
 
         try:
-            footer = driver.find_element(By.ID, "foooter")
+            footer = driver.find_element(By.ID, "footer")
         except NoSuchElementException:
             self.fail("Could not find footer")
 
@@ -59,7 +59,7 @@ class TestInfo(WebTestBase):
         driver.get(self.WEBSITE_URL+"/kontakt.html")
 
         footer = driver.find_element(By.ID, "footer")
-        
+
         footer_text = footer.text
         self.assertIn(self.address, footer_text)
         self.assertIn(self.zipcode, footer_text)
