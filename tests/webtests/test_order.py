@@ -17,19 +17,6 @@ def set_value_and_check(self, zipcode, driver, confirm_button, input_element):
 
 class TestOrder(WebTestBase):
 
-    def test_order_overlay_shows(self):
-        driver = self.driver
-        driver.get(self.WEBSITE_URL)
-
-        # Find order button by id
-        order_button = driver.find_element(By.CLASS_NAME, "order-button")
-        self.assertEqual(order_button.text, "UTKÖRNING")
-
-        try:
-            # Find order overlay by id
-            overlay = driver.find_element(By.CLASS_NAME, "order-overlay")
-        except NoSuchElementException:
-            self.fail("Could not find order overlay.")
 
     def test_valid_zipcode_works(self):
         driver = self.driver
