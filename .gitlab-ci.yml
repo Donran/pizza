@@ -25,8 +25,8 @@ static_validation:
   stage: test
   script:
     - jekyll build -s site -d public
-    - ./scripts/validators/css_validator.sh public
-    - ./scripts/validators/html_validator.sh public
+    - ./tests/validators/css_validator.sh public
+    - ./tests/validators/html_validator.sh public
   only:
     changes:
       - site/**/*
