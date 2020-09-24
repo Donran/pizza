@@ -3,12 +3,13 @@ from selenium.webdriver.common.by import By
 from web_test_base import WebTestBase
 from selenium.common.exceptions import NoSuchElementException
 
-class TestTextContact(WebTestBase):
+class TestMapContact(WebTestBase):
 
-    def test_text_contact(self):
+    def test_map_contact(self):
         driver = self.driver
         driver.get(self.WEBSITE_URL+"/kontakt.html")
 
-        text = driver.find_element(By.ID, "welcomeText").text
-
-        self.assertIn("HITTA HIT TILL OSS!", text)
+        try:
+            googleMap = driver.find_element(By.ID, "googleMaps")
+        except NoSuchElementException:
+            self.fail("No google maps elem found.")

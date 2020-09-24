@@ -1,3 +1,4 @@
+import sys
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from web_test_base import WebTestBase
@@ -6,37 +7,61 @@ from selenium.common.exceptions import NoSuchElementException
 
 class TestInfo(WebTestBase):
 
-    def test_info(self):
+    @classmethod
+    def setUpClass(self):
+        super(TestInfo, self).setUpClass()
+        self.address = "Fjällgatan 32H"
+        self.zipcode = "981 39 KIRUNA"
+        self.phonenumber = "0630‑555‑555"
+        self.email = "info@fantastic4group.gitlab.io"
+
+    # Tests if info exists on page index.
+    def test_info_exists_index(self):
         driver = self.driver
         driver.get(self.WEBSITE_URL)
 
-        # Find address by id
-        footerAddressText = driver.find_element(By.ID, "footerAddress").text
-        # If not true, returns error
-        self.assertIn("Fjällgatan 32H", footerAddressText)
+        # Testing if all info exists on page
+        self.assertIn(self.address, driver.page_source)
+        self.assertIn(self.zipcode, driver.page_source)
+        self.assertIn(self.phonenumber, driver.page_source)
+        self.assertIn(self.email, driver.page_source)
 
-        # Find address link by id
-        footerAddress = driver.find_element(By.ID, "footerAddress")
-
-        # Find zipcode by id
-        footerZipCodeText = driver.find_element(By.ID, "footerZipCode").text
-        # If not true, returns error
-        self.assertIn("981 39 KIRUNA", footerZipCodeText)
+    # Tests if info exists in the footer on page index.
+    def test_info_in_footer_index(self):
+        driver = self.driver
+        driver.get(self.WEBSITE_URL)
 
         try:
-            # Find zipcode link by id
-            driver.find_element(By.ID, "footerZipCode")
+            footer = driver.find_element(By.ID, "footer")
         except NoSuchElementException:
-            self.fail("Couldnt find zipcode")
+            self.fail("Could not find footer")
 
-        try:
-            # Find email by id
-           driver.find_element(By.ID, "footerEmail")
-        except NoSuchElementException:
-            self.fail("Couldnt find email")
+        footer_text = footer.text
+        self.assertIn(self.address, footer_text)
+        self.assertIn(self.zipcode, footer_text)
+        self.assertIn(self.phonenumber, footer_text)
+        self.assertIn(self.email, footer_text)
 
-        try:
-            # Find phone number by id
-            driver.find_element(By.ID, "footerPhoneNumber")
-        except NoSuchElementException:
-            self.fail("Couldnt find phonenumber")
+    # Tests if info exists on page hitta hit.
+    def test_info_exists_hitta_hit(self):
+        driver = self.driver
+        driver.get(self.WEBSITE_URL+"/kontakt.html")
+
+        # Testing if all info exists on page
+        self.assertIn(self.address, driver.page_source)
+        self.assertIn(self.zipcode, driver.page_source)
+        self.assertIn(self.phonenumber, driver.page_source)
+        self.assertIn(self.email, driver.page_source)
+
+    # Tests if info exists in the footer on page hitta hit.
+    def test_info_in_footer_hitta_hit(self):
+        driver = self.driver
+        driver.get(self.WEBSITE_URL+"/kontakt.html")
+
+        footer = driver.find_element(By.ID, "footer")
+
+        footer_text = footer.text
+        self.assertIn(self.address, footer_text)
+        self.assertIn(self.zipcode, footer_text)
+        self.assertIn(self.phonenumber, footer_text)
+        self.assertIn(self.email, footer_text)
