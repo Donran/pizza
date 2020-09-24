@@ -61,7 +61,7 @@ Python 3.8.2
 **Compile the website**
 1. First you need to install the dependencies with the following commands: (if `firefox-esr` does not exist on your distro, use `firefox`)
 ```bash
-apt update && apt upgrade && apt install -yqq curl jq sudo firefox-esr ruby-full build-essential zlib1g-dev
+apt update && sudo apt upgrade && sudo apt install -yqq curl jq sudo firefox-esr ruby-full build-essential zlib1g-dev
 gem install jekyll bundler jekyll-less therubyracer
 ```
 1. With the dependencies installed, to compile/run the website you can run:
