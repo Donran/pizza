@@ -9,19 +9,19 @@ class TestTitle(WebTestBase):
         driver.get(self.WEBSITE_URL)
 
         # Find title by id
-        titleText = driver.find_element(By.ID, "titleTextTest").text
+        header_text = driver.find_element(By.CLASS_NAME, "header-title").text
         # If not true, returns error
-        self.assertIn("PIZZERIA SANTOS", titleText)
+        self.assertIn("PIZZERIA SANTOS", header_text)
 
-        # Find title image by id
-        titleImage = driver.find_element(By.ID, "titleImageTest")
+        header_information = driver.find_elements(By.CLASS_NAME, "header-information")
 
         # Find title phone number by id
-        titlePhoneNumber = driver.find_element(By.ID, "titlePhoneNumberTest").text
+        header_phonenumber = header_information[0].text
         # If not true, returns error
-        self.assertIn("0630-555-555", titlePhoneNumber)
+        self.assertIn("0630-555-555", header_phonenumber)
 
         # Find title address by id
-        titleAddress = driver.find_element(By.ID, "titleAddressTest").text
+        header_address = header_information[2].text
         # If not true, returns error
-        self.assertIn("Fjällgatan 32H", titleAddress)
+        self.assertIn("Fjällgatan 32H", header_address)
+
