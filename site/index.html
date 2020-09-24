@@ -22,13 +22,13 @@ layout: default
 </div>
 
 <!-- The title of the page -->
-<div class="titleImage parallax" id="titleImageTest">
-    <div class="titleContainer">
-        <h1 class="title" id="titleTextTest">PIZZERIA SANTOS</h1>
+<div class="header-image parallax">
+    <div class="header-container">
+        <h1 class="header-title">PIZZERIA SANTOS</h1>
         <div>
-            <a class="titleInformation" id="titlePhoneNumberTest" href="tel:0630-555-555">0630-555-555 </a>
-            <span class="titleInformation">| </span>
-            <a class="titleInformation" id="titleAddressTest" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9"
+            <a class="header-information" href="tel:0630-555-555">0630-555-555</a>
+            <span class="header-information"> | </span>
+            <a class="header-information" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9"
                 target="_blank">Fjällgatan 32H</a>
             <h2 class="only-js order-button"><a>UTKÖRNING</a></h2>
         </div>
@@ -37,16 +37,15 @@ layout: default
 
 
 <h2 class="mt-5">ÖPPETTIDER</h2>
-<!-- Creates the separated lists for the opening hours and the dates closed -->
-<div id="hours">
-    <ul id="openingHours" class="openClass">
+<div class="business-hours">
+    <ul class="open-class open-hours">
         {% for day in site.data.open_hours %}
         <li><span>{{ day.day }}</span> <span>{{ day.time }}</span></li>
         {% endfor %}
     </ul>
-    <ul id="closedDays" class="openClass">
+    <ul class="open-class closed-days">
         {% for day in site.data.closed_days %}
-        <li><span class="closedDate">{{ day.date }}</span> <span>Stängt</span></li>
+        <li><span class="closed-day">{{ day.date }}</span> <span>Stängt</span></li>
         {% endfor %}
     </ul>
 </div>
@@ -55,9 +54,9 @@ layout: default
     <div class="dark-overlay"></div>
 </div>
 
-<h2 id="menuText">MENY</h2>
+<h2 class="menuText" id="menu">MENY</h2>
 <!-- The list of menu items -->
-<ul id="menu">
+<ul class="menu">
     {% for pizza in site.data.pizza %}
     {% if pizza.break %}<li class="no-background"><br/></li>{% endif %}
     <li>

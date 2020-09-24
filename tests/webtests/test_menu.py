@@ -20,7 +20,7 @@ class TestMenu(WebTestBase):
             ["Extra topping", "", 5]
         ]
 
-        menu = driver.find_element(By.ID, "menu")
+        menu = driver.find_element(By.CLASS_NAME, "menu")
         menu_items = menu.find_elements(By.TAG_NAME, "li")
 
         self.assertEqual(len(menu_items), len(expected_menu))

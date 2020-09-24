@@ -79,7 +79,7 @@ $(document).ready(() => {
  * The function that gets and reorders the list passed to the function.
  */
 function reorderListByClosestDate(date) {
-    let strList = $("#closedDays").children().map((_, val) => val.children[0].innerText);
+    let strList = $(".closed-days").children().map((_, val) => val.children[0].innerText);
 
     let dates = strList.map((_, val) => {
         let dateString = val.split(" ");
@@ -90,12 +90,12 @@ function reorderListByClosestDate(date) {
 
         return newDate;
     }).sort((a, b) => a - b);
-
-    $("#closedDays").html("");
+  console.log(dates);
+    $(".closed-days").html("");
     dates.each((_, val) => {
         let day = val.getDate();
         let month = listOfMonths[val.getMonth()];
-        $("#closedDays").append("<li><span class='closedDay'>"+day+" "+month+"</span><span>Stängt</span></li>");
+        $(".closed-days").append("<li><span class='closed-day'>"+day+" "+month+"</span><span>Stängt</span></li>");
     });
 }
 /**
