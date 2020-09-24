@@ -1,6 +1,6 @@
 @main-gold-color: rgb(204, 180, 100);
 
-#orderOverlay {
+.order-overlay {
     background-color: rgba(0,0,0,0.7);
     height: 100%;
     width: 100%;
@@ -15,7 +15,7 @@
     justify-content: center;
 }
 
-#orderContent {
+.order-content {
     cursor: default;
     grid-area: content;
     width: 100%;
@@ -33,9 +33,25 @@
     flex-direction: column;
     box-sizing: border-box;
     padding: 30px;
+    input {
+        max-width: 180px;
+        padding: 0;
+        border: 2px solid rgb(204, 180, 100);
+        box-sizing: border-box;
+        user-select: none;
+        font-size: 25px;
+        text-align: center;
+        line-height: normal;
+        &:focus {
+            outline: none;
+        }
+    }
+    .order-wrapper {
+        display: flex;
+    }
 }
 
-#orderCloseButton{
+.order-close-button{
     cursor: pointer;
     user-select: none;
     align-self: flex-end;
@@ -47,22 +63,7 @@
     }
 }
 
-#orderInput {
-    max-width: 180px;
-    padding: 0;
-    border: 2px solid rgb(204, 180, 100);
-    box-sizing: border-box;
-    user-select: none;
-    font-size: 25px;
-    text-align: center;
-    line-height: normal;
-}
-
-#orderInput:focus{
-    outline: none;
-}
-
-#orderConfirmButton {
+.order-confirm-button {
     margin-left: -2px;
     border: 2px solid rgb(204, 180, 100);
     box-sizing: border-box;
@@ -80,30 +81,28 @@
         color: #171717cf;
         background-color: #ccb464;
     }
+    i {
+        user-select: none;
+        height: 34px;
+        margin: auto auto;
+    }
 }
 
-#orderConfirmButton i {
-    user-select: none;
-    height: 34px;
-    margin: auto auto;
-}
 
-#orderStatus{
+.order-status{
     min-height: min-content;
     user-select: none;
     font-size: 1.3em;
 }
-.orderSuccess {
+
+.order-success {
     color: lawngreen;
 }
-.orderFail {
+
+.order-fail {
     color: rgb(255, 100, 0);
 }
-.orderInfo {
-    color: white;
-}
 
-/* Wraps order content for flex positioning */
-#orderWrapper {
-    display: flex;
+.order-info {
+    color: white;
 }

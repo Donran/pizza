@@ -6,6 +6,7 @@ from selenium.webdriver.firefox.options import Options as options
 from selenium.webdriver.firefox.service import Service
 
 class WebTestBase(unittest.TestCase):
+
     @classmethod
     def setUpClass(self):
         self.WEBSITE_URL = "http://127.0.0.1:8080/"
