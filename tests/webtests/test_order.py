@@ -80,8 +80,10 @@ class TestOrder(WebTestBase):
 
         self.assertIn("Vi levererar till dig", driver.page_source)
 
+        webdriver.ActionChains(driver).send_keys(Keys.ESCAPE).perform()
+
         #driver.find_element(By.TAG_NAME, "body").send_keys(Keys.ESCAPE)
 
-        #self.assertEqual(overlay.get_attribute("data-state"), "hidden")
+        self.assertEqual(overlay.get_attribute("data-state"), "hidden")
 
 
