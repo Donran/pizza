@@ -5,19 +5,19 @@ layout: default
 
 
 <!-- The overlay. It needs inline css values to be able to change them easily with JavaScript -->
-<div id="orderOverlay" style="display: none; opacity: 0;" data-state="hidden">
-    <div id="orderContent">
-        <i id="orderCloseButton" class="fas fa-times"></i>
+<div class="order-overlay" style="display: none; opacity: 0;" data-state="hidden">
+    <div class="order-content">
+        <i class="order-close-button fas fa-times"></i>
         <h2>Se om vi levererar till ditt postnummer</h2>
         <!-- Groups order content for flex positioning -->
-        <div id="orderWrapper">
-            <input id="orderInput" type="text" placeholder="Postnummer" autocomplete="off" value=""
+        <div class="order-wrapper">
+            <input type="text" placeholder="Postnummer" autocomplete="off" value=""
                 maxlength="6" onkeypress="return isNumberKey(event)">
-            <div id="orderConfirmButton">
+            <div class="order-confirm-button">
                 <i class="fas fa-search-location fa-2x"></i>
             </div>
         </div>
-        <Span id="orderStatus" class="orderInfo">Skriv in ditt postnummer</Span>
+        <span class="order-status order-info">Skriv in ditt postnummer</span>
     </div>
 </div>
 
@@ -30,7 +30,7 @@ layout: default
             <span class="titleInformation">| </span>
             <a class="titleInformation" id="titleAddressTest" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9"
                 target="_blank">Fjällgatan 32H</a>
-            <h2 class="only-js" id="orderButton"><a>UTKÖRNING</a></h2>
+            <h2 class="only-js order-button"><a>UTKÖRNING</a></h2>
         </div>
     </div>
 </div>
