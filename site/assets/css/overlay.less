@@ -1,4 +1,4 @@
-@main-gold-color: rgb(204, 180, 100);
+@import "_variables.less";
 
 .order-overlay {
     background-color: rgba(0,0,0,0.7);
@@ -75,7 +75,7 @@
     font-size: 17px;
     transition: 0.2s;
     cursor: pointer;
-    color: @main-gold-color;
+    color: @main-color;
     background-color: black;
     &:hover {
         color: #171717cf;
@@ -104,5 +104,5 @@
 }
 
 .order-info {
-    color: white;
+    color: @white;
 }
