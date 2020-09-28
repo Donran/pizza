@@ -90,7 +90,7 @@ function reorderListByClosestDate(date) {
 
         return newDate;
     }).sort((a, b) => a - b);
-  console.log(dates);
+
     $(".closed-days").html("");
     dates.each((_, val) => {
         let day = val.getDate();
