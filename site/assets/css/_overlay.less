@@ -36,7 +36,7 @@
     input {
         max-width: 180px;
         padding: 0;
-        border: 2px solid rgb(204, 180, 100);
+        border: 2px solid @main-color;
         box-sizing: border-box;
         user-select: none;
         font-size: 25px;
@@ -65,7 +65,7 @@
 
 .order-confirm-button {
     margin-left: -2px;
-    border: 2px solid rgb(204, 180, 100);
+    border: 2px solid @main-color;
     box-sizing: border-box;
     width: 67px;
     height: 67px;
@@ -76,10 +76,10 @@
     transition: 0.2s;
     cursor: pointer;
     color: @main-color;
-    background-color: black;
+    background-color: @black-color;
     &:hover {
-        color: #171717cf;
-        background-color: #ccb464;
+        color: @dark-hover-color;
+        background-color: @main-hover-color;
     }
     i {
         user-select: none;
@@ -100,9 +100,9 @@
 }
 
 .order-fail {
-    color: rgb(255, 100, 0);
+    color: @pizza-red;
 }
 
 .order-info {
-    color: @white;
+    color: @white-color;
 }

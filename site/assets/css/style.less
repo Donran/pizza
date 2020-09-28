@@ -67,8 +67,8 @@ h2 { // Section header class?
     transition: 0.2s;
     padding: 10px;
     &:hover {
-        color: #171717cf;
-        background-color: #ccb464;
+        color: @dark-hover-color;
+        background-color: @main-hover-color;
     }
 }
 
@@ -102,7 +102,7 @@ h2 { // Section header class?
 	}
 
 	ul li:nth-child(even) {
-	    background-color: @list-element-even;
+	    background-color: @light-gray-bg;
 	}
 }
 
@@ -166,7 +166,7 @@ h2 { // Section header class?
         white-space: nowrap;
         transition: 0.1s;
         &:hover {
-            color: rgb(230, 205, 115);
+            color: @main-hover-color;
             text-decoration: none;
         }
         @media screen and (max-width: 344px) {
