@@ -48,6 +48,7 @@ Python 3.8.2
 **Git Command Reference** - https://about.gitlab.com/images/press/git-cheat-sheet.pdf
 
 # Definition of Done
++ All code, content, and documentation should be read and approved by all group members onsite.
 + Approved by the group, both and code structure. All code needs to follow the standards we have in place.
 + Get feedback from group members.
 + Tests should be green.
