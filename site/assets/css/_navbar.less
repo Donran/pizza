@@ -1,9 +1,8 @@
-/* This css file is for styling the Navbar */
-@main-gold-color: rgb(204, 180, 100);
-@gold-active-color: rgb(230, 205, 115);
+@import "_variables.less";
+
 
 .navbar {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: @main-navbar-bg;
     padding: 0;
 }
 
@@ -42,7 +41,7 @@
 }
 
 .navbar-nav a {
-    color: @main-gold-color;
+    color: @main-color;
     transition: 0.1s;
     &:hover {
         color: @gold-active-color;
