@@ -1,6 +1,9 @@
-
+.vscode/
 node_modules
-scripts/screenshots/screenshots
+screenshots
 __pycache__
 geckodriver.log
-public/css/*.css
+Gemfile.lock
+public
+_site
+.jekyll-cache

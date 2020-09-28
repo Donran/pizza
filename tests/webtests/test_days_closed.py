@@ -4,7 +4,7 @@ from web_test_base import WebTestBase
 
 class TestDaysClosed(WebTestBase):
 
-    def check_order_closed_dates(self, month: int, date: int, expectedOrder: list):
+    def check_order_closed_dates(self, month: int, date: int, expected_order: list):
         driver = self.driver
         driver.get(self.WEBSITE_URL)
 
@@ -12,10 +12,10 @@ class TestDaysClosed(WebTestBase):
         driver.execute_script(
             "reorderListByClosestDate(new Date(2020," + str(month - 1) + "," + str(date) + "))")
         # Gets the current sorted order from the classes closedDate
-        websiteOrder = list(map(
-            lambda date: date.text, self.driver.find_elements(By.CLASS_NAME, "closedDate")))
+        website_order = list(map(
+            lambda date: date.text, driver.find_elements(By.CLASS_NAME, "closed-day")))
         # Asserts that the expected order and the website order is the same
-        self.assertEqual(expectedOrder, websiteOrder)
+        self.assertEqual(expected_order, website_order)
 
     def test_days_closed(self):
         # Runs the function check_order_closed_dates that reorders the list with the specified date and checks if it's sorted correctly

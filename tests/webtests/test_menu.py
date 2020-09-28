@@ -16,10 +16,11 @@ class TestMenu(WebTestBase):
             ["Capricciosa", "skinka, champinjoner", 90],
             ["Pompei", "bacon, rödlök, ägg, curry", 90],
             ["La Casa", "skinka, champinjoner, räkor", 95],
+            ["","",""],
             ["Extra topping", "", 5]
         ]
 
-        menu = driver.find_element(By.ID, "menu")
+        menu = driver.find_element(By.CLASS_NAME, "menu")
         menu_items = menu.find_elements(By.TAG_NAME, "li")
 
         self.assertEqual(len(menu_items), len(expected_menu))

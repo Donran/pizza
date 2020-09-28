@@ -10,50 +10,37 @@ workflow:
 pages:
   stage: deploy
   script:
-    - lessc less/style.less public/css/style.css
-    - lessc less/navbar.less public/css/navbar.css
-    - lessc less/overlay.less public/css/overlay.css
-    - lessc less/styleKontakt.less public/css/styleKontakt.css
+    - jekyll build -s site -d public
   artifacts:
     paths:
       - public
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
       changes:
-        - less/**/*
-        - public/**/*
+        - site/**/*
         - tests/**/*
         - .gitlab-ci.yml
 
 static_validation:
   stage: test
   script:
-    - lessc less/style.less public/css/style.css
-    - lessc less/navbar.less public/css/navbar.css
-    - lessc less/overlay.less public/css/overlay.css
-    - lessc less/styleKontakt.less public/css/styleKontakt.css
-    - ./scripts/validators/css_validator.sh public
-    - ./scripts/validators/html_validator.sh public
+    - jekyll build -s site -d public
+    - ./tests/validators/css_validator.sh public
+    - ./tests/validators/html_validator.sh public
   only:
     changes:
-      - less/**
-      - public/**
+      - site/**/*
       - .gitlab-ci.yml
 
 webtest:
   stage: test
   image: donran/pizza-docker:latest
   script:
-    - lessc less/style.less public/css/style.css
-    - lessc less/navbar.less public/css/navbar.css
-    - lessc less/overlay.less public/css/overlay.css
-    - lessc less/styleKontakt.less public/css/styleKontakt.css
-    - python3 -m http.server 8080 --directory public > /dev/null 2>&1 &
+    - jekyll serve -s site -d public -H 0.0.0.0 -P 8080 -B -q
     - cd tests/webtests
     - python3 -m unittest
   only:
     changes:
-      - public/**/*
+      - site/**/*
       - tests/**/*
-      - less/**/*
       - .gitlab-ci.yml
