@@ -53,25 +53,28 @@ $(document).ready(() => {
         parallax_startpos[$(this).attr("parallax-id")] = $(this).css("background-position-y");
     });
 
-    $(window).scroll(function() {
-        checkScroll();
-        var scrolled = $(window).scrollTop();
-        $('.parallax').each(function(index, element) {
-            var initY = $(this).offset().top;
-            var height = $(this).height();
-            var endY  = initY + $(this).height();
-
-            // Check if the element is in the viewport.
-            var visible = isInViewport(this);
-            if(visible) {
-                var diff = scrolled - initY;
-                var ratio = Math.round((diff / height) * 100);
-                $(this).css('background-position','center calc('+parallax_startpos[$(this).attr("parallax-id")]+' + '+parseInt(-(ratio * 1.5)) + 'px)');
-            }
-        })
-    });
+    $(window).scroll(handleScroll);
+    handleScroll();
 
 });
+
+function handleScroll(index, element) {
+    checkScroll();
+    var scrolled = $(window).scrollTop();
+    $('.parallax').each(function(index, element) {
+        var initY = $(this).offset().top;
+        var height = $(this).height();
+        var endY  = initY + $(this).height();
+
+        // Check if the element is in the viewport.
+        var visible = isInViewport(this);
+        if(visible) {
+            var diff = scrolled - initY;
+            var ratio = Math.round((diff / height) * 100);
+            $(this).css('background-position','center calc('+parallax_startpos[$(this).attr("parallax-id")]+' + '+parseInt(-(ratio * 1.5)) + 'px)');
+        }
+    });
+}
 
 /**
  * The function that gets and reorders the list passed to the function.

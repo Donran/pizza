@@ -5,11 +5,15 @@ layout: default
 
 {% include components/header.html %}
 <div class="container">
-    {% include components/parallax.html image="./assets/images/bild1.jpg" %}
     {% include components/open_hours.html %}
-    {% include components/parallax.html image="./assets/images/bild2.jpg" %}
+</div>
+{% include components/parallax.html image="./assets/images/bild2.jpg" %}
+<div class="container">
     {% include components/menu.html %}
     {% include components/zipcode.html %}
-    {% include components/parallax.html image="./assets/images/bild5unsplash.jpg" %}
+</div>
+{% include components/parallax.html image="./assets/images/bild1.jpg" %}
+<div class="container">
     {% include components/find_us.html %}
 </div>
+{% include components/map.html %}
