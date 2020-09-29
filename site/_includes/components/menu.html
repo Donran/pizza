@@ -1,16 +1,14 @@
-<div class="container">
-    <h3 class="mt-5">Meny</h3>
-    <div class="menu">
-        <ul>
-            {% for pizza in site.data.pizza %}
-            {% if pizza.break %}<li class="no-background"><br/></li>{% endif %}
-            <li>
-                <span>{{ pizza.name }}
-                    <span>{{ pizza.toppings }}</span>
-                </span>
-                <span>{{ pizza.price }} kr</span>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
+<h3 class="mt-5">Meny</h3>
+<div class="menu">
+    <ul>
+        {% for pizza in site.data.pizza %}
+        {% if pizza.break %}<li class="no-background"><br/></li>{% endif %}
+        <li>
+            <span>{{ pizza.name }}
+                <span>{{ pizza.toppings }}</span>
+            </span>
+            <span>{{ pizza.price }} kr</span>
+        </li>
+        {% endfor %}
+    </ul>
 </div>
