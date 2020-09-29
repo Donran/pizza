@@ -54,6 +54,7 @@ $(document).ready(() => {
     });
 
     $(window).scroll(function() {
+        checkScroll();
         var scrolled = $(window).scrollTop();
         $('.parallax').each(function(index, element) {
             var initY = $(this).offset().top;
@@ -126,5 +127,18 @@ function isNumberKey(evt){
     if (charCode > 31 && (charCode < 48 || charCode > 57))
         return false;
     return true;
+}
+
+/**
+ * Listen to scroll to change header opacity class
+ */
+function checkScroll(){
+    var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+
+    if($(window).scrollTop() > startY){
+        $('.navbar').addClass("scrolled");
+    }else{
+        $('.navbar').removeClass("scrolled");
+    }
 }
 
