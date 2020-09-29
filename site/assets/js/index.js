@@ -36,11 +36,9 @@ $(document).ready(() => {
     $(".only-js").css("display", "block");
 
 
-    $(".order-button").on("click", () => toggleOverlayVisibility(true));
-
     $(".order-confirm-button").on("click", () => getZipCodeFromInput());
 
-    $(".order-wrapper > input").on("keyup", ev => {
+    $(".zipcode-field input").on("keyup", ev => {
         if(ev.key === "Enter") {
             ev.preventDefault();
             $(".order-confirm-button").click();
@@ -49,19 +47,12 @@ $(document).ready(() => {
 
     reorderListByClosestDate(new Date());
 
-    $("body").on("keyup", ev => {
-        if((ev.key === "Esc" || ev.key === "Escape") &&
-        $(".order-overlay").attr("data-state") == "visible") {
-            ev.preventDefault();
-            toggleOverlayVisibility(false);
-        }
-    });
     $('.parallax').each(function(_, el) {
         let name = Math.random().toString(36).substring(7);
-        console.log(name);
         $(this).attr("parallax-id", name);
         parallax_startpos[$(this).attr("parallax-id")] = $(this).css("background-position-y");
     });
+
     $(window).scroll(function() {
         var scrolled = $(window).scrollTop();
         $('.parallax').each(function(index, element) {
@@ -104,32 +95,6 @@ function reorderListByClosestDate(date) {
         $(".closed-days").append("<li><span class='closed-day'>"+day+" "+month+"</span><span>Stängt</span></li>");
     });
 }
-/**
- * Toggles the visibility by switching the overlay display property while adding a few click event listeners to hide the overlay when clicking outside of the overlay
- * @param {Boolean} overlayBool If the overlay is visible or not
- */
-function toggleOverlayVisibility(status = false) {
-    let overlayDiv = $(".order-overlay");
-    $(".order-content span:last-child").addClass("order-status")
-    overlayDiv.attr("data-state", status ? "visible" : "hidden");
-    if (status) {
-        $(".order-status").text("Skriv in ditt postnummer");
-        $(".order-wrapper > input").val("");
-        $('body').addClass("stop-scrolling");
-        $(window).on("mousedown", ev => {
-            ev.target == overlayDiv[0] ? toggleOverlayVisibility(false):null;
-        });
-        $(".order-close-button").on("click", (_) => toggleOverlayVisibility(false));
-        $(".order-overlay").css({ "display": "flex", "opacity": 1});
-    } else {
-        $('body').removeClass("stop-scrolling");
-        overlayDiv.css("opacity", 0);
-        setTimeout(() => {
-            overlayDiv.css("display", "none");
-            $(".order-status").removeClass();
-        }, 150);
-    }
-}
 
 /**
  * Gets the overlays input value and validates if it's a number and if it's a valid zip-code.
@@ -139,7 +104,7 @@ function getZipCodeFromInput() {
     let orderStatus = $(".order-status");
     orderStatus.removeClass();
 
-    let inputValue = $(".order-wrapper > input").val();
+    let inputValue = $(".zipcode-field input").val();
 
     if (listOfZipCodes.indexOf(parseInt(inputValue)) > -1) {
         finalResult = "Vi levererar till dig";
@@ -152,7 +117,7 @@ function getZipCodeFromInput() {
         finalClass = "order-fail";
     }
     orderStatus.text(finalResult);
-    $(".order-content span:last-child").addClass("order-status")
+    $(".zipcode-field span:last-child").addClass("order-status")
     orderStatus.addClass(finalClass);
 }
 
