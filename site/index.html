@@ -3,74 +3,11 @@ title: Hem
 layout: default
 ---
 
-
-<!-- The overlay. It needs inline css values to be able to change them easily with JavaScript -->
-<div class="order-overlay" style="display: none; opacity: 0;" data-state="hidden">
-    <div class="order-content">
-        <i class="order-close-button fas fa-times"></i>
-        <h2>Se om vi levererar till ditt postnummer</h2>
-        <!-- Groups order content for flex positioning -->
-        <div class="order-wrapper">
-            <input type="text" placeholder="Postnummer" autocomplete="off" value=""
-                maxlength="6" onkeypress="return isNumberKey(event)">
-            <div class="order-confirm-button">
-                <i class="fas fa-search-location fa-2x"></i>
-            </div>
-        </div>
-        <span class="order-status order-info">Skriv in ditt postnummer</span>
-    </div>
-</div>
-
-<!-- The title of the page -->
-<div class="header-image parallax">
-    <div class="header-container">
-        <h1 class="header-title">PIZZERIA SANTOS</h1>
-        <div>
-            <a class="header-information" href="tel:0630-555-555">0630-555-555</a>
-            <span class="header-information"> | </span>
-            <a class="header-information" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9"
-                target="_blank">Fjällgatan 32H</a>
-            <h2 class="only-js order-button"><a>UTKÖRNING</a></h2>
-        </div>
-    </div>
-</div>
-
-
-<h2 class="mt-5">ÖPPETTIDER</h2>
-<div class="business-hours">
-    <ul class="open-class open-hours">
-        {% for day in site.data.open_hours %}
-        <li><span>{{ day.day }}</span> <span>{{ day.time }}</span></li>
-        {% endfor %}
-    </ul>
-    <ul class="open-class closed-days">
-        {% for day in site.data.closed_days %}
-        <li><span class="closed-day">{{ day.date }}</span> <span>Stängt</span></li>
-        {% endfor %}
-    </ul>
-</div>
-
-<div class="parallax parallax-section bg1 mt-5">
-    <div class="dark-overlay"></div>
-    <div style="position: absolute; bottom: 40px;" id="menu"></div>
-</div>
-
-<h2 class="menuText mt-5">MENY</h2>
-<!-- The list of menu items -->
-<div class="menu">
-    <ul>
-        {% for pizza in site.data.pizza %}
-        {% if pizza.break %}<li class="no-background"><br/></li>{% endif %}
-        <li>
-        <span>{{ pizza.name }}
-            <span>{{ pizza.toppings }}</span>
-        </span>
-        <span>{{ pizza.price }} kr</span>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
-
-<div class="parallax parallax-section bg3 mt-5">
-    <div class="dark-overlay"></div>
-</div>
+{% include components/header.html %}
+{% include components/zipcode.html %}
+{% include components/parallax.html image="./assets/images/bild1.jpg" %}
+{% include components/open_hours.html %}
+{% include components/parallax.html image="./assets/images/bild2.jpg" %}
+{% include components/menu.html %}
+{% include components/parallax.html image="./assets/images/bild5unsplash.jpg" %}
+{% include components/find_us.html %}

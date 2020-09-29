@@ -1,0 +1,15 @@
+<h2 class="menuText mt-5">MENY</h2>
+<!-- The list of menu items -->
+<div class="menu">
+    <ul>
+        {% for pizza in site.data.pizza %}
+        {% if pizza.break %}<li class="no-background"><br/></li>{% endif %}
+        <li>
+        <span>{{ pizza.name }}
+            <span>{{ pizza.toppings }}</span>
+        </span>
+        <span>{{ pizza.price }} kr</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
