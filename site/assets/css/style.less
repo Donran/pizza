@@ -35,7 +35,6 @@ body {
         width: 100%;
 
         background-color: #0000004f;
-
         color: white;
         > h1 {
             font-weight: 500;
@@ -51,3 +50,63 @@ body {
         }
     }
 }
+
+.business-hours {
+    width: 100%;
+    display: flex;
+    font-size: 1em;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+            width: 65%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    > .open-hours {
+        width: 400px;
+        margin: 15px 10px;
+        > li {
+            max-width: 100%;
+        }
+        @media screen and (max-width: 860px) {
+            width: 100%;
+        }
+    }
+    .closed-days {
+        li span:nth-last-child(1) {
+            color: @pizza-red;
+        }
+    }
+}
+
+.menu {
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+	li {
+	    list-style: none;
+	    padding: 10px;
+	}
+
+	ul li {
+	    margin: auto;
+	    max-width: 620px;
+	    text-align: left;
+	    display: flex;
+	    display: -webkit-flex;
+	    justify-content: space-between;
+	}
+}
+
+
