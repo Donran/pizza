@@ -65,17 +65,30 @@ $(document).ready(() => {
         let id = el.attr("parallax-id");
         parallax_options[id] = {};
         parallax_options[id]["start_y"] = el.css("background-position-y");
-        let multiplier = el.attr("parallax-multiplier") ?? 1;
-        parallax_options[id]["speed_mul"] = parseInt(multiplier);
+        parallax_options[id]["speed_mul"] = parseInt(el.attr("parallax-multiplier") ?? 1);
     });
 
     $(window).scroll(handleScroll);
     handleScroll();
-
 });
 
+let animation_triggered = false;
 function handleScroll(_, __) {
-    checkScroll();
+    var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
+    if($(window).scrollTop() > startY){
+        $('.navbar').addClass("scrolled");
+    }else{
+        $('.navbar').removeClass("scrolled");
+    }
+    let $findus = $("#find-us");
+    if(isInViewport($findus[0]) && !animation_triggered) {
+        animation_triggered = true;
+        $findus.find("hr").each(function (){
+            $(this).addClass("trigger-animation");
+            console.log("asd");
+        });
+    }
+
     var scrolled = $(window).scrollTop();
     $('.parallax').each(function(_, __) {
         var initY = $(this).offset().top;
@@ -147,18 +160,5 @@ function isNumberKey(evt){
     if (charCode > 31 && (charCode < 48 || charCode > 57))
         return false;
     return true;
-}
-
-/**
- * Listen to scroll to change header opacity class
- */
-function checkScroll(){
-    var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
-
-    if($(window).scrollTop() > startY){
-        $('.navbar').addClass("scrolled");
-    }else{
-        $('.navbar').removeClass("scrolled");
-    }
 }
 
