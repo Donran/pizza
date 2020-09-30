@@ -26,7 +26,7 @@ function isInViewport(node) {
     )
 }
 
-var parallax_startpos = {};
+var parallax_options = {};
 // The first function that runs when the page loads
 $(document).ready(() => {
     // Sets display: none on elements that should only be visible without js running.
@@ -47,10 +47,15 @@ $(document).ready(() => {
 
     reorderListByClosestDate(new Date());
 
-    $('.parallax').each(function(_, el) {
+    $('.parallax').each(function(_, __) {
         let name = Math.random().toString(36).substring(7);
         $(this).attr("parallax-id", name);
-        parallax_startpos[$(this).attr("parallax-id")] = $(this).css("background-position-y");
+        let el = $(this);
+        let id = el.attr("parallax-id");
+        parallax_options[id] = {};
+        parallax_options[id]["start_y"] = el.css("background-position-y");
+        let multiplier = el.attr("parallax-multiplier") ?? 1;
+        parallax_options[id]["speed_mul"] = parseInt(multiplier);
     });
 
     $(window).scroll(handleScroll);
@@ -58,20 +63,21 @@ $(document).ready(() => {
 
 });
 
-function handleScroll(index, element) {
+function handleScroll(_, __) {
     checkScroll();
     var scrolled = $(window).scrollTop();
-    $('.parallax').each(function(index, element) {
+    $('.parallax').each(function(_, __) {
         var initY = $(this).offset().top;
         var height = $(this).height();
-        var endY  = initY + $(this).height();
 
         // Check if the element is in the viewport.
         var visible = isInViewport(this);
         if(visible) {
+            let el = $(this);
+            var opt = parallax_options[el.attr("parallax-id")];
             var diff = scrolled - initY;
             var ratio = Math.round((diff / height) * 100);
-            $(this).css('background-position','center calc('+parallax_startpos[$(this).attr("parallax-id")]+' + '+parseInt(-(ratio * 1.5)) + 'px)');
+            $(this).css('background-position-y','calc('+opt["start_y"]+' + '+parseInt(-(opt['speed_mul']*ratio * 1.5)) + 'px)');
         }
     });
 }

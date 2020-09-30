@@ -1,3 +1,10 @@
-<div id="{{ include.id }}" class="parallax parallax-section bg1 mt-5" style="background-image: url({{ include.image }}); background-position-y: {{ include.offset }}">
+<div
+    id="{{ include.id }}"
+    class="parallax parallax-section bg1 mt-5"
+    style="background-image: url({{ include.image }}); background-position-y: {{ include.offset }}"
+    {% if include.mul %}
+        parallax-multiplier="{{ include.mul }}"
+    {% endif %}
+    >
     <div class="parallax-empty"></div>
 </div>
