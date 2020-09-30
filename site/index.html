@@ -7,13 +7,13 @@ layout: default
 <div class="container">
     {% include components/open_hours.html %}
 </div>
-{% include components/parallax.html image="./assets/images/bild2.jpg" %}
-<div class="container">
+{% include components/parallax.html image="./assets/images/bild2.jpg" id="menu" %}
+<div class="container" id="menu">
     {% include components/menu.html %}
-    {% include components/zipcode.html %}
 </div>
 {% include components/parallax.html image="./assets/images/bild1.jpg" %}
 <div class="container">
+    {% include components/zipcode.html %}
     {% include components/find_us.html %}
 </div>
 {% include components/map.html %}
