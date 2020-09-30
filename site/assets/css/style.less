@@ -256,17 +256,18 @@ footer {
         width: 50%;
     }
 }
-
-hr {
+.trigger-animation {
     animation-name: hr40OnLoad;
     animation-duration: 2s;
     animation-fill-mode: forwards;
-    margin-left: 0;
-    margin-right: 0;
     border: 1px solid lightgray;
-    margin-top: -0.1em;
     &.colorized {
         animation-name: hr50OnLoad;
         border: 1px solid #f4796b;
     }
+}
+hr {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: -0.1em;
 }
