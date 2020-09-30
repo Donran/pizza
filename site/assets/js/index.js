@@ -27,6 +27,7 @@ function isInViewport(node) {
 }
 
 var parallax_options = {};
+var past_keys = [];
 // The first function that runs when the page loads
 $(document).ready(() => {
     // Sets display: none on elements that should only be visible without js running.
@@ -35,6 +36,16 @@ $(document).ready(() => {
     // Displays elements that uses js.
     $(".only-js").css("display", "block");
 
+    $("body").on("keyup", ev => {
+        past_keys.push(ev.key);
+        let winner = "PIZZATIME";
+        if(past_keys.length >= winner.length) {
+            if(past_keys.join("").toUpperCase().indexOf(winner) >= 0) {
+                $("body").css("cursor", "url(./assets/cur3.png), auto");
+                past_keys = [];
+            }
+        }
+    });
 
     $(".order-confirm-button").on("click", () => getZipCodeFromInput());
 
