@@ -15,6 +15,10 @@ let listOfMonths = [
 ];
 let listOfZipCodes = [98139, 98140, 98142, 98138]
 
+function handleHamburgerClicked(){
+    $(".navbar").toggleClass("nav-bg");
+}
+
 function isInViewport(node) {
     var rect = node.getBoundingClientRect()
     return (
@@ -32,9 +36,11 @@ var past_keys = [];
 $(document).ready(() => {
     // Sets display: none on elements that should only be visible without js running.
     $(".rm-on-js").css("display", "none");
-
+    $(".nav-bg-no-js").removeClass("nav-bg-no-js");
     // Displays elements that uses js.
     $(".only-js").css("display", "block");
+
+    $(".navbar-toggler-icon").on("click", handleHamburgerClicked);
 
     $("body").on("keyup", ev => {
         past_keys.push(ev.key);
