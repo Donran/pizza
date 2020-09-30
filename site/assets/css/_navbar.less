@@ -7,26 +7,33 @@
     @media screen and (min-width: 992px){
         padding-top: 30px;
     }
-    @media screen and (max-width:991px){
-        background-color: @main-navbar-bg;
-    }
 }
 
 .navbar.scrolled { 
-    background-color: @main-navbar-bg;
+    background-color: @main-navbar-bg-scrolled;
     padding-top: 0;
     padding-bottom: 0;
-    .navbar-nav a {
-        font-size: 1.5em;
+    .navbar-nav { 
+        margin-right: 0;
+        a {
+            font-size: 1.5em;
+        }
     }
     .navbar-brand > img {
+        height: 75px;
+    }
+    .container-fluid {
+        align-items: center;
+        max-width: 85%;
     }
 }
 
 .navbar-brand {
+    transition: 0.4s;
     color: #FFF;
     padding: 0;
     font-size: 2.4em;
+    margin-left: 5%;
     > img {
         padding: 0 !important;
         filter: invert();
@@ -34,12 +41,14 @@
 }
 
 .navbar img {
-    height: 75px;
+    transition: 0.4s;
+    height: 150px;
     padding: 12.5px;
 }
 
 .navbar .container-fluid {
-    max-width: 85%;
+    transition: 0.4s;
+    align-items: flex-start;
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -61,6 +70,7 @@
 
 .navbar-nav {
     margin: 0;
+    margin-right: 7.5%;
     .nav-item {
         margin-left: 10px;
         margin-right: 10px;
@@ -78,12 +88,24 @@
     transition: 0.1s;
     font-size: 1.7em;
     font-weight: medium;
-    &:hover {
-        color: @red-color;
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    &:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: #fff;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
     }
-    &.active {
-        text-decoration: underline;
+    &:hover:after { 
+      width: 100%; 
+      left: 0%; 
     }
 }
-
 
