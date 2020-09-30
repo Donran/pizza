@@ -1,22 +1,10 @@
 <!-- FOOTER -->
 <footer id="footer pt-4 pb-4">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-10 col-md-3 col-lg-3 col-xl-3">
-                <h3>Adress</h3>
-                <ul class="list-group list-group-flush" id="addressDiv">
-                    <li class="list-group-item">
-                        <a id="address" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9"
-                            target="_blank">Fjällgatan 32H</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a id="zipCode" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9" target="_blank">981 39 KIRUNA</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-10 col-md-5 col-lg-5 col-xl-4">
-                <h3>Öppettider</h3>
+        <div class="row justify-content-around">
+            <div class="col-10 col-md-5 col-lg-5 col-xl-4 text-left">
+                <h3 class="text-center">Öppettider</h3>
+                <hr />
                 <ul class="list-group list-group-flush opening-hours">
                     <li class="list-group-item"><span>Mån - Tors</span> <span>10 - 22</span></li>
                     <li class="list-group-item"><span>Fredagar</span> <span>10 - 23</span></li>
@@ -25,16 +13,28 @@
                 </ul>
             </div>
 
-            <div class="col-10 col-md-3 col-lg-3 col-xl-3">
-                <h3>Kontaktinfo</h3>
-                <ul class="list-group list-group-flush">
+            <div class="col-10 col-md-3 col-lg-3 col-xl-3 text-left">
+                <h3 class="text-center">Kontaktinfo</h3>
+                <hr /> 
+                <ul class="list-group list-group-flush contact-info">
                     <li class="list-group-item">
                         <a id="email" href="mailto:info@fantastic4group.gitlab.io">
-                            info@fantastic4group.gitlab.io
+                            <i class="fas fa-envelope"></i>
+                            <span>info@fantastic4group.gitlab.io</span>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a id="phoneNumber" href="tel:0630-555-555">0630&#8209;555&#8209;555</a>
+                        <a id="phoneNumber" href="tel:0630-555-555">
+                            <i class="fas fa-phone"></i>
+                            <span>0630&#8209;555&#8209;555</span>
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a id="address" href="https://goo.gl/maps/2aqFdNDscvCgKKQR9"
+                            target="_blank">
+                            <i class="fas fa-home"></i>
+                            <span>Fjällgatan 32H<br />981 39 KIRUNA</span>
+                        </a>
                     </li>
                 </ul>
             </div>
