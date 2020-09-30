@@ -10,7 +10,7 @@
 }
 
 .navbar.scrolled { 
-    background-color: @main-navbar-bg-scrolled;
+    background-color: @main-navbar-bg;
     padding-top: 0;
     padding-bottom: 0;
     .navbar-nav { 
@@ -21,6 +21,9 @@
     }
     .navbar-brand > img {
         height: 75px;
+        @media screen and (min-width: 880px){
+            opacity: 1;
+        }
     }
     .container-fluid {
         align-items: center;
@@ -37,6 +40,9 @@
     > img {
         padding: 0 !important;
         filter: invert();
+        @media screen and (min-width: 880px){
+            opacity: 0;
+        }
     }
 }
 
