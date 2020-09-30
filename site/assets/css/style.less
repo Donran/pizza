@@ -140,6 +140,24 @@ h3 {
 }
 
 .zipcode-field .input-group {
+    input {
+        &:focus {
+            box-shadow: none;
+            border: 1px solid @red-color;
+        }
+    }
+    .btn-outline-secondary {
+        border: 1px solid @red-color;
+        svg {
+            color: @red-color;
+        }
+        &:hover {
+            background-color: @red-color;
+            svg {
+                color: @white-color;
+            }
+        }
+    }
     @media screen and (min-width: 320px){
         width: 80%;
     }
@@ -152,6 +170,23 @@ h3 {
     @media screen and (min-width: 970px){
         width: 25%;
     }
+}
+
+.order-status{
+    min-height: min-content;
+    user-select: none;
+}
+
+.order-success {
+    color: lawngreen;
+}
+
+.order-fail {
+    color: @pizza-red;
+}
+
+.order-info {
+    color: @black-color;
 }
 
 .parallax {
