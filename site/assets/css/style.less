@@ -221,5 +221,52 @@ footer {
 }
 
 #find-us {
-    max-width: 600px;
+    //max-width: 600px;
+    .row:first-child {
+        max-width: 600px;
+        .col-12 {
+            padding: 0;
+        }
+    }
+
+    .col-md-6 {
+        padding: 0;
+        p {
+            width: 95%;
+        }
+    }
+}
+
+@keyframes hr40OnLoad {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 40%;
+    }
+}
+
+@keyframes hr50OnLoad {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 50%;
+    }
+}
+
+hr {
+    animation-name: hr40OnLoad;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    margin-left: 0;
+    margin-right: 0;
+    border: 1px solid lightgray;
+    margin-top: -0.1em;
+    &.colorized {
+        animation-name: hr50OnLoad;
+        border: 1px solid #f4796b;
+    }
 }
