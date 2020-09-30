@@ -1,6 +1,5 @@
 @import "_variables.less";
 @import "_helpers.less";
-@import "_overlay.less";
 @import "_navbar.less";
 @import "_contact.less";
 
@@ -203,4 +202,20 @@ h3 {
 
 .map iframe {
     width:100%;
+}
+
+
+// FOOTER
+footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: @black-color;
+    .list-group-item {
+        border: 0px;
+        background-color: @black-color;
+        color: @white-color;
+        a {
+            color: @white-color;
+        }
+    }
 }
