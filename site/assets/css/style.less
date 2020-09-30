@@ -54,6 +54,20 @@ body {
                 font-size: 3.5rem;
             }
         }
+        &.header-text {
+            @media(max-width: 880px) {
+                display: none;
+            }
+        }
+        &.header-logo {
+            img {
+                width: 70%;
+                filter: invert();
+            }
+            @media(min-width: 881px){
+                display: none;
+            }
+        }
     }
 }
 
