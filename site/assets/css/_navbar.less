@@ -1,5 +1,12 @@
 @import "_variables.less";
 
+.nav-bg {
+    background-color: @main-navbar-bg !important;
+}
+
+.nav-bg-no-js {
+    background-color: @main-navbar-bg !important;
+}
 
 .navbar {
     transition: 1s;
@@ -19,10 +26,15 @@
             font-size: 1.5em;
         }
     }
-    .navbar-brand > img {
-        height: 75px;
+    .navbar-brand {
+        img {
+            height: 75px;
+            @media screen and (max-width: 880px){
+                opacity: 1;
+            }
+        }
         @media screen and (max-width: 880px){
-            opacity: 1;
+            height: 75px;
         }
     }
     .container-fluid {
@@ -43,6 +55,9 @@
         @media screen and (max-width: 880px){
             opacity: 0;
         }
+    }
+    @media screen and (max-width: 880px){
+        height: 0;
     }
 }
 
