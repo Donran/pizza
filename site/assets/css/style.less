@@ -260,7 +260,15 @@ footer {
             margin-bottom: 20px; 
         }
         ul {
-            width: 70%;
+            @media screen and (min-width: 320px) {
+                width: 58%;
+            }
+            @media screen and (min-width: 768px) {
+                width: 90%;
+            }
+            @media screen and (min-width: 1200px){
+                width: 70%; 
+            }
         }
     }
     .opening-hours {
@@ -269,6 +277,7 @@ footer {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+        
         }
     }
     .contact-info li a {
