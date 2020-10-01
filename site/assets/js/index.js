@@ -64,6 +64,11 @@ $(document).ready(() => {
 
     reorderListByClosestDate(new Date());
 
+    // Remove animations to be added later if JS is enabled
+    $("#find-us").find("hr").each(function() {
+        $(this).removeClass("trigger-animation");
+    });
+
     $('.parallax').each(function(_, __) {
         let name = Math.random().toString(36).substring(7);
         $(this).attr("parallax-id", name);
