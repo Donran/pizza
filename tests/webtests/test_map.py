@@ -7,9 +7,9 @@ class TestMapContact(WebTestBase):
 
     def test_map_contact(self):
         driver = self.driver
-        driver.get(self.WEBSITE_URL+"/kontakt.html")
+        driver.get(self.WEBSITE_URL)
 
         try:
-            googleMap = driver.find_element(By.ID, "googleMaps")
+            googleMap = driver.find_element(By.CLASS_NAME, "map")
         except NoSuchElementException:
             self.fail("No google maps elem found.")

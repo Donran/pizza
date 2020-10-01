@@ -8,20 +8,19 @@ class TestTitle(WebTestBase):
         driver = self.driver
         driver.get(self.WEBSITE_URL)
 
-        # Find title by id
-        header_text = driver.find_element(By.CLASS_NAME, "header-title").text
-        # If not true, returns error
-        self.assertIn("PIZZERIA SANTOS", header_text)
+        #Find element by class
+        header_text = driver.find_element(By.CLASS_NAME, "header-text").text
+        #Looking for text in header_text
+        self.assertIn("Välkommen till", header_text)
+        self.assertIn("Pizzeria Santos", header_text)
+        #Find element by class
+        header_logo = driver.find_element(By.CLASS_NAME, "header-logo")
+        #Find element by tag
+        logo_img = header_logo.find_element(By.TAG_NAME, "img")
+        #Save source attribute in variable
+        src = logo_img.get_attribute("src")
+        #Looking for correct logo in src
+        self.assertIn("/assets/svg/icon4.svg", src)
+        
 
-        header_information = driver.find_elements(By.CLASS_NAME, "header-information")
-
-        # Find title phone number by id
-        header_phonenumber = header_information[0].text
-        # If not true, returns error
-        self.assertIn("0630-555-555", header_phonenumber)
-
-        # Find title address by id
-        header_address = header_information[2].text
-        # If not true, returns error
-        self.assertIn("Fjällgatan 32H", header_address)
 

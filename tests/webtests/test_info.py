@@ -41,27 +41,3 @@ class TestInfo(WebTestBase):
         self.assertIn(self.zipcode, footer_text)
         self.assertIn(self.phonenumber, footer_text)
         self.assertIn(self.email, footer_text)
-
-    # Tests if info exists on page hitta hit.
-    def test_info_exists_hitta_hit(self):
-        driver = self.driver
-        driver.get(self.WEBSITE_URL+"/kontakt.html")
-
-        # Testing if all info exists on page
-        self.assertIn(self.address, driver.page_source)
-        self.assertIn(self.zipcode, driver.page_source)
-        self.assertIn(self.phonenumber, driver.page_source)
-        self.assertIn(self.email, driver.page_source)
-
-    # Tests if info exists in the footer on page hitta hit.
-    def test_info_in_footer_hitta_hit(self):
-        driver = self.driver
-        driver.get(self.WEBSITE_URL+"/kontakt.html")
-
-        footer = driver.find_element(By.ID, "footer")
-
-        footer_text = footer.text
-        self.assertIn(self.address, footer_text)
-        self.assertIn(self.zipcode, footer_text)
-        self.assertIn(self.phonenumber, footer_text)
-        self.assertIn(self.email, footer_text)

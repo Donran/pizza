@@ -8,14 +8,18 @@ class TestFindUs(WebTestBase):
    
     def test_find_us_info(self):
         driver = self.driver
-        driver.get(self.WEBSITE_URL+"/kontakt.html")
+        driver.get(self.WEBSITE_URL)
 
-        expected_headings = ["Hitta din väg hit", "Med buss", "Med bil", "Med cykel", "Till fots"]
+        main_heading = "Hitta din väg hit"
+        expected_subheadings = ["Med buss", "Med bil", "Med cykel", "Till fots"]
 
-        text_border_elem = driver.find_element(By.CLASS_NAME, "text-border")
-        heading_elems = text_border_elem.find_elements(By.TAG_NAME, "h2")
-        
-        self.assertEqual(len(heading_elems), len(expected_headings))
+        find_us_elem = driver.find_element(By.ID, "find-us")
+        subheading_elems = find_us_elem.find_elements(By.TAG_NAME, "h4")
+        mainheading_elem = find_us_elem.find_element(By.TAG_NAME, "h3")
 
-        for heading in heading_elems:
-            self.assertIn(heading.text, expected_headings)
+        self.assertEqual(len(subheading_elems), len(expected_subheadings))
+
+        self.assertIn(main_heading, mainheading_elem.text)
+
+        for subheading in subheading_elems:
+            self.assertIn(subheading.text, expected_subheadings)

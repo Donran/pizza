@@ -9,10 +9,10 @@ class TestOpeningHours(WebTestBase):
         driver.get(self.WEBSITE_URL)
 
         expected_open_hours = [
-            "Mån - Tors 10 - 22",
-            "Fredagar 10 - 23",
-            "Lördagar 12 - 23",
-            "Söndagar 12 - 20"
+            "Mån-Tors 10-22",
+            "Fredagar 10-23",
+            "Lördagar 12-23",
+            "Söndagar 12-20"
         ]
 
         # Find opening hours list by id
@@ -22,5 +22,7 @@ class TestOpeningHours(WebTestBase):
         self.assertEqual(len(expected_open_hours), len(opening_hours_arr))
 
         for i in range(len(expected_open_hours)):
-            self.assertIn(expected_open_hours[i], opening_hours_arr[i].text.replace("\n", " "))
+            spans = opening_hours_arr[i].find_elements(By.TAG_NAME, "span")
+            oh_text_on_site = spans[0].text + " " + spans[1].text
+            self.assertIn(expected_open_hours[i], oh_text_on_site)
 
