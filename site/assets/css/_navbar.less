@@ -20,15 +20,14 @@
 }
 
 .navbar {
-    transition: 1s;
+    transition: 0.5s;
     background-color: transparent;
     @media screen and (min-width: 992px){
         padding-top: 30px;
     }
 }
 
-.navbar.scrolled { 
-    background-color: @main-navbar-bg;
+.navbar.scrolled-1 { 
     padding-top: 0;
     padding-bottom: 0;
     .navbar-nav { 
@@ -52,6 +51,10 @@
         align-items: center;
         max-width: 85%;
     }
+}
+
+.navbar.scrolled-2 { 
+    background-color: @main-navbar-bg;
 }
 
 .navbar-brand {
@@ -116,7 +119,7 @@
 }
 
 .navbar-nav a {
-    color: @white-color;
+    color: @main-navbar-text-color;
     transition: 0.1s;
     font-size: 1.7em;
     font-weight: medium;
@@ -131,7 +134,7 @@
         height: 2px;
         left: 50%;
         position: absolute;
-        background: #fff;
+        background: @main-navbar-text-color;
         transition: width 0.3s ease 0s, left 0.3s ease 0s;
         width: 0;
     }

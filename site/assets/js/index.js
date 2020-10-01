@@ -85,12 +85,21 @@ $(document).ready(() => {
 
 let animation_triggered = false;
 function handleScroll(_, __) {
-    var startY = $('.navbar').height() * 2; //The point where the navbar changes in px
-    if($(window).scrollTop() > startY){
-        $('.navbar').addClass("scrolled");
+    let navbar = $('.navbar');
+    let navbarHeight = navbar.height()
+    if($(window).scrollTop() > navbarHeight){
+        navbar.addClass("scrolled-1");
     }else{
-        $('.navbar').removeClass("scrolled");
+        navbar.removeClass("scrolled-1");
     }
+ 
+    let headerHeight = $('#header').height();
+    if($(window).scrollTop() > headerHeight - navbarHeight){
+        navbar.addClass("scrolled-2");
+    } else {
+        navbar.removeClass("scrolled-2");
+    }
+
     let $findus = $("#find-us");
     if(isInViewport($findus[0]) && !animation_triggered) {
         animation_triggered = true;
