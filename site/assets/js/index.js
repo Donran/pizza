@@ -71,12 +71,12 @@ $(document).ready(() => {
 
     $('.parallax').each(function(_, __) {
         let name = Math.random().toString(36).substring(7);
-        $(this).attr("parallax-id", name);
+        $(this).attr("data-parallax-id", name);
         let el = $(this);
-        let id = el.attr("parallax-id");
+        let id = el.attr("data-parallax-id");
         parallax_options[id] = {};
         parallax_options[id]["start_y"] = el.css("background-position-y");
-        parallax_options[id]["speed_mul"] = parseInt(el.attr("parallax-multiplier") ?? 1);
+        parallax_options[id]["speed_mul"] = parseInt(el.attr("data-parallax-multiplier") ?? 1);
     });
 
     $(window).scroll(handleScroll);
@@ -118,7 +118,7 @@ function handleScroll(_, __) {
         var visible = isInViewport(this);
         if(visible) {
             let el = $(this);
-            var opt = parallax_options[el.attr("parallax-id")];
+            var opt = parallax_options[el.attr("data-parallax-id")];
             var diff = scrolled - initY;
             var ratio = Math.round((diff / height) * 100);
             $(this).css('background-position-y','calc('+opt["start_y"]+' + '+parseInt(-(opt['speed_mul']*ratio * 1.5)) + 'px)');
