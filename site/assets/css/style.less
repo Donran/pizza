@@ -23,6 +23,16 @@ body {
     color: @black-color;
 }
 
+@keyframes fadeInOnLoad {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 #header {
     background-size: cover !important;
     & > .header-content {
@@ -39,12 +49,19 @@ body {
             font-weight: 500;
             font-size: 6.3rem;
             line-height: 1;
+
+            opacity: 0;
+            animation: fadeInOnLoad 1s 0s ease-out forwards;
+        
         }
 
         > h2 {
             font-weight: 400;
             font-size: 3.5rem;
             line-height: 0.5;
+
+            opacity: 0;
+            animation: fadeInOnLoad 1s 0s ease-out forwards;
         }
         @media(max-width: 480px) {
             > h2 {

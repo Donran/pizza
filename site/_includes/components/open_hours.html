@@ -1,7 +1,8 @@
 <div class="row business-hours mt-5">
-    <div class="col-12 col-md-5 mb-5">
+    <div class="col-12 col-md-4 mb-5">
         <h3 class="mb-2">Öppettider</h3>
-        <ul class="open-hours">
+        <hr class="colorized trigger-animation"/>
+        <ul class="open-hours"">
             {% for day in site.data.open_hours %}
             <li><span>{{ day.day }}</span> <span>{{ day.time }}</span></li>
             {% endfor %}
@@ -10,6 +11,7 @@
 
     <div class="col-12 col-md-5 mb-5">
         <h3 class="mb-2">Stängda dagar</h3>
+        <hr class="colorized trigger-animation"/>
         <ul class="open-class closed-days">
             {% for day in site.data.closed_days %}
             <li><span class="closed-day">{{ day.date }}</span> <span>Stängt</span></li>
