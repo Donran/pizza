@@ -9,8 +9,7 @@ class TestDaysClosed(WebTestBase):
         driver.get(self.WEBSITE_URL)
 
         # Executes the JS reordering script with a custom month and date
-        driver.execute_script(
-            "reorderListByClosestDate(new Date(2020," + str(month - 1) + "," + str(date) + "))")
+        driver.execute_script("reorderListByClosestDate(new Date(2020," + str(month - 1) + "," + str(date) + "))")
         # Gets the current sorted order from the classes closedDate
         website_order = list(map(
             lambda date: date.text, driver.find_elements(By.CLASS_NAME, "closed-day")))
