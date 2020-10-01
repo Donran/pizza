@@ -6,7 +6,6 @@ class TestDaysClosed(WebTestBase):
 
     def check_order_closed_dates(self, month: int, date: int, expected_order: list):
         driver = self.driver
-        driver.get(self.WEBSITE_URL)
 
         # Executes the JS reordering script with a custom month and date
         driver.execute_script("reorderListByClosestDate(new Date(2020," + str(month - 1) + "," + str(date) + "))")
@@ -17,6 +16,9 @@ class TestDaysClosed(WebTestBase):
         self.assertEqual(expected_order, website_order)
 
     def test_days_closed(self):
+        driver = self.driver 
+        driver.get(self.WEBSITE_URL)
+
         # Runs the function check_order_closed_dates that reorders the list with the specified date and checks if it's sorted correctly
         self.check_order_closed_dates(12, 24, ['24 december', '25 december',
                                             '26 december', '6 januari', '1 maj'])
