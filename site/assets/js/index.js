@@ -76,7 +76,7 @@ $(document).ready(() => {
         let id = el.attr("data-parallax-id");
         parallax_options[id] = {};
         parallax_options[id]["start_y"] = el.css("background-position-y");
-        parallax_options[id]["speed_mul"] = parseInt(el.attr("data-parallax-multiplier") ?? 1);
+        parallax_options[id]["speed_mul"] = parseInt(el.attr("data-parallax-multiplier") ? el.attr("data-parallax-multiplier") : 1);
     });
 
     $(window).scroll(handleScroll);
