@@ -5,10 +5,14 @@ layout: default
 
 {% include components/header.html %}
 <div class="container">
-    {% include components/open_hours.html %}
-</div>
-<div class="container" id="menu">
-    {% include components/menu.html %}
+    <div class="row flex-row-reverse mt-5">
+        <div class="col-12 d-flex col-md-6">
+            {% include components/open_hours.html %}
+        </div>
+        <div class="col-12 col-md-6">
+            {% include components/menu.html %}
+        </div>
+    </div>
 </div>
 {% include components/parallax.html image="./assets/images/bild1.jpg" %}
 <div class="container only-js mb-5">
