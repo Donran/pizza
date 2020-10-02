@@ -105,7 +105,6 @@ function handleScroll(_, __) {
         animation_triggered = true;
         $findus.find("hr").each(function (){
             $(this).addClass("trigger-animation");
-            console.log("asd");
         });
     }
 
