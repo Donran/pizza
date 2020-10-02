@@ -1,4 +1,4 @@
-image: donran/pizza-docker:latest
+image: donran/pizza-docker-ubuntu:latest
 
 stages:
   - test
@@ -34,11 +34,10 @@ static_validation:
 
 webtest:
   stage: test
-  image: donran/pizza-docker:latest
   script:
     - jekyll serve -s site -d public -H 0.0.0.0 -P 8080 -B -q
     - cd tests/webtests
-    - python3 -m unittest -v 
+    - python3 -m unittest -v
   only:
     changes:
       - site/**/*

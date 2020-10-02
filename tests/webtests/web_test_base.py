@@ -24,12 +24,8 @@ class WebTestBase(unittest.TestCase):
         ops = options()
         ops.headless = True
         ops.binary_location = firefox_binary
-        if(os.name == "nt"):
-            serv = Service(os.getcwd()+"/../geckodriver.exe")
-        else:
-            serv = Service(os.getcwd()+"/../geckodriver")
 
-        self.driver = webdriver.Firefox(service=serv, options=ops)
+        self.driver = webdriver.Firefox(executable_path=os.getcwd()+"/../geckodriver", options=ops)
 
         self.driver.implicitly_wait(3)
 
