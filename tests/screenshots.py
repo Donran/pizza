@@ -4,6 +4,7 @@ import shutil
 import tracemalloc
 from selenium import webdriver
 from time import sleep
+from selenium.webdriver.firefox.options import Options as options
 
 # Trace memory allocations in case of errors
 tracemalloc.start()
@@ -14,7 +15,11 @@ class ScreenshotTest():
         # Selects the correct geckodriver based on OS
         drivername = "/geckodriver.exe" if os.name == 'nt' else "/geckodriver"
         pathtodriver = os.path.dirname(os.path.realpath(__file__)) + drivername
-        self.driver = webdriver.Firefox(executable_path=pathtodriver, desired_capabilities=webdriver.DesiredCapabilities.FIREFOX)
+
+        ops = options()
+        ops.headless = True
+
+        self.driver = webdriver.Firefox(executable_path=pathtodriver, options=ops, desired_capabilities=webdriver.DesiredCapabilities.FIREFOX)
 
         self.WEBSITE_URL = "http://localhost:8080/"
 
@@ -45,7 +50,7 @@ class ScreenshotTest():
     def takeScreenshots(self):
         driver = self.driver
 
-        pages = ["index", "kontakt"]
+        pages = ["index"]
 
         for page in pages:
             driver.get(self.WEBSITE_URL + page + ".html")
@@ -56,9 +61,10 @@ class ScreenshotTest():
             for resolution in self.resolutions:
                 width = resolution[0]
                 height = resolution[1]
+                print("screenshot at res: {}x{}".format(width, height))
                 driver.set_window_size(width, height, driver.window_handles[0])
                 driver.get_screenshot_as_file(f"{os.path.dirname(os.path.realpath(__file__))}/screenshots/{page}/screenshot-{width}x{height}.png")
-                driver.get_full_page_screenshot_as_file(f"{os.path.dirname(os.path.realpath(__file__))}/screenshots/{page}/screenshot-{width}-full.png")
+                #driver.get_full_page_screenshot_as_file(f"{os.path.dirname(os.path.realpath(__file__))}/screenshots/{page}/screenshot-{width}-full.png")
 
     def tearDown(self):
         self.driver.quit()
