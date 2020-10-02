@@ -1,6 +1,7 @@
 <h3>Meny</h3>
 <hr class="colorized trigger-animation"/>
-<div class="menu" id="menu">
+<div id="menu" class="offset-anchor"></div>
+<div class="menu">
     <ul>
         {% for pizza in site.data.pizza %}
         {% if pizza.break %}<li class="no-background"><br/></li>{% endif %}
